@@ -2,7 +2,7 @@
 
 ## Minimum Viable Product
 
-BeatHub is a web application inspired by Evernote built using Ruby on Rails
+BeatHub is a web application inspired by Spotify built using Ruby on Rails
 and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
 following criteria with smooth, bug-free navigation, adequate seed data and
 sufficient CSS styling:
@@ -16,7 +16,7 @@ sufficient CSS styling:
 - [ ] Production README [sample](docs/production_readme.md)
 
 ## Design Docs
-* [View Wireframes][wireframes] 
+* [View Wireframes][wireframes]
 * [React Components][components]
 * [API endpoints][api-endpoints]
 * [DB schema][schema]
