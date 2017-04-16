@@ -7,7 +7,7 @@
 - SignInForm
 
 **HomeContainer**
--MainContent (center)
+- MainContent (center)
 - LeftContent (left)
 - FollowedFriendsIndex (right)
 - AudioPlayer (bottom)
@@ -16,10 +16,11 @@
 - SearchProfile
 - Featured
 - SearchIndex
-- SongAlbumArtistIndex (aka user category index)
+- CollectionIndex (aka user's artist, album, artist index)
 - UserShow
 - UsersIndex
 - ArtistPage
+- AlbumPage
 - PlaylistForm
 - PlaylistShow
 
@@ -32,3 +33,23 @@
 **LeftContentContainer**
 - UserMusicIndex
 - UserPlaylistIndex
+
+
+## Routes
+
+|Path   | Component   |
+|-------|-------------|
+| "/sign-up" | "SignUpFormContainer" |
+| "/sign-in" | "SignInFormContainer" |
+| "/home" | "HomeContainer" |
+| "/search" | "SearchIndex" |
+| "/featured" | "featured" |
+| "/collection/songs" | "CollectionIndexContainer" |
+| "/collection/albums" | "CollectionIndexContainer" |
+| "/collection/artists" | "CollectionIndexContainer" |
+| "/collection/playlists" | "PlaylistForm" |
+| "/profile/:id" | "UserShow" |
+| "/profile/:id/playlist/:id" | "PlaylistShow" |
+| "/users" | "UsersIndex" |
+| "/artist/:id" | "ArtistPage" |
+| "/album/:id" | "AlbumPage" |
