@@ -43,6 +43,7 @@
 | "/sign-in" | "SignInFormContainer" |
 | "/home" | "HomeContainer" |
 | "/search" | "SearchIndex" |
+| "/search/results/searchTerm" | "SearchIndex" |
 | "/featured" | "featured" |
 | "/collection/songs" | "CollectionIndexContainer" |
 | "/collection/albums" | "CollectionIndexContainer" |
