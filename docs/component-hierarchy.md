@@ -48,7 +48,8 @@
 | "/collection/songs" | "CollectionIndexContainer" |
 | "/collection/albums" | "CollectionIndexContainer" |
 | "/collection/artists" | "CollectionIndexContainer" |
-| "/collection/playlists" | "PlaylistForm" |
+| "/collection/playlists" | "CollectionIndexContainer" | (default for /collection)
+| "/collection/playlists/new" | "PlaylistForm" |
 | "/profile/:id" | "UserShow" |
 | "/profile/:id/playlist/:id" | "PlaylistShow" |
 | "/users" | "UsersIndex" |
