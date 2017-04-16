@@ -57,6 +57,10 @@
 - `GET /api/playlists/:id`
 - `DELETE /api/playlists/:id`
 
+### PlaylistSongs
+- `POST /api/playlistSongs`
+- `DELETE /api/playlistSongs/:id`
+
 ### Follows
 
 - `GET /api/users/:id/follows`

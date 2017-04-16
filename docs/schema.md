@@ -52,3 +52,11 @@ column name     | data type | details
 id              | integer   | not null, primary key
 name            | string    | not null, indexed, unique
 author_id       | integer   | not null, foreign_key {references users}
+
+## PlaylistSongs
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+name            | string    | not null, indexed, unique
+song_id         | integer   | not null, foreign_key {references songs}
+playlist_id     | integer   | not null, foreign_key {references playlist}
