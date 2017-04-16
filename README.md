@@ -16,11 +16,11 @@ sufficient CSS styling:
 - [ ] Production README [sample](docs/production_readme.md)
 
 ## Design Docs
-* [View Wireframes][wireframes] COMING SOON
-* [React Components][components] COMING SOON
-* [API endpoints][api-endpoints] COMING SOON
-* [DB schema][schema] COMING SOON
-* [Sample State][sample-state] COMING SOON
+* [View Wireframes][wireframes] 
+* [React Components][components]
+* [API endpoints][api-endpoints]
+* [DB schema][schema]
+* [Sample State][sample-state]
 
 [wireframes]: docs/wireframes
 [components]: docs/component-hierarchy.md
