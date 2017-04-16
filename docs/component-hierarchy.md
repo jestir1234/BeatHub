@@ -1,34 +1,34 @@
 ## Component Hierarchy
 
 **SignUpFormContainer**
--SignUpForm
+- SignUpForm
 
 **SignInFormContainer**
--SignInForm
+- SignInForm
 
 **HomeContainer**
 -MainContent (center)
--LeftContent (left)
--FollowedFriendsIndex (right)
--AudioPlayer (bottom)
+- LeftContent (left)
+- FollowedFriendsIndex (right)
+- AudioPlayer (bottom)
 
 **MainContentContainer**
--SearchProfile
--Featured
--SearchIndex
--SongAlbumArtistIndex (aka user category index)
--UserShow
--UsersIndex
--ArtistPage
--PlaylistForm
--PlaylistShow
+- SearchProfile
+- Featured
+- SearchIndex
+- SongAlbumArtistIndex (aka user category index)
+- UserShow
+- UsersIndex
+- ArtistPage
+- PlaylistForm
+- PlaylistShow
 
 **ArtistPageContainer**
--AlbumsIndex
+- AlbumsIndex
 
 **AlbumsIndexContainer**
--AlbumItem
+- AlbumItem
 
 **LeftContentContainer**
--UserMusicIndex
--UserPlaylistIndex
+- UserMusicIndex
+- UserPlaylistIndex
