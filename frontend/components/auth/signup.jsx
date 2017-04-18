@@ -20,25 +20,27 @@ class SignUp extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.signup(this.state).then(() => this.props.router.push('/home'));
+    this.props.signup(this.state).then(() => this.props.router.push('/'));
   }
 
   render(){
     return (
-      <div className="signup-form-container">
-        <h3>Sign up with your email address </h3>
-        <form className="signup-form">
-          <input type="text" value={this.state.username} placeholder="Username" onChange={this.handleInput('username')}/>
+      <div className="signup-form-page">
+        <div className="signup-container">
+          <h3>Sign up with your email address </h3>
+          <form className="signup-form">
+            <input type="text" value={this.state.username} placeholder="e.g.marshmallow" onChange={this.handleInput('username')}/>
+            <br/>
+            <input type="email" value={this.state.email} placeholder="e.g.marshmallow@email.com" onChange={this.handleInput('email')}/>
+            <br/>
+            <input type="password" value={this.state.password} placeholder="Choose a password" onChange={this.handleInput('password')}/>
+            <br/>
+            <button onClick={this.handleSubmit}>SIGN UP</button>
+          </form>
           <br/>
-          <input type="email" value={this.state.email} placeholder="Email" onChange={this.handleInput('email')}/>
-          <br/>
-          <input type="password" value={this.state.password} placeholder="Password" onChange={this.handleInput('password')}/>
-          <br/>
-          <button onClick={this.handleSubmit}>SIGN UP</button>
-        </form>
-        <br/>
-        <div>
-        Already have an account?<Link to='/login'> Login</Link>
+          <div>
+          Already have an account?<Link to='/login'> Login</Link>
+          </div>
         </div>
       </div>
     );

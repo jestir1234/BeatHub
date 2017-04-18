@@ -1,5 +1,5 @@
 
-.signup-form-container {
+.signup-form-page {
   border: 1px solid black;
   width: 100vw;
   height: 100vh;
@@ -11,17 +11,37 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.signup-form-container h3{
+.signup-form-page h3{
   margin-top: 100px;
 }
 
 .signup-form {
   margin-top: 100px;
+  border-right: 1px solid white;
 }
 
-.signup-form-container input {
+.signup-form-page input {
   width: 70%;
   height: 40px;
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 15px;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid white;
+  color: white;
+}
+
+::-webkit-input-placeholder { /* Chrome */
+  color: white;
+  opacity: .7;
+  transition: opacity 250ms ease-in-out;
+}
+
+:focus::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+
+.signup-container{
+  width: 40%;
+  margin-left: 8%;
 }

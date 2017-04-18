@@ -19,7 +19,7 @@ class Login extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.login(this.state).then(() => this.props.router.push('/home'));
+    this.props.login(this.state).then(() => this.props.router.push('/'));
   }
 
   render(){
