@@ -1,0 +1,26 @@
+
+.signup-form-container {
+  border: 1px solid black;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  margin: 0 auto;
+  background: url("https://cdn.suwalls.com/wallpapers/photography/listening-to-music-at-sunset-46733-1920x1200.jpg");
+  background-size: cover;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.signup-form-container h3{
+  margin-top: 100px;
+}
+
+.signup-form {
+  margin-top: 100px;
+}
+
+.signup-form-container input {
+  width: 70%;
+  height: 40px;
+  margin-top: 10px;
+}

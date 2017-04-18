@@ -25,9 +25,9 @@ class SignUp extends React.Component{
 
   render(){
     return (
-      <div className="signup-form">
+      <div className="signup-form-container">
         <h3>Sign up with your email address </h3>
-        <form>
+        <form className="signup-form">
           <input type="text" value={this.state.username} placeholder="Username" onChange={this.handleInput('username')}/>
           <br/>
           <input type="email" value={this.state.email} placeholder="Email" onChange={this.handleInput('email')}/>
@@ -39,7 +39,7 @@ class SignUp extends React.Component{
         <br/>
         <div>
         Already have an account?<Link to='/login'> Login</Link>
-      </div>
+        </div>
       </div>
     );
   }
