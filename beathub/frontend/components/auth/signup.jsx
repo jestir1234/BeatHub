@@ -20,12 +20,12 @@ class SignUp extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.signup(this.state).then(() => this.props.router.push('/'));
+    this.props.signup(this.state).then(() => this.props.router.push('/home'));
   }
 
   render(){
     return (
-      <div>
+      <div className="signup-form">
         <h3>Sign up with your email address </h3>
         <form>
           <input type="text" value={this.state.username} placeholder="Username" onChange={this.handleInput('username')}/>

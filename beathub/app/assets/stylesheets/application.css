@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+.signup-form {
+  border: 1px solid black;
+  width: 40%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.signup-form input {
+  width: 70%;
+  height: 50px;
+}

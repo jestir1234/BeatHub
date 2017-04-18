@@ -5,7 +5,7 @@ class Login extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = {username: "", email: ""};
+    this.state = {username: "", password: ""};
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -19,7 +19,7 @@ class Login extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.login(this.state).then(() => this.props.router.push('/'));
+    this.props.login(this.state).then(() => this.props.router.push('/home'));
   }
 
   render(){
