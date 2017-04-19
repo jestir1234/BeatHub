@@ -1,6 +1,12 @@
 # BeatHub
 
+
+[Heroku link][https://beat-hub-app.herokuapp.com/#/login] **Note:** This should be a link to your production site
+
+[Trello link][https://trello.com/b/GiRkKhjn/beathub]
+
 ## Minimum Viable Product
+
 
 BeatHub is a web application inspired by Spotify built using Ruby on Rails
 and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
