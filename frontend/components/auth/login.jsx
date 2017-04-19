@@ -13,7 +13,13 @@ class Login extends React.Component {
   }
 
   componentDidMount(){
-    this.parseError(this.props.errors);
+    if (this.props.errors.length > 0){
+      if (this.props.errors[0] === "Invalid username or password"){
+        this.parseError(this.props.errors);
+      } else {
+        this.props.clearErrors([]);
+      }
+    }
   }
 
   componentWillReceiveProps(newProps){
