@@ -13,6 +13,10 @@ class SignUp extends React.Component{
     this.resetErrors = this.resetErrors.bind(this);
   }
 
+  componentDidMount(){
+    
+  }
+
   handleInput(field){
     return (e) => {
       e.preventDefault();
@@ -23,7 +27,7 @@ class SignUp extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     this.resetErrors();
-    this.props.signup(this.state).then(() => this.props.router.push('/'), alert("something went wrong"));
+    this.props.signup(this.state).then(() => this.props.router.push('/'), console.log("something went wrong"));
   }
 
   resetErrors(){
@@ -44,7 +48,7 @@ class SignUp extends React.Component{
       errorHash[first_word] = error;
       element = document.getElementById(`${first_word}`);
       if (element){
-        element.setAttribute("class", "show");
+        element.setAttribute("class", "show-signup-error");
       }
     });
     return errorHash;

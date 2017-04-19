@@ -1,5 +1,5 @@
 .login-form-page{
-  background: url("http://www.artsfon.com/pic/201501/2560x1440/artsfon.com-44017.jpg");
+  background: url("http://musicfactory.gr/wp-content/uploads/2017/03/k2.jpg");
   width: 100vw;
   height: 100vh;
   text-align: center;
@@ -51,6 +51,8 @@
   background-color: #363636;
   border: none;
   border-radius: 3px;
+  font-size: 14px;
+  color: white;
 }
 
 .login-form button {
@@ -70,4 +72,16 @@
   width: 16%;
   height: 35px;
   background-color: #07d159;
+}
+
+.login-error {
+  display: none;
+}
+
+.show-login-error{
+  border: 2px solid red;
+  width: 260px;
+  height: 50px;
+  background: red;
+  line-height: 45px;
 }

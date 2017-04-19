@@ -109,11 +109,11 @@
   display: none;
 }
 
-.show{
+.show-signup-error{
   margin-top: -20px;
   border: 2px solid red;
   width: 210px;
-  height: 60px;
+  height: 50px;
   background: red;
   position: relative;
   -moz-border-radius:    10px;
