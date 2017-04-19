@@ -1,9 +1,9 @@
 # BeatHub
 
 
-[Heroku link][https://beat-hub-app.herokuapp.com/#/login] **Note:** This should be a link to your production site
+[Heroku link](https://beat-hub-app.herokuapp.com) **Note:** This should be a link to your production site
 
-[Trello link][https://trello.com/b/GiRkKhjn/beathub]
+[Trello link](https://trello.com/b/GiRkKhjn/beathub)
 
 ## Minimum Viable Product
 
