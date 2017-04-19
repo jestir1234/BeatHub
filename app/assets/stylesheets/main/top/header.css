@@ -1,0 +1,9 @@
+.top-content{
+  border: 2px solid #00dfff;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  position: absolute;
+  margin-top: 2%;
+  height: 5%
+}
