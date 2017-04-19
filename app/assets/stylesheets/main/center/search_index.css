@@ -1,0 +1,10 @@
+.center-content{
+  width: 70%;
+  height: 75%;
+  position: absolute;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 5%;
+  border: 2px solid red;
+  color: white;
+}

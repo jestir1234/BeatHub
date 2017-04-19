@@ -7,4 +7,15 @@
    height: 100vh;
    margin: 0 auto;
    background-size: cover;
+   color: white;
+   position: absolute;
+   border: 3px solid orange;
+}
+
+.main-page-container h3{
+  border: 1px solid yellow;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  position: absolute;
 }
