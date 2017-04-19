@@ -6,18 +6,22 @@
   text-align: center;
   margin: 0 auto;
   background: url("https://cdn.suwalls.com/wallpapers/photography/listening-to-music-at-sunset-46733-1920x1200.jpg");
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .5);
   background-size: cover;
   color: white;
   font-family: 'Montserrat', sans-serif;
+  display: flex;
 }
 
 .signup-form-page h3{
   margin-top: 100px;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 .signup-form {
   margin-top: 100px;
-  border-right: 1px solid white;
 }
 
 .signup-form-page input {
@@ -42,6 +46,90 @@
 }
 
 .signup-container{
+  margin-top: 5%;
+  margin-bottom: 5%;
   width: 40%;
   margin-left: 8%;
+  border-right: 1px solid white;
+}
+
+.login-link-container{
+  margin-top: 40px;
+}
+
+.login-link{
+  text-decoration: none;
+  color: white;
+  -webkit-transition: text-decoration 1s;
+   transition: text-decoration 1s;
+}
+
+.login-link:hover{
+  text-decoration: underline;
+}
+
+.signup-form button{
+  background: transparent;
+  color: white;
+  border: 3px solid white;
+  border-radius: 20px;
+  width: 40%;
+  height: 40px;
+  margin-top: 20px;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+.signup-form button:hover{
+  cursor: pointer;
+}
+
+.slogan-container {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 8%;
+}
+
+.slogan-container h2{
+  color: #07d159;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: left;
+}
+
+.slogan-container p{
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+  font-size: 23px;
+}
+
+.form-errors {
+  margin-top: -20px;
+  display: inline-block;
+  border: 2px solid red;
+  width: 210px;
+  height: 60px;
+  background: red;
+  position: relative;
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+}
+
+.form-errors:before{
+  content:"";
+  position: absolute;
+  right: 100%;
+  top: 26px;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-right: 26px solid red;
+  border-bottom: 13px solid transparent;
+  margin-top: -25px;
+}
+
+#hidden{
+  display: none;
 }

@@ -24,18 +24,20 @@ class Login extends React.Component {
 
   render(){
     return(
-      <div>
-        <form>
-          <input type="text" value={this.state.username} placeholder="Username" onChange={this.handleInput('username')}/>
-          <br/>
-          <input type="password" value={this.state.password} placeholder="Password" onChange={this.handleInput('password')}/>
-          <br/>
-          <button onClick={this.handleSubmit}>LOG IN</button>
-        </form>
-        <br/>
-        <br/>
-        <br/>
-        <Link to='/signup'>Create an Account</Link>
+
+      <div className="login-form-page">
+        <div className="login-container">
+          <form className='login-form'>
+            <input type="text" value={this.state.username} placeholder="Username" onChange={this.handleInput('username')}/>
+            <br/>
+            <input type="password" value={this.state.password} placeholder="Password" onChange={this.handleInput('password')}/>
+            <br/>
+            <button onClick={this.handleSubmit}>LOG IN</button>
+          </form>
+        </div>
+        <div className="link-container">
+          <Link className="signup-link" to='/signup'>SIGN UP</Link>
+        </div>
       </div>
     );
   }

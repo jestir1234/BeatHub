@@ -1,0 +1,73 @@
+.login-form-page{
+  background: url("http://www.artsfon.com/pic/201501/2560x1440/artsfon.com-44017.jpg");
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  margin: 0 auto;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .5);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.login-container{
+  z-index: 5;
+  width: 40%;
+  margin-top: 10%;
+}
+
+.signup-link {
+  text-decoration: none;
+  color: #b4b4b4;
+  font-size: 17px;
+  font-family: 'Gudea', sans-serif;
+  -webkit-transition: text-decoration 1s;
+   transition: text-decoration 1s;
+}
+
+.link-container {
+  margin-top: -40px;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+.login-form{
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form input {
+  width: 70%;
+  height: 28px;
+  background-color: #363636;
+  border: none;
+  border-radius: 3px;
+}
+
+.login-form button {
+  background-color: #07b44d;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  width: 15%;
+  height: 30px;
+  margin-top: 4%;
+  font-weight: bold;
+  -webkit-transition: width height background-color 1s;
+   transition: width height background-color 1s;
+}
+
+.login-form button:hover {
+  width: 16%;
+  height: 35px;
+  background-color: #07d159;
+}
