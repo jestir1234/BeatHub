@@ -6,7 +6,7 @@ class SignUp extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {username: "", email: "", password: ""};
+    this.state = {username: "", email: "", password: "", collectErrors: {"Username": "", "Email": "", "Password": ""}};
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.parseErrors = this.parseErrors.bind(this);
@@ -14,7 +14,14 @@ class SignUp extends React.Component{
   }
 
   componentDidMount(){
-    
+    this.resetErrors();
+  }
+
+  componentWillReceiveProps(newProps){
+    this.resetErrors();
+    if (newProps.errors) {
+      this.parseErrors(newProps.errors);
+    }
   }
 
   handleInput(field){
@@ -31,7 +38,7 @@ class SignUp extends React.Component{
   }
 
   resetErrors(){
-    let elements = document.getElementsByClassName("show");
+    let elements = document.getElementsByClassName("show-signup-error");
     if (elements.length > 0){
       for (let i = 0; i < elements.length; i++){
         elements[i].setAttribute("class", "form-errors");
@@ -51,26 +58,23 @@ class SignUp extends React.Component{
         element.setAttribute("class", "show-signup-error");
       }
     });
-    return errorHash;
+    this.setState({collectErrors: errorHash});
   }
 
   render(){
-    const errors = this.props.errors;
-    let collectErrors = errors ? this.parseErrors(errors) : "";
-    const usernameErrors = collectErrors.Username ? collectErrors.Username : "";
-    const emailErrors = collectErrors.Email ? collectErrors.Email : "";
-    const passwordErrors = collectErrors.Password ? collectErrors.Password : "";
+    
+    let collectErrors = this.state.collectErrors;
 
     return (
       <div className="signup-form-page">
         <div className="signup-container">
           <h3>Sign up with your email address </h3>
           <form className="signup-form">
-            <input type="text" value={this.state.username} placeholder="e.g.marshmallow" onChange={this.handleInput('username')}/><div className="form-errors" id="Username">{usernameErrors}</div>
+            <input type="text" value={this.state.username} placeholder="e.g.marshmallow" onChange={this.handleInput('username')}/><div className="form-errors" id="Username">{collectErrors.Username}</div>
             <br/>
-            <input type="email" value={this.state.email} placeholder="e.g.marshmallow@email.com" onChange={this.handleInput('email')}/><div className="form-errors" id="Email">{emailErrors}</div>
+            <input type="email" value={this.state.email} placeholder="e.g.marshmallow@email.com" onChange={this.handleInput('email')}/><div className="form-errors" id="Email">{collectErrors.Email}</div>
             <br/>
-            <input type="password" value={this.state.password} placeholder="Choose a password" onChange={this.handleInput('password')}/><div className="form-errors" id="Password">{passwordErrors}</div>
+            <input type="password" value={this.state.password} placeholder="Choose a password" onChange={this.handleInput('password')}/><div className="form-errors" id="Password">{collectErrors.Password}</div>
             <br/>
             <button onClick={this.handleSubmit}>SIGN UP</button>
           </form>
