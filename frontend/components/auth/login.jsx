@@ -35,6 +35,13 @@ class Login extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
+    let $el = $('#login-button');
+    if ($el.length > 0){
+      $('#login-button').attr("id", "clicked-button");
+    } else {
+      $('#clicked-button').attr('id', 'login-button');
+    }
+
     this.props.login(this.state).then(() => this.props.router.push('/'), console.log("something went wrong"));
   }
 
@@ -67,10 +74,10 @@ class Login extends React.Component {
             <br/>
             <input type="password" value={this.state.password} placeholder="Password" onChange={this.handleInput('password')}/>
             <br/>
-            <div className="login-error">{errors ? errors : ""}</div>
-            <button onClick={this.handleSubmit}>LOG IN</button>
+            <button id="login-button" onClick={this.handleSubmit}>LOG IN</button>
           </form>
         </div>
+        <div className="login-error">{errors ? errors : ""}</div>
         <div className="link-container">
           <Link className="signup-link" to='/signup'>SIGN UP</Link>
         </div>

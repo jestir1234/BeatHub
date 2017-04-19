@@ -62,11 +62,12 @@ class SignUp extends React.Component{
   }
 
   render(){
-    
+
     let collectErrors = this.state.collectErrors;
 
     return (
       <div className="signup-form-page">
+        <img id="beathub-logo" src={window.logo_path}/>
         <div className="signup-container">
           <h3>Sign up with your email address </h3>
           <form className="signup-form">

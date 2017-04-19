@@ -14,14 +14,16 @@
 }
 
 .signup-form-page h3{
-  margin-top: 100px;
-  font-size: 30px;
+  margin-top: 150px;
+  font-size: 20px;
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 2px;;
+  width: 40%;
+  margin-left: 30%;
 }
 
 .signup-form {
-  margin-top: 100px;
+  margin-top: 10%;
 }
 
 .signup-form-page input {
@@ -110,26 +112,26 @@
 }
 
 .show-signup-error{
-  margin-top: -20px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin-top: -50px;
+  margin-left: 35%;
   border: 2px solid red;
   width: 210px;
-  height: 50px;
+  height: 40px;
   background: red;
-  position: relative;
+  position: absolute;
   -moz-border-radius:    10px;
-  -webkit-border-radius: 10px;
-  display: inline-block;
+  -webkit-border-radius: 5px;
 }
 
-.show:before{
-  content:"";
+#beathub-logo{
   position: absolute;
-  right: 100%;
-  top: 26px;
-  width: 0;
-  height: 0;
-  border-top: 13px solid transparent;
-  border-right: 26px solid red;
-  border-bottom: 13px solid transparent;
-  margin-top: -25px;
+  height: 180px;
+  width: 160px;
+  margin-left: 23%;
+  margin-top: 2%;
 }
