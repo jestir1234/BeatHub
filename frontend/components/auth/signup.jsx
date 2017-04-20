@@ -72,7 +72,9 @@ class SignUp extends React.Component{
 
     return (
       <div className="signup-form-page">
+        <h2 id="logo-header">BeatHub</h2>
         <img id="beathub-logo" src={window.logo_path}/>
+
         <div className="signup-container">
           <h3>Sign up with your email address </h3>
           <form className="signup-form">
@@ -95,6 +97,12 @@ class SignUp extends React.Component{
           <h2>Get the right music, right now</h2>
             <br/>
             <p>Listen to millions of songs for free.</p>
+            <br/>
+            <ul className="slogan-list">
+              <li> <span className="slogan-list-text">Search and discover music you'll love</span></li>
+              <li> <span className="slogan-list-text">Create playlists of your favorite music</span></li>
+              <li> <span className="slogan-list-text">BeatHub radio - unlimited stations and skips</span></li>
+            </ul>
         </div>
       </div>
     );

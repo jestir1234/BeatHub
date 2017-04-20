@@ -24,6 +24,7 @@
 
 .signup-form {
   margin-top: 10%;
+  margin-right: 0;
 }
 
 .signup-form-page input {
@@ -87,11 +88,11 @@
 }
 
 .slogan-container {
-  width: 40%;
+  width: 30%;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding-left: 8%;
+  padding-left: 4%;
 }
 
 .slogan-container h2{
@@ -128,16 +129,47 @@
   -webkit-border-radius: 5px;
 }
 
-#beathub-logo{
-  position: absolute;
-  height: 180px;
-  width: 160px;
-  margin-left: 23%;
-  margin-top: 2%;
-}
-
 .guest-login-link:hover{
   cursor: pointer;
   text-decoration: underline;
   color: #c893d6;
+}
+
+#beathub-logo{
+  position: absolute;
+  height: 10%;
+  width: 5%;
+  margin-left: 19%;
+  margin-top: 8%;
+}
+
+
+#logo-header{
+  position: absolute;
+  font-size: 40px;
+  top: 17%;
+  left: 25%;
+}
+
+.slogan-list {
+  margin-top: 1%;
+  margin-right: 20%;
+}
+
+.slogan-list li{
+  text-align: left;
+  margin-top: 2%;
+  font-size: 14px;
+}
+
+
+.slogan-list li:before{
+  content: '✔';
+  color: #07d159;
+  font-size: 150%;
+}
+
+.slogan-list-text{
+  position: relative;
+  left: 2%;
 }
