@@ -4,6 +4,12 @@
   margin-left: 15%;
   margin-right: 15%;
   position: absolute;
-  margin-top: 2%;
-  height: 5%
+  margin-top: 0;
+  height: 8%
+}
+
+.profile-container{
+  border: 1px dotted #1fe700;
+  width: 25%;
+  margin-left: 74%;
 }

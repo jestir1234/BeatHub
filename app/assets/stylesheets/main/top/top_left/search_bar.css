@@ -1,0 +1,11 @@
+.search-bar-container{
+  border: 1px solid red;
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#search-bar{
+  border-radius: 20px;
+  width: 68%;
+}

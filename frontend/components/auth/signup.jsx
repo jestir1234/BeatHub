@@ -11,6 +11,7 @@ class SignUp extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.parseErrors = this.parseErrors.bind(this);
     this.resetErrors = this.resetErrors.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
 
   componentDidMount(){
@@ -35,6 +36,10 @@ class SignUp extends React.Component{
     e.preventDefault();
     this.resetErrors();
     this.props.signup(this.state).then(() => this.props.router.push('/'), console.log("something went wrong"));
+  }
+
+  guestLogin(){
+    this.props.signup({username: "Guest", email: "guest@email.com", password: "something"}).then(() => this.props.router.push('/'), console.log("guest is logging in"));
   }
 
   resetErrors(){
@@ -82,6 +87,8 @@ class SignUp extends React.Component{
           <br/>
           <div className="login-link-container">
           <Link className="login-link" to='/login'>Already have an account? Log In here</Link>
+          <br/>
+          <Link className="guest-login-link" onClick={() => this.guestLogin()}>Guest Login</Link>
           </div>
         </div>
         <div className="slogan-container">
