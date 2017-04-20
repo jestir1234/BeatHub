@@ -118,14 +118,13 @@
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  margin-top: -50px;
+  margin-top: -45px;
   margin-left: 35%;
-  border: 2px solid red;
-  width: 210px;
+  width: 170px;
   height: 40px;
   background: red;
   position: absolute;
-  -moz-border-radius:    10px;
+  -moz-border-radius:    4px;
   -webkit-border-radius: 5px;
 }
 

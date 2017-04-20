@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchResultsDropDown from './search_results_dropdown';
 
 class SearchBar extends React.Component {
   constructor(props){
@@ -10,16 +11,17 @@ class SearchBar extends React.Component {
 
   handleInput(e){
     e.preventDefault();
-    this.setState({searchText: e.target.value});
+    this.setState({searchText: e.target.value}, () => this.props.fetchSearchResults(this.state.searchText));
   }
-
 
 
   render(){
     return(
-      <div className="search-bar-container">
-        <i className="inside fa fa-search" aria-hidden="true"></i>
-        <input id="search-bar" type="text" placeholder="Search" value={this.state.searchText} onChange={this.handleInput}/>
+      <div className="search-container">
+        <div id="search-bar-container">
+          <i className="inside fa fa-search" aria-hidden="true"></i>
+          <input id="search-bar" type="text" placeholder="Search" value={this.state.searchText} onChange={this.handleInput}/>
+        </div>
       </div>
     );
   }

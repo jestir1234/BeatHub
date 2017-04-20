@@ -10,6 +10,10 @@ Artist.destroy_all
 Album.destroy_all
 Song.destroy_all
 
+artists = [];
+albums = [];
+songs = [];
+
 ActiveRecord::Base.connection.reset_pk_sequence!(User)
 ActiveRecord::Base.connection.reset_pk_sequence!(Artist)
 ActiveRecord::Base.connection.reset_pk_sequence!(Album)
@@ -24,13 +28,20 @@ wild_nothing = Artist.new(name: "Wild Nothing", genre: "Shoe-gaze")
 chvrches = Artist.new(name: "CHVRCHES", genre: "Synth-pop")
 
 wild_nothing.save
+artists.push(wild_nothing)
+
 chvrches.save
+artists.push(chvrches)
 
 nocturne = Album.new(name: "Nocturne", artist_id: wild_nothing.id, year: "01/2/2010")
 bones = Album.new(name: "The Bones of What You Believe", artist_id: chvrches.id, year: "20/9/2013")
 
 nocturne.save
 bones.save
+
+albums.push(nocturne)
+albums.push(bones)
+
 
 noc1 = Song.new(name: "Shadow", album_id: nocturne.id, album_ord: 1, genre: "Shoe-gaze")
 noc2 = Song.new(name: "Midnight Song", album_id: nocturne.id, album_ord: 2, genre: "Shoe-gaze")
@@ -56,6 +67,17 @@ noc9.save
 noc10.save
 noc11.save
 
+songs << noc1
+songs << noc2
+songs << noc3
+songs << noc4
+songs << noc5
+songs << noc6
+songs << noc7
+songs << noc8
+songs << noc9
+songs << noc10
+songs << noc11
 
 
 bones1 = Song.new(name: "The Mother We Share", album_id: bones.id, album_ord: 1, genre: "Synth-pop")
@@ -83,3 +105,31 @@ bones9.save
 bones10.save
 bones11.save
 bones12.save
+
+songs << bones1
+songs << bones2
+songs << bones3
+songs << bones4
+songs << bones5
+songs << bones6
+songs << bones7
+songs << bones8
+songs << bones9
+songs << bones10
+songs << bones11
+songs << bones12
+
+artists.each do |artist|
+  search_document = artist.pg_search_document
+  search_document.searchable
+end
+
+albums.each do |album|
+  search_document = album.pg_search_document
+  search_document.searchable
+end
+
+songs.each do |song|
+  search_document = song.pg_search_document
+  search_document.searchable
+end

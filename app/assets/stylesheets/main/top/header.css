@@ -17,9 +17,10 @@
   justify-content: space-between;
 }
 
-.search-bar-container{
+.search-container{
   width: 30%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   position: absolute;
+  border: 2px dotted green;
 }

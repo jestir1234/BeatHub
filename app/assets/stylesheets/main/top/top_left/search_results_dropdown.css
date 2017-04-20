@@ -1,0 +1,4 @@
+.search-results-dropdown-container{
+  display: flex;
+  flex-direction: column;
+}

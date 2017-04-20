@@ -1,5 +1,7 @@
 class Api::ArtistsController < ApplicationController
-  def create
+
+  def index
+    
   end
 
   def show
