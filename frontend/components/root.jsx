@@ -9,7 +9,7 @@ import HomeContainer from './main/home_container';
 const _ensureLoggedIn = (nextState, replace) => {
   const currentUser = store.getState().session.currentUser;
   if (!currentUser){
-    replace('/login');
+    replace('/signup');
   }
 };
 
