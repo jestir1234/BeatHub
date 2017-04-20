@@ -14,7 +14,7 @@ class SearchResultsDropDown extends React.Component {
     });
 
     return (
-      <div>
+      <div className="search-items-container">
         <h3>{categoryName}</h3>
         <ul>{listItems}</ul>
         <br/>

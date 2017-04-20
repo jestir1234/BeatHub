@@ -14,6 +14,7 @@
 
 #profile-icon-container{
   width: 40%;
+  padding-top: 3px;
 }
 
 #logout-btn-container button{

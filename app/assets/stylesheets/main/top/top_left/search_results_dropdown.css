@@ -1,4 +1,31 @@
 .search-results-dropdown-container{
-  display: flex;
-  flex-direction: column;
+  width: 91%;
+  margin-left: 11%;
+  border-radius: 4px;
+  background-color: #242424;
+  opacity: .9;
+  z-index: 10;
 }
+
+.search-items-container h3{
+  color: #7a7a7a;
+}
+
+.search-items-container ul li{
+  font-family: 'Alegreya Sans', sans-serif;
+  text-indent: 10px;
+  z-index: 10;
+}
+
+.search-items-container ul li:hover{
+  background: #4d4d4d;
+  cursor: pointer;
+}
+/*
+font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Inconsolata', monospace;
+font-family: 'Cabin', sans-serif;
+font-family: 'Alegreya Sans', sans-serif;
+font-family: 'Pontano Sans', sans-serif;
+font-family: 'Cabin Condensed', sans-serif;
+font-family: 'Didact Gothic', sans-serif;*/

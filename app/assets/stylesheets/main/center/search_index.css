@@ -7,4 +7,5 @@
   margin-top: 5%;
   border: 2px solid red;
   color: white;
+  z-index: -1;
 }

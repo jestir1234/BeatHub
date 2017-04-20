@@ -1,7 +1,6 @@
 
 
 #search-bar{
-  position: absolute;
   border-radius: 20px;
   width: 100%;
   text-indent: 25px;
@@ -14,6 +13,7 @@
   margin-top: 3px;
   color: #5c5c5c;
   position: absolute;
+  left: 18%;
 }
 
 #search-bar::-webkit-input-placeholder{
@@ -22,9 +22,5 @@
 }
 
 #search-bar-container{
-  border: 1px dotted red;
   margin-left: 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
