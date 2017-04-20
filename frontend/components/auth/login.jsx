@@ -68,6 +68,10 @@ class Login extends React.Component {
     const errors = this.props.errors;
     return(
       <div className="login-form-page">
+        <div className="login-logo-container">
+          <h2 id="login-logo-header">BeatHub</h2>
+          <img id="login-beathub-logo" src={window.logo_path}/>
+        </div>
         <div className="login-container">
           <form className='login-form'>
             <input type="text" value={this.state.username} placeholder="Username" onChange={this.handleInput('username')}/>

@@ -10,7 +10,6 @@
   font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
 }
 
@@ -31,7 +30,7 @@
 }
 
 .link-container {
-  margin-top: -40px;
+  margin-top: 10%;
 }
 
 .signup-link:hover {
@@ -64,9 +63,9 @@
   left: 0;
   margin: auto;
   color: white;
-  width: 10%;
+  width: 9%;
   height: 30px;
-  margin-top: 4%;
+  margin-top: 2%;
   font-weight: bold;
   -webkit-transition: width height background-color 1s;
    transition: width height background-color 1s;
@@ -75,7 +74,7 @@
 
 .login-form button:hover {
   cursor: pointer;
-  width: 11%;
+  width: 10%;
   height: 35px;
   background-color: #07d159;
 }
@@ -87,17 +86,32 @@
 .show-login-error{
   width: 260px;
   height: 40px;
-  background: red;
+  background: #d60000;
   display: flex;
   justify-content: center;
-  align-content: center;
   flex-direction: column;
-  position: absolute;
-  top: 48%;
-  border-radius: 5px;
   font-size: 13px;
+  margin-top: 6%;
 }
 
 #clicked-button{
   opacity: .6;
+}
+
+#login-logo-header{
+  font-size: 45px;
+  margin-left: 1%;
+}
+
+#login-beathub-logo{
+  height: 10%;
+  width: 10%;
+}
+
+.login-logo-container{
+  display: flex;
+  flex-direction: row-reverse;
+  align-self:center;
+  margin-right: 18%;
+  margin-top: 15%;
 }
