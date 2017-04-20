@@ -9,7 +9,13 @@
 }
 
 .profile-container{
-  border: 1px dotted #1fe700;
   width: 25%;
   margin-left: 74%;
+}
+
+.search-bar-container{
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
 }

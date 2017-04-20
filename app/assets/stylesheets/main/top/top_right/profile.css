@@ -10,12 +10,13 @@
 #logout-btn-container{
   width: 40%;
   margin-left: 55%;
-  margin-top: -8%;
+  margin-top: -10%;
 }
 
 
 #profile-icon-container{
   width: 40%;
+  margin-top: 6%;
 }
 
 #logout-btn-container button{
@@ -36,5 +37,4 @@
   cursor: pointer;
   width: 100%;
   height: 30px;
-  font-size:
 }

@@ -1,11 +1,23 @@
-.search-bar-container{
-  border: 1px solid red;
-  width: 30%;
-  display: flex;
-  justify-content: flex-end;
-}
+
 
 #search-bar{
   border-radius: 20px;
   width: 68%;
+  text-indent: 25px;
+  color: #5c5c5c;
+  font-size: 12px;
+  outline: none;
+  margin-left: auto;
+}
+
+.inside {
+  position: absolute;
+  margin-left: 31%;
+  margin-top: 3px;
+  color: #5c5c5c;
+}
+
+#search-bar::-webkit-input-placeholder{
+  color: #5c5c5c;
+
 }

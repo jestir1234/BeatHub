@@ -18,7 +18,7 @@ class SearchBar extends React.Component {
   render(){
     return(
       <div className="search-bar-container">
-        <i className="fa fa-rocket"></i>
+        <i className="inside fa fa-search" aria-hidden="true"></i>
         <input id="search-bar" type="text" placeholder="Search" value={this.state.searchText} onChange={this.handleInput}/>
       </div>
     );
