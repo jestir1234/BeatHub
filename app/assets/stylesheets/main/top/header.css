@@ -3,14 +3,18 @@
   width: 70%;
   margin-left: 15%;
   margin-right: 15%;
-  position: absolute;
   margin-top: 0;
-  height: 8%
+  height: 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .profile-container{
   width: 25%;
   margin-left: 74%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .search-bar-container{

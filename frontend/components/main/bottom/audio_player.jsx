@@ -9,7 +9,7 @@ class AudioPlayer extends React.Component{
 
   render(){
     return(
-      <div>AUDIO PLAYER COMPONENT WILL GO HERE</div>
+      <div className="bottom-content">AUDIO PLAYER COMPONENT WILL GO HERE</div>
     );
   }
 }

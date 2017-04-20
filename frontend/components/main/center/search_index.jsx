@@ -10,9 +10,7 @@ class SearchIndex extends React.Component{
 
   render(){
     return(
-      <div className="search-index-page">
-        <h1>THIS IS THE SEARCH INDEX - SEARCHES WILL GO HERE</h1>
-      </div>
+      <div className="center-content">THIS IS THE SEARCH INDEX - SEARCHES WILL GO HERE</div>
     );
   }
 }

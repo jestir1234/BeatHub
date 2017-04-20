@@ -16,25 +16,15 @@ class Home extends React.Component {
     return(
       <div className="main-page-container">
 
-        <div className="top-content">
           <HeaderContainer />
-        </div>
 
-        <div className="left-content">
           <UserMusicIndex />
-        </div>
 
-        <div className="center-content">
           <SearchIndexContainer />
-        </div>
 
-        <div className="right-content">
           <FollowedFriendsIndex />
-        </div>
 
-        <div className="bottom-content">
           <AudioPlayerContainer />
-        </div>
 
       </div>
     );

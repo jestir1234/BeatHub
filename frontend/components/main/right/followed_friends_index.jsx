@@ -9,7 +9,7 @@ class FollowedFriendsIndex extends React.Component {
 
   render(){
     return(
-      <div>FOLLOWED FRIENDS INDEX WILL GO HERE</div>
+      <div className="right-content">FOLLOWED FRIENDS INDEX WILL GO HERE</div>
     );
   }
 }

@@ -10,7 +10,7 @@ class Header extends React.Component{
 
   render(){
     return(
-      <div className="header-container">
+      <div className="top-content">
         <SearchBar />
         <Profile currentUser={this.props.currentUser} logout={this.props.logout}/>
       </div>
