@@ -29,5 +29,6 @@
       json.genre song.genre
       json.artist song.album.artist
       json.album_ord song.album_ord
+      json.audio_url asset_path(song.audio_url)
     end
 end

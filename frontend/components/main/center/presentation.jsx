@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import SongItem from './list/song_item';
+import SoundComponent from '../bottom/sound_component';
 
 class Presentation extends React.Component{
   constructor(props){
@@ -50,6 +51,7 @@ class Presentation extends React.Component{
             <ul>
               {albumSongs}
             </ul>
+            <SoundComponent />
           </div>
         </div>
     );
