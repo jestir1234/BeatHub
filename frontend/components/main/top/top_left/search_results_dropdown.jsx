@@ -20,7 +20,13 @@ class SearchResultsDropDown extends React.Component {
   constructList(category, categoryName){
     const listItems = category.map((item, idx) => {
       if (categoryName === "Songs"){
-        return (<li key={idx}>{item.name}</li>);
+        return (
+          <li key={idx}>
+            <Link onClick={this.handleClick(item.album)}>
+              {item.name}
+            </Link>
+          </li>
+        );
       } else if (categoryName === "Albums") {
         return (
           <li key={idx}>

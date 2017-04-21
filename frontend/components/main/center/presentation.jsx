@@ -24,8 +24,9 @@ class Presentation extends React.Component{
 
 
   renderAlbum(album){
+
     let albumName = album.name;
-    let artist = album.artist.name;
+    let artist = album.artist_name;
     let albumArt = album.image_url;
 
     let albumSongs = this.state.songs.length ? this.state.songs.map((song, idx) => {
@@ -56,6 +57,7 @@ class Presentation extends React.Component{
 
 
   render(){
+
     const presentationInfo = this.props.presentationInfo ? this.props.presentationInfo : null;
     let showPage = presentationInfo ? this.renderAlbum(presentationInfo) : null;
 
