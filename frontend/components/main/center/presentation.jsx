@@ -11,13 +11,14 @@ class Presentation extends React.Component{
   }
 
   componentWillReceiveProps(nextProps){
-
     if (nextProps.presentationInfo !== this.state.presentationInfo) {
       this.setState({presentationInfo: nextProps.presentationInfo, songs: this.state.songs});
-      let album = nextProps.presentationInfo;
-      this.props.fetchAlbumSongs(album.id).then((songs) => {
-        this.setState({presentationInfo: this.state.presentationInfo, songs: songs.songs});
-      });
+      if (nextProps.presentationInfo){
+        let album = nextProps.presentationInfo;
+        this.props.fetchAlbumSongs(album.id).then((songs) => {
+          this.setState({presentationInfo: this.state.presentationInfo, songs: songs.songs});
+        });
+      }
     }
   }
 
