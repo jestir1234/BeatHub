@@ -5,7 +5,6 @@ import App from './app';
 import SignUpContainer from './auth/signup_container';
 import LoginContainer from './auth/login_container';
 import HomeContainer from './main/home_container';
-import AlbumShowContainer from './main/center/show_pages/album_show_container';
 
 const _ensureLoggedIn = (nextState, replace) => {
   const currentUser = store.getState().session.currentUser;

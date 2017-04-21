@@ -4,7 +4,9 @@ import { login, signup, logout } from './util/session_api_util';
 import { searchMusic } from './util/search_api_util';
 import configureStore from './store/store';
 import Root from './components/root';
+import { fetchAlbumSongs } from './util/songs_api_util';
 
+window.fetchAlbumSongs = fetchAlbumSongs;
 
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -11,3 +11,22 @@
 .album-show img{
   width: 25%
 }
+
+.album-show h1{
+  font-weight: 700;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 200%;
+}
+
+#artist-link {
+  color: #c3c3c3;
+}
+
+#artist-link:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.album-show p {
+  color: #989797;
+}

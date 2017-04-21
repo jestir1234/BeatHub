@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 
 class Presentation extends React.Component{
@@ -17,7 +18,7 @@ class Presentation extends React.Component{
         <div className="album-show">
           <img src={albumArt}/>
           <h1>{albumName}</h1>
-          <p>By {artist}</p>
+          <p>By <Link id="artist-link">{artist}</Link></p>
         </div>
     );
   }
