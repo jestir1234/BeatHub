@@ -10,6 +10,7 @@
 
 #artist-link {
   color: #c3c3c3;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #artist-link:hover{
@@ -17,29 +18,102 @@
   cursor: pointer;
 }
 
+#light-to-dark-background {
+background: #432551; /* For browsers that do not support gradients */
+background: -webkit-linear-gradient(#432551, #19171a); /* For Safari 5.1 to 6.0 */
+background: -o-linear-gradient(#432551, #19171a); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(#432551, #19171a); /* For Firefox 3.6 to 15 */
+background: linear-gradient(#432551, #19171a); /* Standard syntax */
+}
+
 
 .album-show {
   border: 2px dotted #000;
   height: 100%;
   width: 100%;
+  overflow-y: auto;
   display: flex;
+  justify-content: space-around;
 }
 
 .album-show-songs {
-  background: blue;
-  height: 100%;
+  height: auto;
   width: 60%;
 }
 .album-show p {
   color: #989797;
 }
 
-.album-show img{
-  width: 25%
+#album-song-count {
+  color: #7a6b81;
+  padding-top: 3%;
 }
 
-.album-show h1{
+.album-show-description img{
+  width: 45%;
+  padding-top: 5%;
+}
+
+.album-show-description h1{
   font-weight: 700;
   font-family: 'Alegreya Sans', sans-serif;
   font-size: 200%;
+  padding-top: 3%;
+}
+
+.album-show-description{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.album-show-description button {
+  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 6%;
+  background-color: #07b44d;
+  border-radius: 20px;
+  border: none;
+  width: 20%;
+  height: 5%;
+  color: white;
+  font-weight: bold;
+  -webkit-transition: width height background-color 1s;
+   transition: width height background-color 1s ease-in-out;
+   outline: none;
+}
+
+.album-show-description button:hover {
+  transform: scaleX(1.1);
+  transform: scaleY(1.1);
+  cursor: pointer;
+  background-color: #07d159;
+}
+
+.song-list-item-container {
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.song-list-item-container:hover{
+  background-color: #44304d;
+  cursor: pointer;
+}
+
+.song-list-item {
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+#song-list-item-duration{
+  padding-left: 12%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+#song-order{
+  color: #989797;
+  font-family: 'Alegreya Sans', sans-serif;
+  padding: 10px;
 }

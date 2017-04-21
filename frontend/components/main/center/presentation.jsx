@@ -29,18 +29,20 @@ class Presentation extends React.Component{
 
     let albumSongs = this.state.songs.length ? this.state.songs.map((song, idx) => {
       return(
-        <div>
-          <SongItem song={song} key={idx}/>
+        <div className="song-list-item-container">
+          <SongItem song={song} key={idx}/><p id="song-list-item-duration">{song.duration} seconds</p>
         </div>
       );
     }) : null;
 
     return (
-        <div className="album-show">
+        <div className="album-show" id="light-to-dark-background">
           <div className="album-show-description">
             <img src={albumArt}/>
             <h1>{albumName}</h1>
             <p>By <Link id="artist-link">{artist}</Link></p>
+            <p id="album-song-count">{albumSongs ? `${albumSongs.length} SONGS` : null}</p>
+            <button>Play</button>
           </div>
           <div className="album-show-songs">
             <ul>

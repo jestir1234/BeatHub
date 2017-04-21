@@ -1,9 +1,9 @@
 import React from 'react';
 
-const SongItem = ({song}) => {
+const SongItem = (props) => {
   return (
-    <li>{song.album_ord} {song.name}</li>
-  )
+    <li>{props.song.album_ord} {props.song.name}</li>
+  );
 };
 
 export default SongItem;

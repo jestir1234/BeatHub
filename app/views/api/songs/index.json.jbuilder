@@ -6,4 +6,5 @@ json.array!(@album.songs) do |song|
   json.genre song.genre
   json.artist song.album.artist
   json.album_ord song.album_ord
+  json.duration song.duration
 end
