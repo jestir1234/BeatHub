@@ -3,9 +3,10 @@ import Presentation from './presentation';
 
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    presentationInfo: ownProps.presentationInfo
   };
 };
 

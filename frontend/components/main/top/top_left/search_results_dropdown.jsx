@@ -11,9 +11,9 @@ class SearchResultsDropDown extends React.Component {
   }
 
   handleClick(item){
-    console.log("in the handle click");
     return (e) => {
       e.preventDefault();
+      this.props.receiveAlbum(item);
     };
   }
 

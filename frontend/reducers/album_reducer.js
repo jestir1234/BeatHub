@@ -1,8 +1,8 @@
 import { RECEIVE_ALBUM } from '../actions/album_actions';
 
-const _nullAlbum = {};
+const _nullAlbum = null;
 
-const AlbumReducer = (oldState = {}, action) => {
+const AlbumReducer = (oldState = null, action) => {
   switch(action.type){
     case RECEIVE_ALBUM:
       return action.album;
