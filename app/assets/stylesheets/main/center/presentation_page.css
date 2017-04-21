@@ -84,14 +84,21 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
 }
 
 .album-show-description button:hover {
-  transform: scaleX(1.1);
+  transform: scaleX(1.2);
   transform: scaleY(1.1);
   cursor: pointer;
   background-color: #07d159;
 }
 
+.album-show-description button:active {
+  transform: scale(0.94);
+  opacity: .8;
+  background-color: #07b44d;
+}
+
 .song-list-item-container {
-  height: 10%;
+  border: 1px dotted red;
+  height: 5%;
   display: flex;
   justify-content: space-between;
 }
@@ -104,13 +111,46 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
 .song-list-item {
   margin-bottom: 5%;
   margin-top: 5%;
+  display: flex;
+  justify-content:flex-start;
+  border: 1px solid green;
+  width: 50%;
 }
 
-.song-list-item button{
+.song-list-item:hover > .song-item-play-btn-container{
+  display: block;
+}
+
+.song-item-play-btn-container button{
+  background: none;
   border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  border: 1px solid white;
+  border: 1px solid #d8d7d8;
+  height: 30px;
+  width: 30px;
+  outline: none;
+}
+
+.song-item-play-btn-container button:hover{
+  border: 2px solid #d8d7d8;
+  cursor: pointer;
+}
+
+.song-item-play-btn-container button:active{
+  border: 2px solid #545454;
+  cursor: pointer;
+  transform: scale(.94);
+}
+
+.song-item-play-btn-container button:active > #triangle-test{
+  border-left: 10px solid #6d6d6d;
+}
+
+.song-item-play-btn-container {
+  position: relative;
+  float: right;
+  left: 10px;
+  z-index: 6;
+  display: none;
 }
 
 
@@ -120,8 +160,25 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
   margin-top: 5%;
 }
 
-#song-order{
+.song-item-order-container{
   color: #989797;
   font-family: 'Alegreya Sans', sans-serif;
-  padding: 10px;
+}
+
+.song-item-song-name{
+  margin-left: 10%;
+}
+
+.song-item-song-name p {
+  color: #c7bdcc;
+  font-size: 20px;
+}
+
+#triangle-test{
+  width: 0;
+  height: 0;
+  margin-left: 5px;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 10px solid white;
 }

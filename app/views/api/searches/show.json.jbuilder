@@ -17,6 +17,7 @@
       json.image_url asset_path(album.image.url)
       json.artist album.artist
       json.artist_id album.artist_id
+      json.artist_name album.artist_name
     end
   end
 

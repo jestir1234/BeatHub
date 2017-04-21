@@ -36,8 +36,8 @@ chvrches.image = File.open("app/assets/images/chvrches_artist.jpeg")
 chvrches.save
 artists.push(chvrches)
 
-nocturne = Album.new(name: "Nocturne", artist_id: wild_nothing.id, year: "01/2/2010")
-bones = Album.new(name: "The Bones of What You Believe", artist_id: chvrches.id, year: "20/9/2013")
+nocturne = Album.new(name: "Nocturne", artist_id: wild_nothing.id, year: "01/2/2010", artist_name: "Wild Nothing")
+bones = Album.new(name: "The Bones of What You Believe", artist_id: chvrches.id, year: "20/9/2013", artist_name: "CHVRCHES")
 
 nocturne.image = File.open("app/assets/images/nocturne.jpg")
 nocturne.save
