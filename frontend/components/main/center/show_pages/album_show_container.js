@@ -1,13 +1,12 @@
 import { connect } from 'react-redux';
-import SearchIndex from './search_index';
-
-
+import AlbumShow from './album_show';
 
 const mapStateToProps = (state) => {
   return {
-    currentUser: state.session.currentUser
+
   };
 };
+
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -18,4 +17,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SearchIndex);
+)(AlbumShow);

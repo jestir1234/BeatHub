@@ -27,16 +27,21 @@ User.create(username: "Durant", password: "password", email: "durant@email.com")
 wild_nothing = Artist.new(name: "Wild Nothing", genre: "Shoe-gaze")
 chvrches = Artist.new(name: "CHVRCHES", genre: "Synth-pop")
 
+wild_nothing.image = File.open("app/assets/images/wild_nothing.jpg");
 wild_nothing.save
 artists.push(wild_nothing)
 
+
+chvrches.image = File.open("app/assets/images/chvrches_artist.jpeg")
 chvrches.save
 artists.push(chvrches)
 
 nocturne = Album.new(name: "Nocturne", artist_id: wild_nothing.id, year: "01/2/2010")
 bones = Album.new(name: "The Bones of What You Believe", artist_id: chvrches.id, year: "20/9/2013")
 
+nocturne.image = File.open("app/assets/images/nocturne.jpg")
 nocturne.save
+bones.image = File.open("app/assets/images/sample_album.jpeg")
 bones.save
 
 albums.push(nocturne)

@@ -1,11 +1,9 @@
 .center-content{
   width: 70%;
-  height: 75%;
+  height: 74%;
   position: absolute;
-  margin-left: 15%;
-  margin-right: 15%;
+  left: 15%;
   margin-top: 5%;
   border: 2px solid red;
   color: white;
-  z-index: -1;
 }

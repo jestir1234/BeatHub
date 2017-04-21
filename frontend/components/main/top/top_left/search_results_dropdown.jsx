@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router';
 
 
 class SearchResultsDropDown extends React.Component {
@@ -6,11 +7,39 @@ class SearchResultsDropDown extends React.Component {
     super(props);
 
     this.constructList = this.constructList.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(item){
+    console.log("in the handle click");
+    return (e) => {
+      e.preventDefault();
+    };
   }
 
   constructList(category, categoryName){
     const listItems = category.map((item, idx) => {
-      return (<li key={idx}>{item.name}</li>);
+      if (categoryName === "Songs"){
+        return (<li key={idx}>{item.name}</li>);
+      } else if (categoryName === "Albums") {
+        return (
+          <li key={idx}>
+            <Link onClick={this.handleClick(item)}>
+              <img src={item.image_url}/>
+              <span className="list-item-padding">{item.name}</span>
+            </Link>
+          </li>
+        );
+      } else if (categoryName === "Artists") {
+        return (
+          <li key={idx}>
+            <div className="list-item-artist">
+              <img src={item.image_url}/>
+            </div>
+            <span className="list-item-padding">{item.name}</span>
+          </li>
+        );
+      }
     });
 
     return (
@@ -39,6 +68,19 @@ class SearchResultsDropDown extends React.Component {
       songList = songs.length > 0 ? this.constructList(songs, "Songs") : null;
     }
 
+    let dropdown;
+
+    document.addEventListener("click", (e) => {
+      dropdown = document.getElementsByClassName('search-results-dropdown-container')[0];
+      if (e.path.includes(dropdown) || e.target.id === 'search-bar'){
+        dropdown.style.display = "block";
+      } else {
+        dropdown.style.display = "none";
+      }
+    });
+
+
+
     return (
       <div className="search-results-dropdown-container">
         {artistList}
@@ -49,4 +91,4 @@ class SearchResultsDropDown extends React.Component {
   }
 }
 
-export default SearchResultsDropDown;
+export default withRouter(SearchResultsDropDown);
