@@ -8,16 +8,6 @@
   color: white;
 }
 
-.album-show img{
-  width: 25%
-}
-
-.album-show h1{
-  font-weight: 700;
-  font-family: 'Alegreya Sans', sans-serif;
-  font-size: 200%;
-}
-
 #artist-link {
   color: #c3c3c3;
 }
@@ -27,6 +17,29 @@
   cursor: pointer;
 }
 
+
+.album-show {
+  border: 2px dotted #000;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.album-show-songs {
+  background: blue;
+  height: 100%;
+  width: 60%;
+}
 .album-show p {
   color: #989797;
+}
+
+.album-show img{
+  width: 25%
+}
+
+.album-show h1{
+  font-weight: 700;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 200%;
 }

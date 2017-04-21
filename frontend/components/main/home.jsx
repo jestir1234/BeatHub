@@ -30,7 +30,7 @@ class Home extends React.Component {
 
           <UserMusicIndex />
 
-          <PresentationContainer presentationInfo={presentationInfo}/>
+          <PresentationContainer presentationInfo={presentationInfo} songs={this.props.songs}/>
 
           <FollowedFriendsIndex />
 
