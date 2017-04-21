@@ -2,9 +2,6 @@ class User < ActiveRecord::Base
   validates :username, :email, :password_digest, :session_token, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
 
-  has_attached_file :image, default_url: "http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/110.png&w=350&h=254"
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
-
   after_initialize :ensure_session_token
   attr_reader :password
 
