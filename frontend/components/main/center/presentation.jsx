@@ -9,7 +9,6 @@ class Presentation extends React.Component{
 
     this.state = {presentationInfo: null, songs: []};
     this.renderAlbum = this.renderAlbum.bind(this);
-    this.showPlayButton = this.showPlayButton.bind(this);
   }
 
   componentWillReceiveProps(nextProps){
@@ -24,15 +23,9 @@ class Presentation extends React.Component{
     }
   }
 
-  showPlayButton(){
-    $(".song-list-item-container").hover(() => {
-      let $el = $(".song-item-play-btn-container");
-      $el.css("background-color", "red");
-    });
-  }
 
   renderAlbum(album){
-    
+
     let albumName = album.name;
     let artist = album.artist_name;
     let albumArt = album.image_url;
