@@ -11,59 +11,58 @@ class AudioPlayer extends React.Component{
     this.handleClick = this.handleClick.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
     this.handlePause = this.handlePause.bind(this);
-  }
-
-  componentDidMount(){
-    // Update play-arrow if song was played elsewhere
-    let playBtn = document.getElementsByClassName('play-btn')[0];
-    let inner = playBtn.children[0];
-    if (this.props.currentSong && inner.id === 'play-arrow') {
-      inner.setAttribute("id", "pause");
-    }
+    this.state = {buttonStyle: 'play-arrow'};
   }
 
   componentWillReceiveProps(newProps){
-    let playBtn = document.getElementsByClassName('play-btn')[0];
-    let inner = playBtn.children[0];
-    if (newProps.currentSong && inner.id === "play-arrow" && newProps.currentSongStatus.status === "PLAY") {
-      inner.setAttribute("id", "pause");
-    } else if (newProps.currentSongStatus.status === "PAUSE"){
-      inner.setAttribute("id", "play-arrow");
+
+    if (newProps.currentSong && this.props.currentSong !== newProps.currentSong) {
+      if (newProps.currentSongStatus.status === "PLAY") {
+        this.setState({buttonStyle: "pause"});
+      } else if (newProps.currentSongStatus === "PAUSE") {
+        this.setState({buttonStyle: "play-arrow"});
+      }
+    } else if (newProps.currentSong && this.props.currentSong === newProps.currentSong) {
+      if (newProps.currentSongStatus.status === "PAUSE") {
+        this.setState({buttonStyle: "play-arrow"});
+      } else if (newProps.currentSongStatus.status === "PLAY") {
+        this.setState({buttonStyle: "pause"});
+      }
     }
   }
 
   handleClick(props) {
-    let inner;
-    let button;
+
     return (e) => {
-      button = document.getElementsByClassName("play-btn")[0];
-      inner = button.children[0];
       e.preventDefault();
-      if (e.target === inner) {
-        if (inner.id === "play-arrow"){
-          inner.setAttribute("id", "pause");
-          this.handlePlay(props);
-      } else if (inner.id === "pause") {
-          inner.setAttribute("id", "play-arrow");
-          this.handlePause(props);
-        }
+      if (props.currentSongStatus.status === null) {
+        this.handlePlay(props);
+      } else if (props.currentSongStatus.status === "PLAY"){
+        this.handlePause(props);
+      } else if (props.currentSongStatus.status === "PAUSE"){
+        this.handlePlay(props);
       }
     };
   }
 
+
+
   handlePlay(props){
     if (props.currentSongStatus.positionAndDuration){
       props.playCurrentSong(props.currentSongStatus.positionAndDuration.position);
+      this.setState({buttonStyle: "pause"});
     } else if (props.currentSong) {
       props.removeCurrentSong();
       props.fetchSong(props.song.id);
       props.playCurrentSong(null);
+      this.setState({buttonStyle: "pause"});
     }
 
   }
 
   handlePause(props){
     props.pauseCurrentSong();
+    this.setState({buttonStyle: "play-arrow"});
   }
 
   playSong(props){
@@ -111,14 +110,14 @@ class AudioPlayer extends React.Component{
             <div className="play-controls">
               <button>shuffle</button>
               <button>back</button>
-              <button onClick={this.handleClick(this.props)}className="play-btn"><div id="play-arrow"></div></button>
+              <button onClick={this.handleClick(this.props)}className="play-btn"><div id={this.state.buttonStyle}></div></button>
               <button>forward</button>
               <button>repeat</button>
             </div>
             <div className="status-bar-container">
               <p id="time-passed">{timePassed}</p>
               <div className="status-bar">
-                <Line percent={completionPercentage} strokeWidth=".5" strokeColor="green" trailWidth="1"/>
+                <Line percent={completionPercentage} strokeWidth=".5" strokeColor="#a0a0a0" trailWidth="1" trailColor="#404040" />
               </div>
               <p id="time-left">{timeLeft}</p>
             </div>

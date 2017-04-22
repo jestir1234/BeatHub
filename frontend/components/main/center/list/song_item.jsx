@@ -14,22 +14,34 @@ class SongItem extends React.Component {
 
   componentWillReceiveProps(newProps){
     let buttonStyle;
-    if (newProps.currentSong) {
-      buttonStyle = newProps.currentSong.id === this.props.song.id ? "pause" : "triangle-test";
-      this.setState({buttonStyle: buttonStyle});
+    if (newProps.currentSong && this.props.currentSong !== newProps.currentSong) {
+      if (newProps.currentSongStatus.status === "PLAY") {
+        buttonStyle = newProps.currentSong.id === this.props.song.id ? "pause" : "triangle-test";
+        this.setState({buttonStyle: buttonStyle});
+      } else if (newProps.currentSongStatus === "PAUSE") {
+        this.setState({buttonStyle: "triangle-test"});
+      }
+    } else if (newProps.currentSong && this.props.currentSong === newProps.currentSong) {
+      if (newProps.currentSongStatus.status === "PAUSE") {
+        this.setState({buttonStyle: "triangle-test"});
+      } else if (newProps.currentSongStatus === "PLAY") {
+        this.setState({buttonStyle: "pause"});
+      }
     }
   }
 
   handleClick(props){
+
     return (e) => {
       e.preventDefault();
-
-      if (e.target.id === "triangle-test") {
-        e.target.setAttribute("id", "pause");
+      if (props.currentSongStatus.status === null) {
         this.handlePlay(props);
-      } else if (e.target.id === "pause") {
-        e.target.setAttribute("id", "triangle-test");
-        handlePause(props);
+      } else if (props.currentSongStatus.status === "PLAY" && props.currentSong.id === props.song.id){
+        this.handlePause(props);
+      } else if (props.currentSongStatus.status === "PLAY" && props.currentSong.id !== props.song.id){
+        this.handlePlay(props);
+      } else if (props.currentSongStatus.status === "PAUSE"){
+        this.handlePlay(props);
       }
     };
   }
@@ -37,15 +49,18 @@ class SongItem extends React.Component {
   handlePlay(props){
     if (props.currentSongStatus.positionAndDuration && props.currentSong.id === props.song.id){
       props.playCurrentSong(props.currentSongStatus.positionAndDuration.position);
+      this.setState({buttonStyle: "pause"});
     } else {
       props.removeCurrentSong();
       props.fetchSong(props.song.id);
       props.playCurrentSong(null);
+      this.setState({buttonStyle: "pause"});
     }
   }
 
   handlePause(props){
     props.pauseCurrentSong();
+    this.setState({buttonStyle: "triangle-test"});
   }
 
 
@@ -74,56 +89,5 @@ class SongItem extends React.Component {
 
 }
 
-// const handleClick = (props) => {
-//   return (e) => {
-//     e.preventDefault();
-//
-//     if (e.target.id === "triangle-test") {
-//       e.target.setAttribute("id", "pause");
-//       handlePlay(props);
-//     } else if (e.target.id === "pause") {
-//       e.target.setAttribute("id", "triangle-test");
-//       handlePause(props);
-//     }
-//   };
-// };
-
-// const handlePlay = (props) => {
-//
-//   if (props.currentSongStatus.positionAndDuration && props.currentSong.id === props.song.id){
-//     props.playCurrentSong(props.currentSongStatus.positionAndDuration.position);
-//   } else {
-//     props.removeCurrentSong();
-//     props.fetchSong(props.song.id);
-//     props.playCurrentSong(null);
-//   }
-//
-// };
-
-// const handlePause = (props) => {
-//   props.pauseCurrentSong();
-// };
-
-//
-// const SongItem = (props) => {
-//   let buttonStyle = props.currentSong.id === props.song.id ? "pause" : "triangle-test";
-//   return (
-//     <li className="song-list-item">
-//
-//       <div className="song-item-play-btn-container">
-//         <button onClick={handleClick(props)}><div id={buttonStyle}></div></button>
-//       </div>
-//
-//       <div className="song-item-order-container">
-//         <span id="song-order">{props.song.album_ord}.</span>
-//       </div>
-//
-//       <div className="song-item-song-name">
-//         <p>{props.song.name}</p>
-//       </div>
-//
-//     </li>
-//   );
-// };
 
 export default SongItem;
