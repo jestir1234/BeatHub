@@ -143,6 +143,11 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
   border-left: 10px solid #6d6d6d;
 }
 
+.song-item-play-btn-container button:active > #pause{
+  border-right: 4px solid #6d6d6d;
+  border-left: 4px solid #6d6d6d;
+}
+
 .song-item-play-btn-container {
   position: relative;
   float: right;
@@ -182,9 +187,9 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
 }
 
 #pause{
-  margin-right: 1px;
+  padding-left: 1px;
   width: 4px;
-  height: 16px;
+  height: 14px;
   border-right: 4px solid white;
   border-left: 4px solid white;
 }

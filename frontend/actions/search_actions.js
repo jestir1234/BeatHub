@@ -10,10 +10,9 @@ export const receiveSearchResults = (searchResults) => {
   };
 };
 
-export const removeSearchResults = (searchResults) => {
+export const removeSearchResults = () => {
   return {
     type: REMOVE_SEARCH_RESULTS,
-    searchResults
   };
 };
 

@@ -8,7 +8,7 @@ const SearchResultsReducer = (oldState = {}, action) => {
     case RECEIVE_SEARCH_RESULTS:
       return action.searchResults;
     case REMOVE_SEARCH_RESULTS:
-      return action.searchResults;
+      return _nullSearchResults;
     default:
       return oldState;
   }

@@ -16,14 +16,14 @@ class SearchBar extends React.Component {
 
 
   render(){
-    
+
     return(
       <div className="search-container">
         <div id="search-bar-container">
           <i className="inside fa fa-search" aria-hidden="true"></i>
           <input id="search-bar" type="text" placeholder="Search" value={this.state.searchText} onChange={this.handleInput}/>
         </div>
-        <SearchResultsDropDown searchResults={this.props.searchResults} receiveAlbum={this.props.receiveAlbum}/>
+        <SearchResultsDropDown searchResults={this.props.searchResults} receiveAlbum={this.props.receiveAlbum} removeSearchResults={this.props.removeSearchResults}/>
       </div>
     );
   }

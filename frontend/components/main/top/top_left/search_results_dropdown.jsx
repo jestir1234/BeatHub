@@ -22,6 +22,7 @@ class SearchResultsDropDown extends React.Component {
     return (e) => {
       e.preventDefault();
       this.props.receiveAlbum(item);
+      this.props.removeSearchResults();
     };
   }
 
