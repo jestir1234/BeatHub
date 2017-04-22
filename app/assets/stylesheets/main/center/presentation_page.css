@@ -97,7 +97,6 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
 }
 
 .song-list-item-container {
-  border: 1px dotted red;
   height: 5%;
   display: flex;
   justify-content: space-between;
@@ -113,7 +112,6 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
   margin-top: 5%;
   display: flex;
   justify-content:flex-start;
-  border: 1px solid green;
   width: 50%;
 }
 

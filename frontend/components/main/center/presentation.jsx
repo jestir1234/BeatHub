@@ -33,7 +33,7 @@ class Presentation extends React.Component{
     let albumSongs = this.state.songs.length ? this.state.songs.map((song, idx) => {
       return(
         <div className="song-list-item-container">
-          <SongItem song={song} key={idx}/><p id="song-list-item-duration">{song.duration} seconds</p>
+          <SongItem song={song} removeCurrentSong={this.props.removeCurrentSong} fetchSong={this.props.fetchSong} key={idx}/><p id="song-list-item-duration">{song.duration} seconds</p>
         </div>
       );
     }) : null;
@@ -51,7 +51,6 @@ class Presentation extends React.Component{
             <ul>
               {albumSongs}
             </ul>
-            <SoundComponent />
           </div>
         </div>
     );

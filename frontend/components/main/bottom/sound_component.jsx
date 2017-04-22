@@ -10,7 +10,7 @@ class SoundComponent extends React.Component {
 
   render(){
     return(
-      <Sound url="http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3" playStatus={Sound.status.PLAYING}/>
+      <Sound url={`${this.props.song.audio_url}`} playStatus={Sound.status.PLAYING}/>
     );
   }
 }

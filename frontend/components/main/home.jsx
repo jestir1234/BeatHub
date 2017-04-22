@@ -22,7 +22,7 @@ class Home extends React.Component {
 
     const user = this.props.currentUser;
     const presentationInfo = this.props.album ? this.props.album : null;
-
+    const currentSong = this.props.currentSong ? this.props.currentSong : null;
     return(
       <div className="main-page-container">
 
@@ -30,11 +30,11 @@ class Home extends React.Component {
 
           <UserMusicIndex />
 
-          <PresentationContainer presentationInfo={presentationInfo} songs={this.props.songs}/>
+          <PresentationContainer presentationInfo={presentationInfo} songs={this.props.songs} currentSong={currentSong}/>
 
           <FollowedFriendsIndex />
 
-          <AudioPlayerContainer />
+          <AudioPlayerContainer currentSong={currentSong}/>
 
       </div>
     );

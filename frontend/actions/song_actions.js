@@ -2,6 +2,7 @@ import * as SongsAPIUtil from '../util/songs_api_util';
 
 export const RECEIVE_SONGS = 'RECEIVE_SONGS';
 export const RECEIVE_CURRENT_SONG = 'RECEIVE_CURRENT_SONG';
+export const REMOVE_CURRENT_SONG = "REMOVE_CURRENT_SONG";
 
 export const receiveSongs = (songs) => {
   return {
@@ -14,6 +15,12 @@ export const receiveCurrentSong = (currentSong) => {
   return {
     type: RECEIVE_CURRENT_SONG,
     currentSong
+  };
+};
+
+export const removeCurrentSong = () => {
+  return {
+    type: REMOVE_CURRENT_SONG,
   };
 };
 

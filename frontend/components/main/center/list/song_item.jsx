@@ -1,4 +1,16 @@
 import React from 'react';
+import Sound from 'react-sound';
+import SoundComponent from '../../bottom/sound_component';
+
+
+const handlePlay = (props) => {
+  return (e) => {
+    e.preventDefault();
+    
+    props.removeCurrentSong();
+    props.fetchSong(props.song.id);
+  };
+};
 
 const SongItem = (props) => {
 
@@ -6,7 +18,7 @@ const SongItem = (props) => {
     <li className="song-list-item">
 
       <div className="song-item-play-btn-container">
-        <button><div id="triangle-test"></div></button>
+        <button onClick={handlePlay(props)}><div id="triangle-test"></div></button>
       </div>
 
       <div className="song-item-order-container">
@@ -16,7 +28,6 @@ const SongItem = (props) => {
       <div className="song-item-song-name">
         <p>{props.song.name}</p>
       </div>
-
 
     </li>
   );

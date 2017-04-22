@@ -6,7 +6,8 @@ const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser,
     album: state.Album,
-    songs: state.songs
+    songs: state.songs,
+    currentSong: state.songs.currentSong
   };
 };
 

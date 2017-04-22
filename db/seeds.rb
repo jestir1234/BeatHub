@@ -48,17 +48,17 @@ albums.push(nocturne)
 albums.push(bones)
 
 
-noc1 = Song.new(name: "Shadow", album_id: nocturne.id, album_ord: 1, genre: "Shoe-gaze", duration: 261, audio_url: "app/assets/mp3/wild_nothing-golden_haze.mp3")
-noc2 = Song.new(name: "Midnight Song", album_id: nocturne.id, album_ord: 2, genre: "Shoe-gaze", duration: 187, audio_url: "app/assets/mp3/wild_nothing-golden_haze.mp3")
-noc3 = Song.new(name: "Nocturne", album_id: nocturne.id, album_ord: 3, genre: "Shoe-gaze", duration: 320, audio_url: "app/assets/mp3/wild_nothing-golden_haze.mp3")
-noc4 = Song.new(name: "Through the Grass", album_id: nocturne.id, album_ord: 4, genre: "Shoe-gaze", duration: 270, audio_url: "app/assets/mp3/wild_nothing-golden_haze.mp3")
-noc5 = Song.new(name: "Only Heather", album_id: nocturne.id, album_ord: 5, genre: "Shoe-gaze", duration: 196, audio_url: "app/assets/mp3/wild_nothing-golden_haze.mp3")
-noc6 = Song.new(name: "This Chain Won't Break", album_id: nocturne.id, album_ord: 6, genre: "Shoe-gaze", duration: 280, audio_url: "app/assets/mp3/wild_nothing-golden_haze.mp3")
-noc7 = Song.new(name: "Disappear Always", album_id: nocturne.id, album_ord: 7, genre: "Shoe-gaze", duration: 271, audio_url: "app/assets/mp3/wild_nothing-golden_haze.mp3")
-noc8 = Song.new(name: "Paradise", album_id: nocturne.id, album_ord: 8, genre: "Shoe-gaze", duration: 333, audio_url: "app/assets/mp3/wild_nothing-golden_haze.mp3")
-noc9 = Song.new(name: "Counting Days", album_id: nocturne.id, album_ord: 9, genre: "Shoe-gaze", duration: 234, audio_url: "app/assets/mp3/wild_nothing-golden_haze.mp3")
-noc10 = Song.new(name: "The Blue Dress", album_id: nocturne.id, album_ord: 10, genre: "Shoe-gaze", duration: 270, audio_url: "app/assets/mp3/wild_nothing-golden_haze.mp3")
-noc11 = Song.new(name: "Rheya", album_id: nocturne.id, album_ord: 11, genre: "Shoe-gaze", duration: 235, audio_url: "app/assets/mp3/wild_nothing-golden_haze.mp3")
+noc1 = Song.new(name: "Shadow", album_id: nocturne.id, album_ord: 1, genre: "Shoe-gaze", duration: 261, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+noc2 = Song.new(name: "Midnight Song", album_id: nocturne.id, album_ord: 2, genre: "Shoe-gaze", duration: 187, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+noc3 = Song.new(name: "Nocturne", album_id: nocturne.id, album_ord: 3, genre: "Shoe-gaze", duration: 320, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+noc4 = Song.new(name: "Through the Grass", album_id: nocturne.id, album_ord: 4, genre: "Shoe-gaze", duration: 270, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+noc5 = Song.new(name: "Only Heather", album_id: nocturne.id, album_ord: 5, genre: "Shoe-gaze", duration: 196, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+noc6 = Song.new(name: "This Chain Won't Break", album_id: nocturne.id, album_ord: 6, genre: "Shoe-gaze", duration: 280, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+noc7 = Song.new(name: "Disappear Always", album_id: nocturne.id, album_ord: 7, genre: "Shoe-gaze", duration: 271, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+noc8 = Song.new(name: "Paradise", album_id: nocturne.id, album_ord: 8, genre: "Shoe-gaze", duration: 333, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+noc9 = Song.new(name: "Counting Days", album_id: nocturne.id, album_ord: 9, genre: "Shoe-gaze", duration: 234, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+noc10 = Song.new(name: "The Blue Dress", album_id: nocturne.id, album_ord: 10, genre: "Shoe-gaze", duration: 270, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+noc11 = Song.new(name: "Rheya", album_id: nocturne.id, album_ord: 11, genre: "Shoe-gaze", duration: 235, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
 
 noc1.save
 noc2.save
@@ -85,18 +85,18 @@ songs << noc10
 songs << noc11
 
 
-bones1 = Song.new(name: "The Mother We Share", album_id: bones.id, album_ord: 1, genre: "Synth-pop", duration: 192)
-bones2 = Song.new(name: "We Sink", album_id: bones.id, album_ord: 2, genre: "Synth-pop", duration: 214)
-bones3 = Song.new(name: "Gun", album_id: bones.id, album_ord: 3, genre: "Synth-pop", duration: 233)
-bones4 = Song.new(name: "Tether", album_id: bones.id, album_ord: 4, genre: "Synth-pop", duration: 286)
-bones5 = Song.new(name: "Lies", album_id: bones.id, album_ord: 5, genre: "Synth-pop", duration: 221)
-bones6 = Song.new(name: "Under the Tide", album_id: bones.id, album_ord: 6, genre: "Synth-pop", duration: 272)
-bones7 = Song.new(name: "Recover", album_id: bones.id, album_ord: 7, genre: "Synth-pop", duration: 225)
-bones8 = Song.new(name: "Night Sky", album_id: bones.id, album_ord: 8, genre: "Synth-pop", duration: 231)
-bones9 = Song.new(name: "Science/Visions", album_id: bones.id, album_ord: 9, genre: "Synth-pop", duration: 238)
-bones10 = Song.new(name: "Lungs", album_id: bones.id, album_ord: 10, genre: "Synth-pop", duration: 182)
-bones11 = Song.new(name: "By the Throat", album_id: bones.id, album_ord: 11, genre: "Synth-pop", duration: 249)
-bones12 = Song.new(name: "You Caught the Light", album_id: bones.id, album_ord: 12, genre: "Synth-pop", duration: 337)
+bones1 = Song.new(name: "The Mother We Share", album_id: bones.id, album_ord: 1, genre: "Synth-pop", duration: 192, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+bones2 = Song.new(name: "We Sink", album_id: bones.id, album_ord: 2, genre: "Synth-pop", duration: 214, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+bones3 = Song.new(name: "Gun", album_id: bones.id, album_ord: 3, genre: "Synth-pop", duration: 233, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+bones4 = Song.new(name: "Tether", album_id: bones.id, album_ord: 4, genre: "Synth-pop", duration: 286, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+bones5 = Song.new(name: "Lies", album_id: bones.id, album_ord: 5, genre: "Synth-pop", duration: 221, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+bones6 = Song.new(name: "Under the Tide", album_id: bones.id, album_ord: 6, genre: "Synth-pop", duration: 272, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+bones7 = Song.new(name: "Recover", album_id: bones.id, album_ord: 7, genre: "Synth-pop", duration: 225, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+bones8 = Song.new(name: "Night Sky", album_id: bones.id, album_ord: 8, genre: "Synth-pop", duration: 231, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+bones9 = Song.new(name: "Science/Visions", album_id: bones.id, album_ord: 9, genre: "Synth-pop", duration: 238, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+bones10 = Song.new(name: "Lungs", album_id: bones.id, album_ord: 10, genre: "Synth-pop", duration: 182, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+bones11 = Song.new(name: "By the Throat", album_id: bones.id, album_ord: 11, genre: "Synth-pop", duration: 249, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
+bones12 = Song.new(name: "You Caught the Light", album_id: bones.id, album_ord: 12, genre: "Synth-pop", duration: 337, audio_url: "http://www.largesound.com/ashborytour/sound/AshboryBYU.mp3")
 
 bones1.save
 bones2.save
