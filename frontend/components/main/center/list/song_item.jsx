@@ -19,7 +19,7 @@ const handleClick = (props) => {
 
 const handlePlay = (props) => {
 
-  if (props.currentSongStatus.positionAndDuration){
+  if (props.currentSongStatus.positionAndDuration && props.currentSong.id === props.song.id){
     props.playCurrentSong(props.currentSongStatus.positionAndDuration.position);
   } else {
     props.removeCurrentSong();

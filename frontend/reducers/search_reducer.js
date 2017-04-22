@@ -10,7 +10,7 @@ const SearchResultsReducer = (oldState = {}, action) => {
     case REMOVE_SEARCH_RESULTS:
       return action.searchResults;
     default:
-      return _nullSearchResults;
+      return oldState;
   }
 };
 

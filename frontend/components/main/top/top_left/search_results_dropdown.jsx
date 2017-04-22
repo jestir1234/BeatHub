@@ -10,6 +10,14 @@ class SearchResultsDropDown extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  shouldComponentUpdate(nextProps, nextState){
+    if(nextProps.searchResults === this.props.searchResults) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   handleClick(item){
     return (e) => {
       e.preventDefault();
@@ -63,7 +71,9 @@ class SearchResultsDropDown extends React.Component {
     const artists = searchResults.artists || [];
     const albums = searchResults.albums || [];
     const songs = searchResults.songs || [];
-
+    console.log(artists.length);
+    console.log(albums.length);
+    console.log(songs.length);
     let artistList;
     let albumList;
     let songList;
@@ -84,8 +94,6 @@ class SearchResultsDropDown extends React.Component {
         dropdown.style.display = "none";
       }
     });
-
-
 
     return (
       <div className="search-results-dropdown-container">
