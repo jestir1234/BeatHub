@@ -153,7 +153,7 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
 
 
 #song-list-item-duration{
-  padding-left: 12%;
+  padding-right: 5%;
   margin-bottom: 5%;
   margin-top: 5%;
 }

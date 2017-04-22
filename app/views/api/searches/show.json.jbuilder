@@ -5,7 +5,7 @@
       json.id artist.id
       json.name artist.name
       json.genre artist.genre
-      json.image_url asset_path(artist.image.url)
+      json.image_url artist.image_url
     end
   end
 
@@ -14,7 +14,7 @@
       json.id album.id
       json.name album.name
       json.year album.year
-      json.image_url asset_path(album.image.url)
+      json.image_url album.image_url
       json.artist album.artist
       json.artist_id album.artist_id
       json.artist_name album.artist_name
@@ -30,6 +30,6 @@
       json.genre song.genre
       json.artist song.album.artist
       json.album_ord song.album_ord
-      json.audio_url asset_path(song.audio_url)
+      json.audio_url song.audio_url
     end
 end

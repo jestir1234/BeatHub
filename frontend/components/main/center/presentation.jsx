@@ -9,6 +9,7 @@ class Presentation extends React.Component{
 
     this.state = {presentationInfo: null, songs: []};
     this.renderAlbum = this.renderAlbum.bind(this);
+    this.convertInToTime = this.convertInToTime.bind(this);
   }
 
   componentWillReceiveProps(nextProps){
@@ -23,6 +24,16 @@ class Presentation extends React.Component{
     }
   }
 
+  convertInToTime(duration){
+    let minutes = Math.floor(duration / 60);
+    let seconds = duration % 60;
+    if (seconds < 10){
+      return `${minutes}:0${seconds}`;
+    } else {
+      return `${minutes}:${seconds}`;
+    }
+  }
+
 
   renderAlbum(album){
 
@@ -33,7 +44,7 @@ class Presentation extends React.Component{
     let albumSongs = this.state.songs.length ? this.state.songs.map((song, idx) => {
       return(
         <div className="song-list-item-container">
-          <SongItem song={song} removeCurrentSong={this.props.removeCurrentSong} fetchSong={this.props.fetchSong} key={idx}/><p id="song-list-item-duration">{song.duration} seconds</p>
+          <SongItem song={song} removeCurrentSong={this.props.removeCurrentSong} fetchSong={this.props.fetchSong} key={idx}/><p id="song-list-item-duration">{this.convertInToTime(song.duration)}</p>
         </div>
       );
     }) : null;

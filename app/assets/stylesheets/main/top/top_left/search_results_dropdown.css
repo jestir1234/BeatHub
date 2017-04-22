@@ -36,6 +36,7 @@
   margin-left: 10px;
   vertical-align: middle;
   line-height: 50px;
+  font-size: 17px;
 }
 
 /*.list-item-artist{
@@ -47,9 +48,13 @@
 
 .list-item-artist img {
   display: inline;
-  height: 80%;
-  width: 85%;
+  height: 100px;
+  width: 100px;
   border-radius: 60%;
+}
+
+.list-item-song {
+  font-size: 16px;
 }
 /*
 font-family: 'Source Sans Pro', sans-serif;

@@ -23,7 +23,7 @@ class SearchResultsDropDown extends React.Component {
         return (
           <li key={idx}>
             <Link onClick={this.handleClick(item.album)}>
-              {item.name}
+              <span className="list-item-song">{item.name}</span>
             </Link>
           </li>
         );
