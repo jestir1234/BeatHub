@@ -44,7 +44,16 @@ class Presentation extends React.Component{
     let albumSongs = this.state.songs.length ? this.state.songs.map((song, idx) => {
       return(
         <div className="song-list-item-container">
-          <SongItem song={song} removeCurrentSong={this.props.removeCurrentSong} fetchSong={this.props.fetchSong} key={idx}/><p id="song-list-item-duration">{this.convertInToTime(song.duration)}</p>
+          <SongItem
+            song={song}
+            removeCurrentSong={this.props.removeCurrentSong}
+            fetchSong={this.props.fetchSong}
+            playCurrentSong={this.props.playCurrentSong}
+            pauseCurrentSong={this.props.pauseCurrentSong}
+            stopCurrentSong={this.props.stopCurrentSong}
+            currentSongStatus={this.props.currentSongStatus}
+            key={idx}/>
+          <p id="song-list-item-duration">{this.convertInToTime(song.duration)}</p>
         </div>
       );
     }) : null;

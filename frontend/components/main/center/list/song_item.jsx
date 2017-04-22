@@ -6,21 +6,33 @@ import SoundComponent from '../../bottom/sound_component';
 const handleClick = (props) => {
   return (e) => {
     e.preventDefault();
-    
+
     if (e.target.id === "triangle-test") {
       e.target.setAttribute("id", "pause");
+      handlePlay(props);
     } else if (e.target.id === "pause") {
       e.target.setAttribute("id", "triangle-test");
+      handlePause(props);
     }
-    props.removeCurrentSong();
-    props.fetchSong(props.song.id);
   };
 };
 
-// const handlePlay = (song) => {
-//   props.removeCurrentSong();
-//   props.fetchSong(song.id);
-// };
+const handlePlay = (props) => {
+
+  if (props.currentSongStatus.positionAndDuration){
+    props.playCurrentSong(props.currentSongStatus.positionAndDuration.position);
+  } else {
+    props.removeCurrentSong();
+    props.fetchSong(props.song.id);
+    props.playCurrentSong(null);
+  }
+
+};
+
+const handlePause = (props) => {
+  props.pauseCurrentSong();
+};
+
 //
 // const handlePause = (song) => {
 //

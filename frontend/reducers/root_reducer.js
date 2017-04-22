@@ -3,6 +3,7 @@ import SessionReducer from './session_reducer';
 import SearchResultsReducer from './search_reducer';
 import AlbumReducer from './album_reducer';
 import SongsReducer from './songs_reducer';
+import CurrentSongStatusReducer from './current_song_reducer';
 import { USER_LOGOUT } from '../actions/session_actions';
 
 const RootReducer = (state, action) => {
@@ -17,7 +18,8 @@ const appReducer = combineReducers({
   session: SessionReducer,
   searchResults: SearchResultsReducer,
   Album: AlbumReducer,
-  songs: SongsReducer
+  songs: SongsReducer,
+  currentSongStatus: CurrentSongStatusReducer
 });
 
 export default RootReducer;

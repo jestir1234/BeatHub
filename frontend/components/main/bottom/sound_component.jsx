@@ -4,14 +4,42 @@ import Sound from 'react-sound';
 class SoundComponent extends React.Component {
   constructor(props){
     super(props);
+    this.state = {status: null};
+  }
 
+  componentDidMount(){
+    if (this.props.songStatus.status === "PLAY") {
+      this.setState({status: Sound.status.PLAYING});
+    } else if (this.props.songStatus.status === "PAUSE") {
+      this.setState({status: Sound.status.PAUSED});
+    } else if (this.props.songStatus.status === "STOP") {
+      this.setState({status: Sound.status.STOPPED});
+    } else {
+      this.setState({status : null});
+    }
+  }
+
+  componentWillReceiveProps(newProps){
+    if (newProps.songStatus.status === "PLAY") {
+      this.setState({status: Sound.status.PLAYING});
+    } else if (newProps.songStatus.status === "PAUSE") {
+      this.setState({status: Sound.status.PAUSED});
+    } else if (newProps.songStatus.status === "STOP") {
+      this.setState({status: Sound.status.STOPPED});
+    } else {
+      this.setState({status : null});
+    }
   }
 
 
   render(){
-    const playing = Sound.status.PLAYING;
+    let newPositionAndDuration = this.props.songStatus.positionAndDuration ? this.props.songStatus.positionAndDuration : null;
+  
+    if (newPositionAndDuration) {
+      console.log(newPositionAndDuration.position);
+    }
     return(
-      <Sound url={`${this.props.song.audio_url}`} playStatus={playing}/>
+      <Sound url={`${this.props.song.audio_url}`} playFromPosition={newPositionAndDuration ? newPositionAndDuration.position : null} playStatus={this.state.status} onPlaying={(positionAndDuration) => this.props.updatePositionAndDuration(positionAndDuration)}/>
     );
   }
 }

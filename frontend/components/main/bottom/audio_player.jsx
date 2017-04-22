@@ -8,16 +8,17 @@ class AudioPlayer extends React.Component{
     this.playSong = this.playSong.bind(this);
   }
 
-  playSong(song){
+  playSong(props){
     return(
-        <SoundComponent song={song}/>
+        <SoundComponent song={props.currentSong} songStatus={props.currentSongStatus} updatePositionAndDuration={props.updatePositionAndDuration}/>
     );
   }
 
   render(){
-    const currentSong = this.props.currentSong ? this.props.currentSong : null;
-    const playSong = currentSong ? this.playSong(currentSong) : null;
     
+    const currentSong = this.props.currentSong ? this.props.currentSong : null;
+    const playSong = currentSong ? this.playSong(this.props) : null;
+
     return(
       <div className="bottom-content">
         <h1>{currentSong ? `${currentSong.name} is currently playing...` : "No songs playing"}</h1>
