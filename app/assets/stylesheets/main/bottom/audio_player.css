@@ -5,4 +5,23 @@
   width: 100%;
   top: 84%;
   background-color: #282828;
+  display: flex;
+  justify-content: space-between;
+}
+
+.audio-display{
+  border: 1px solid red;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.play-controls{
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-bar {
+  width: 50%;
+  margin-left: 25%;
 }
