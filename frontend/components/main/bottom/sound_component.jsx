@@ -34,10 +34,7 @@ class SoundComponent extends React.Component {
 
   render(){
     let newPositionAndDuration = this.props.songStatus.positionAndDuration ? this.props.songStatus.positionAndDuration : null;
-  
-    if (newPositionAndDuration) {
-      console.log(newPositionAndDuration.position);
-    }
+
     return(
       <Sound url={`${this.props.song.audio_url}`} playFromPosition={newPositionAndDuration ? newPositionAndDuration.position : null} playStatus={this.state.status} onPlaying={(positionAndDuration) => this.props.updatePositionAndDuration(positionAndDuration)}/>
     );

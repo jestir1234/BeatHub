@@ -72,9 +72,7 @@ class SearchResultsDropDown extends React.Component {
     const artists = searchResults.artists || [];
     const albums = searchResults.albums || [];
     const songs = searchResults.songs || [];
-    console.log(artists.length);
-    console.log(albums.length);
-    console.log(songs.length);
+
     let artistList;
     let albumList;
     let songList;
