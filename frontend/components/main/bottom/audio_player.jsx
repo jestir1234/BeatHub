@@ -108,16 +108,16 @@ class AudioPlayer extends React.Component{
 
         <div className="audio-display">
             <div className="play-controls">
-              <button>shuffle</button>
-              <button>back</button>
+              <button className="shuffle-btn"></button>
+              <button className="skip-btn"><div className="arrow-left"></div></button>
               <button onClick={this.handleClick(this.props)}className="play-btn"><div id={this.state.buttonStyle}></div></button>
-              <button>forward</button>
-              <button>repeat</button>
+              <button className="skip-btn"><div className="arrow-right"></div></button>
+              <button className="repeat-btn"></button>
             </div>
             <div className="status-bar-container">
               <p id="time-passed">{timePassed}</p>
               <div className="status-bar">
-                <Line percent={completionPercentage} strokeWidth=".5" strokeColor="#a0a0a0" trailWidth="1" trailColor="#404040" />
+                <Line percent={completionPercentage} strokeLinecap='round' strokeWidth=".5" strokeColor="#a0a0a0" trailWidth="1" trailColor="#404040" />
               </div>
               <p id="time-left">{timeLeft}</p>
             </div>

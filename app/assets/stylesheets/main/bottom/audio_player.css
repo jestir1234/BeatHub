@@ -10,7 +10,6 @@
 }
 
 .audio-display{
-  border: 1px solid red;
   width: 60%;
   height: 40%;
   display: flex;
@@ -24,12 +23,10 @@
 .play-controls{
   display: flex;
   justify-content: space-around;
-  border: 1px dotted blue;
   width: 35%;
 }
 
 .status-bar-container {
-  border: 1px dotted green;
   width: 90%;
   display: flex;
   justify-content: space-around;
@@ -84,4 +81,84 @@
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
   border-left: 10px solid #a0a0a0;
+}
+
+.skip-btn{
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.skip-btn:active > .arrow-right {
+  border-left: 6px solid #6d6d6d;
+  cursor: pointer;
+  transform: scale(.90);
+}
+
+.skip-btn:active > .arrow-left {
+  border-right: 6px solid #6d6d6d;
+  cursor: pointer;
+  transform: scale(.90);
+}
+
+.skip-btn:hover > .arrow-right{
+  border-left: 10px solid white;
+}
+
+.skip-btn:hover > .arrow-left{
+  border-right: 10px solid white;
+}
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #a0a0a0;
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right:8px solid #a0a0a0;
+}
+
+.shuffle-btn{
+  margin-top: 2.5%;
+  border: none;
+  background: none;
+  background-image: url("http://www.iconsplace.com/download/white-shuffle-256.ico");
+  background-size: 55% 65%;
+  background-repeat: no-repeat;
+  width: 10%;
+  outline: none;
+}
+
+.shuffle-btn:hover {
+  transform: scale(1.2);
+}
+
+.shuffle-btn:active{
+  transform: scale(.9);
+}
+
+.repeat-btn{
+  background: none;
+  background-image: url("https://1001freedownloads.s3.amazonaws.com/vector/thumb/66492/ic_auto_repeat_disabled.png");
+  background-repeat: no-repeat;
+  background-size: 90% 90%;
+  width: 10%;
+  outline: none;
+  margin-top: 1%;
+  border: none;
+}
+
+.repeat-btn:hover{
+  transform: scale(1.2);
+}
+
+.repeat-btn:active{
+  transform: scale(.9);
 }
