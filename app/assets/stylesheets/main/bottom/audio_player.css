@@ -162,3 +162,28 @@
 .repeat-btn:active{
   transform: scale(.9);
 }
+
+.volume-control{
+  width: 10%;
+  display: flex;
+  justify-content: flex-start;
+  background: transparent;
+  align-items: center;
+}
+
+.volume-bar{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-right: 40px;
+  box-sizing: border-box;
+}
+
+.volume-icon{
+  background-image: url("http://www.iconsdb.com/icons/preview/white/volume-up-4-xxl.png");
+  height: 18px;
+  width: 18px;
+  background-size: contain;
+  margin-right: 15px;
+}

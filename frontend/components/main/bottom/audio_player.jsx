@@ -1,6 +1,8 @@
 import React from 'react';
 import SoundComponent from './sound_component';
 import { Line, Circle } from 'rc-progress';
+import VolumeSlider from './volume_slider';
+
 
 class AudioPlayer extends React.Component{
   constructor(props){
@@ -126,7 +128,11 @@ class AudioPlayer extends React.Component{
 
 
         <div className="volume-control">
-          <p>volume controls here</p>
+          <div className="volume-icon">
+          </div>
+          <div className="volume-bar">
+            <Line percent="50" strokeLinecap='round' strokeWidth='3' strokeColor="green" trailWidth="2" trailColor="#404040"/>
+          </div>
         </div>
       </div>
     );
