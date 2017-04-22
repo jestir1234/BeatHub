@@ -9,8 +9,9 @@ class SoundComponent extends React.Component {
 
 
   render(){
+    const playing = Sound.status.PLAYING;
     return(
-      <Sound url={`${this.props.song.audio_url}`} playStatus={Sound.status.PLAYING}/>
+      <Sound url={`${this.props.song.audio_url}`} playStatus={playing}/>
     );
   }
 }

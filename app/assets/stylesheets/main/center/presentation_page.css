@@ -180,3 +180,11 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
   border-bottom: 8px solid transparent;
   border-left: 10px solid white;
 }
+
+#pause{
+  margin-right: 1px;
+  width: 4px;
+  height: 16px;
+  border-right: 4px solid white;
+  border-left: 4px solid white;
+}

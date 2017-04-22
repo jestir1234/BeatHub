@@ -3,14 +3,28 @@ import Sound from 'react-sound';
 import SoundComponent from '../../bottom/sound_component';
 
 
-const handlePlay = (props) => {
+const handleClick = (props) => {
   return (e) => {
     e.preventDefault();
     
+    if (e.target.id === "triangle-test") {
+      e.target.setAttribute("id", "pause");
+    } else if (e.target.id === "pause") {
+      e.target.setAttribute("id", "triangle-test");
+    }
     props.removeCurrentSong();
     props.fetchSong(props.song.id);
   };
 };
+
+// const handlePlay = (song) => {
+//   props.removeCurrentSong();
+//   props.fetchSong(song.id);
+// };
+//
+// const handlePause = (song) => {
+//
+// };
 
 const SongItem = (props) => {
 
@@ -18,7 +32,7 @@ const SongItem = (props) => {
     <li className="song-list-item">
 
       <div className="song-item-play-btn-container">
-        <button onClick={handlePlay(props)}><div id="triangle-test"></div></button>
+        <button onClick={handleClick(props)}><div id="triangle-test"></div></button>
       </div>
 
       <div className="song-item-order-container">

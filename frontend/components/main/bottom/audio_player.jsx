@@ -17,6 +17,7 @@ class AudioPlayer extends React.Component{
   render(){
     const currentSong = this.props.currentSong ? this.props.currentSong : null;
     const playSong = currentSong ? this.playSong(currentSong) : null;
+    
     return(
       <div className="bottom-content">
         <h1>{currentSong ? `${currentSong.name} is currently playing...` : "No songs playing"}</h1>
