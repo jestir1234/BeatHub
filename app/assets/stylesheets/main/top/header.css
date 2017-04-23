@@ -1,14 +1,15 @@
 .top-content{
   border: 2px solid #00dfff;
-  width: 70%;
+  width: 90%;
   margin-left: 15%;
   margin-right: 15%;
-  margin-top: 0;
-  padding-top: 10px;
+  /* margin-top: 0; */
+  /* padding-top: 10px; */
   height: 8%;
   display: flex;
   justify-content: space-between;
   z-index: 3;
+  align-items: center;
 }
 
 .profile-container{

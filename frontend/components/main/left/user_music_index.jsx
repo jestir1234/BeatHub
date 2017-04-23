@@ -21,10 +21,13 @@ class UserMusicIndex extends React.Component{
       <div className="left-content">
         THIS IS THE USER MUSIC INDEX. USER NAV FOR SONGS, ALBUMS, ARTISTS INDEX WILL GO HERE
 
+        <div className="user-playlist-index">
 
+        </div>
 
         <div className="create-playlist-link">
-          <Link onClick={this.handleClick}><button></button>New Playlist</Link>
+          <div onClick={this.handleClick} className="create-playlist-icon"><div id="cross">+</div></div>
+          <Link onClick={this.handleClick}>New Playlist</Link>
         </div>
 
       </div>

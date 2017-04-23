@@ -1,11 +1,54 @@
 .left-content{
   border: 2px solid green;
   width: 15%;
-  height: 85%;
-  position: absolute;
-  margin: 0 auto;
-  margin-right: 1px;
+  height: 90%;
+  /* position: absolute; */
+  /* margin: 0 auto; */
+  /* margin-right: 1px; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.create-playlist-link{
+  border-top: 1px solid #a0a0a0;
+  height: 13%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a0a0a0;
+}
+
+.create-playlist-link:hover > .create-playlist-icon{
+  border: 2px solid white;
+}
+
+.create-playlist-icon{
+  border-radius: 50%;
+  border: 1px solid #a0a0a0;
+  background-color: transparent;
+  height: 38px;
+  width: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  -webkit-transition: color .5s, -webkit-transform .5s;
+  transition: color .5s transform .5s;
+}
+
+#cross {
+  font-size: 40px;
+  color: #a0a0a0;
+    -webkit-text-stroke: 100% white;
+    -webkit-transition: color .5s, -webkit-transform .5s;
+    transition: color .5s transform .5s;
+}
+
+.create-playlist-icon:hover {
+  border: 2px solid white;
+}
+
+.create-playlist-icon:hover > #cross{
+  color: white;
 }

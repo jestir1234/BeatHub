@@ -11,4 +11,5 @@
    position: absolute;
    border: 3px solid orange;
    display: flex;
+   flex-wrap: wrap;
 }
