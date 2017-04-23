@@ -17,7 +17,6 @@ class AudioPlayer extends React.Component{
   }
 
   componentWillReceiveProps(newProps){
-
     if (newProps.currentSong && this.props.currentSong !== newProps.currentSong) {
       if (newProps.currentSongStatus.status === "PLAY") {
         this.setState({buttonStyle: "pause"});

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
+import merge from 'lodash/merge';
 
 
 class UserMusicIndex extends React.Component{
   constructor(props){
     super(props);
-
+    this.state = {playlists: []};
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -16,10 +17,17 @@ class UserMusicIndex extends React.Component{
   }
 
   componentWillReceiveProps(newProps){
-    if (this.props.currentUser){
+    
+    if (newProps.currentUser){
       if (newProps.playlists.playlists){
-        if (newProps.playlists.playlists.length !== this.props.playlists.playlists) {
-          this.props.fetchPlaylists(this.props.currentUser.id);
+        if (this.state.playlists.length !== newProps.playlists.playlists.length){
+          this.setState({playlists: newProps.playlists.playlists});
+        }
+      } else if (newProps.playlists.playlist) {
+        if (!this.state.playlists.includes(newProps.playlists.playlist)){
+          let copy = merge({}, this.state);
+          copy.playlists.push(newProps.playlists.playlist);
+          this.setState(copy);
         }
       }
     }
@@ -33,8 +41,8 @@ class UserMusicIndex extends React.Component{
 
 
   render(){
-    let playlists = this.props.playlists.playlists ? this.props.playlists.playlists : null;
-    let userPlaylists = playlists ? playlists.map((playlist) => {
+
+    let userPlaylists = this.state.playlists ? this.state.playlists.map((playlist) => {
         return(
           <li className="playlist-item" key={playlist.id}>{playlist.name}</li>
         );
