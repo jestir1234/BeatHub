@@ -5,4 +5,7 @@
   position: absolute;
   margin: 0 auto;
   margin-right: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }

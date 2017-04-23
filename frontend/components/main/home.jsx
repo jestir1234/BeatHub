@@ -5,6 +5,7 @@ import UserMusicIndex from './left/user_music_index.jsx';
 import FollowedFriendsIndex from './right/followed_friends_index';
 import AudioPlayerContainer from './bottom/audio_player_container';
 import HeaderContainer from './top/header_container';
+import PlaylistForm from './modal/playlist_form';
 
 class Home extends React.Component {
   constructor(props){
@@ -36,6 +37,7 @@ class Home extends React.Component {
 
           <AudioPlayerContainer currentSong={currentSong}/>
 
+          <PlaylistForm />
       </div>
     );
   }

@@ -5,9 +5,11 @@ import { searchMusic } from './util/search_api_util';
 import configureStore from './store/store';
 import Root from './components/root';
 import { fetchAlbumSongs, fetchSong } from './util/songs_api_util';
+import { createPlaylist } from './util/playlist_api_util';
 
 // window.fetchAlbumSongs = fetchAlbumSongs;
 // window.fetchSong = fetchSong;
+window.createPlaylist = createPlaylist;
 
 
 document.addEventListener("DOMContentLoaded", () => {
