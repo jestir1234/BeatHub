@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import PresentationContainer from './center/presentation_container';
-import UserMusicIndex from './left/user_music_index.jsx';
+import UserMusicIndexContainer from './left/user_music_index_container';
 import FollowedFriendsIndex from './right/followed_friends_index';
 import AudioPlayerContainer from './bottom/audio_player_container';
 import HeaderContainer from './top/header_container';
@@ -29,7 +29,7 @@ class Home extends React.Component {
 
           <HeaderContainer />
 
-          <UserMusicIndex />
+          <UserMusicIndexContainer />
 
           <PresentationContainer presentationInfo={presentationInfo} songs={this.props.songs} currentSong={currentSong}/>
 
