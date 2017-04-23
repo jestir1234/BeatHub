@@ -117,6 +117,7 @@
     float: right;
     font-size: 28px;
     font-weight: bold;
+    padding-right: 5px;
 }
 
 .close:hover,

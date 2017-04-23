@@ -6,6 +6,7 @@ class PlaylistForm extends React.Component{
     this.state = {name: "", description: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
+    this.closeForm = this.closeForm.bind(this);
   }
 
   handleClick(e){
@@ -14,9 +15,18 @@ class PlaylistForm extends React.Component{
     modal.style.display = "none";
   }
 
+  closeForm(){
+    let modal = document.getElementById("playlist-form-modal");
+    modal.style.display = "none";
+  }
+
   handleSubmit(e){
     e.preventDefault();
-
+    if (this.state.name === ""){
+      this.setState({name: "New Playlist"});
+    }
+    this.props.createPlaylist({name: "New Playlist", description: "The most bestest playlist in the world!"}).then(() => this.closeForm());
+    this.setState({name: "", description: ""});
   }
 
   handleInput(field){

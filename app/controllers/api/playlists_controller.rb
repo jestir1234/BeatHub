@@ -1,6 +1,7 @@
 class Api::PlaylistsController < ApplicationController
 
   def create
+    
     @playlist = Playlist.new(playlist_params)
     @playlist.author = current_user
 

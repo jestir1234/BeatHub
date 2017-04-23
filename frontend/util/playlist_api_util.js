@@ -6,7 +6,7 @@ export const createPlaylist = (playlist) => {
   });
 };
 
-export const editPlaylist = (playlist) => {
+export const updatePlaylist = (playlist) => {
   return $.ajax({
     method: "PATCH",
     url: `api/playlists/${playlist.id}`,
@@ -25,5 +25,12 @@ export const fetchPlaylist = (playlistId) => {
   return $.ajax({
     method: "GET",
     url: `api/playlists/${playlistId}`
+  });
+};
+
+export const fetchPlaylists = (userId) => {
+  return $.ajax({
+    method: "GET",
+    url: `api/users/${userId}/playlists`
   });
 };
