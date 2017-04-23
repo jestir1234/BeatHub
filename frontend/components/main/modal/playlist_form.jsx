@@ -24,8 +24,10 @@ class PlaylistForm extends React.Component{
     e.preventDefault();
     if (this.state.name === ""){
       this.setState({name: "New Playlist"});
+      this.props.createPlaylist({name: "New Playlist", description: "The most bestest playlist in the world!"}).then(() => this.closeForm());
+    } else {
+      this.props.createPlaylist(this.state).then(() => this.closeForm());
     }
-    this.props.createPlaylist({name: "New Playlist", description: "The most bestest playlist in the world!"}).then(() => this.closeForm());
     this.setState({name: "", description: ""});
   }
 

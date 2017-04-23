@@ -15,6 +15,16 @@ class UserMusicIndex extends React.Component{
     }
   }
 
+  componentWillReceiveProps(newProps){
+    if (this.props.currentUser){
+      if (newProps.playlists.playlists){
+        if (newProps.playlists.playlists.length !== this.props.playlists.playlists) {
+          this.props.fetchPlaylists(this.props.currentUser.id);
+        }
+      }
+    }
+  }
+
   handleClick(e){
     e.preventDefault();
     let modal = document.getElementById("playlist-form-modal");

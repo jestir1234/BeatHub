@@ -5,11 +5,13 @@
   margin-right: 15%;
   /* margin-top: 0; */
   /* padding-top: 10px; */
-  height: 8%;
+  height: 6%;
   display: flex;
   justify-content: space-between;
   z-index: 3;
-  align-items: center;
+  /* align-items: center; */
+  /* padding: 4%; */
+  padding-top: 3%;
 }
 
 .profile-container{
@@ -20,4 +22,6 @@
 
 .search-container{
   width: 30%;
+    display: flex;
+    flex-direction: column;
 }

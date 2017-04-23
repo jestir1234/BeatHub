@@ -39,6 +39,7 @@
 }
 
 #cross {
+  padding-bottom: 2%;
   font-size: 40px;
   color: #a0a0a0;
     -webkit-text-stroke: 100% white;
@@ -61,11 +62,13 @@
   flex-direction: column;
   align-items: flex-start;
   margin-left: 10%;
+  overflow: scroll;
 }
 
 .user-playlist-index h3{
   color: #a0a0a0;
   font-weight: bold;
+  letter-spacing: 3px;
 }
 
 .playlist-item{
@@ -73,4 +76,9 @@
   display: flex;
   align-self: center;
   color: #a0a0a0;
+  cursor: pointer;
+}
+
+.playlist-item:hover{
+  color: white;
 }
