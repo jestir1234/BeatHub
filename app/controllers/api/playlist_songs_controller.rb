@@ -1,7 +1,7 @@
 class Api::PlaylistSongsController < ApplicationController
 
   def create
-    
+
     @playlist_song = PlaylistSong.new(playlist_song_params)
     playlist = Playlist.find(params[:playlistSong][:playlist_id])
     song = Song.find(params[:playlistSong][:song_id])

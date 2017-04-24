@@ -112,7 +112,6 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
   margin-top: 5%;
   display: flex;
   justify-content:flex-start;
-  width: 50%;
 }
 
 .song-list-item:hover > .song-item-play-btn-container{

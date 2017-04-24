@@ -70,10 +70,13 @@ class SongItem extends React.Component {
       e.preventDefault();
       console.log("clicked");
       let el = e.currentTarget;
-      // let el2 = document.getElementsByClassName('song-list-item')[props.idx];
-      let menu = document.getElementById('right-click-menu-container');
+      $('.right-click-menu-container').css("display", "none");
+      let menu = document.getElementsByClassName('right-click-menu-container')[props.idx];
+      let playlistMenu = document.getElementsByClassName("menu-playlists")[props.idx];
+
+      playlistMenu.style.display = "none";
       menu.style.display = "flex";
-      el.appendChild(menu);
+
     };
   }
 
@@ -96,7 +99,7 @@ class SongItem extends React.Component {
         <div className="song-item-song-name">
           <p onContextMenu={this.handleRightClick(props)}>{props.song.name}</p>
         </div>
-        <RightClickMenuContainer />
+        <RightClickMenuContainer song={props.song} idx={props.idx} />
       </li>
     );
   }

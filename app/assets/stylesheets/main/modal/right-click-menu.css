@@ -10,20 +10,21 @@
     overflow: auto; /* Enable scroll if needed */
 }
 
-#right-click-menu-container{
+.right-click-menu-container{
   display: none;
   position: relative;
   overflow: hidden;
   white-space: nowrap;
   background-color: #2e1a31;
   border-radius: 2px;
+  border: 1px solid green;
 }
 
-#right-click-menu-container p{
+.right-click-menu-container p{
   font-size: 75%;
 }
 
-#right-click-menu-container p:hover{
+.right-click-menu-container p:hover{
   background: #6f5574;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -32,4 +33,21 @@
   border: 1px solid red;
   height: 100px;
   width: 100px;
+  display: none;
+  margin-left: 10px;
+}
+
+.menu-playlist-item:hover{
+  background: #6f5574;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.menu-playlists ul li{
+  font-family: 'Alegreya Sans', sans-serif;
+  color: #989797
+}
+
+.menu-playlists ul li:hover{
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
 }
