@@ -3,7 +3,7 @@ node_modules/
 bundle.js
 bundle.js.map
 tmp/
-log/
+/log/
 
 # Ignore application configuration
 /config/application.yml
