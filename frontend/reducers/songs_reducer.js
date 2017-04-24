@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_SONG, RECEIVE_SONGS, REMOVE_CURRENT_SONG } from '../actions/song_actions';
+import { RECEIVE_CURRENT_SONG, RECEIVE_SONGS, REMOVE_CURRENT_SONG, REMOVE_SONG } from '../actions/song_actions';
 import merge from 'lodash/merge';
 
 export const _nullSongs = {songs: [], currentSong: null};

@@ -27,6 +27,7 @@ class Api::PlaylistsController < ApplicationController
 
   def show
     @playlist = Playlist.includes(:songs).find(params[:id]);
+
     render 'api/playlists/playlist_songs'
   end
 

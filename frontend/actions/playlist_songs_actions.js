@@ -1,4 +1,5 @@
 import * as PlaylistSongAPIUtil from '../util/playlist_songs_api_util';
+import { removePresentationItem } from './presentation_actions';
 
 export const REMOVE_SONG_FROM_PLAYLIST = "REMOVE_SONG_FROM_PLAYLIST";
 export const ADD_SONG_TO_PLAYLIST = "ADD_SONG_TO_PLAYLIST";
@@ -11,10 +12,10 @@ export const addSongToPlaylist = (playlistSong) => {
   };
 };
 
-export const removeSongFromPlaylist = (playlistSongId) => {
+export const removeSongFromPlaylist = (playlistSong) => {
   return {
     type: REMOVE_SONG_FROM_PLAYLIST,
-    playlistSongId
+    playlistSong
   };
 };
 
@@ -24,8 +25,8 @@ export const createSongToPlaylist = (playlistSong) => {
   };
 };
 
-export const deleteSongFromPlaylist = (playlistSongId) => {
+export const deleteSongFromPlaylist = (playlistSong) => {
   return (dispatch) => {
-    return PlaylistSongAPIUtil.deletePlaylistSong.then(() => dispatch(removeSongFromPlaylist(playlistSongId)));
+    return PlaylistSongAPIUtil.deletePlaylistSong(playlistSong).then(() => dispatch(removePresentationItem(playlistSong)));
   };
 };

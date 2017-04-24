@@ -6,9 +6,11 @@ export const createPlaylistSong = (playlistSong) => {
   });
 };
 
-export const deletePlaylistSong = (playlistSongId) => {
+export const deletePlaylistSong = (playlistSong) => {
+
   return $.ajax({
     method: 'DELETE',
-    url: `api/playlist_songs/playlistSongId`
+    url: `api/playlist_songs/${playlistSong.id}`,
+    data: { playlistSong }
   });
 };

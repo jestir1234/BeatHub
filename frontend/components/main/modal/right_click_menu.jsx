@@ -8,6 +8,7 @@ class RightClickMenu extends React.Component {
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleAddSongToPlayist = this.handleAddSongToPlayist.bind(this);
     this.exitMenu = this.exitMenu.bind(this);
+    this.handleDeleteSongFromPlaylist = this.handleDeleteSongFromPlaylist.bind(this);
   }
 
 
@@ -24,6 +25,14 @@ class RightClickMenu extends React.Component {
       e.preventDefault();
       let playlistSong = {song_id: song.id, playlist_id: playlist.id};
       this.props.createSongToPlaylist(playlistSong).then(() => this.exitMenu());
+    };
+  }
+
+  handleDeleteSongFromPlaylist(){
+    return (e) => {
+      e.preventDefault();
+      let playlistSong = {id: this.props.song.playlist_song_id, playlist_ord: this.props.song.playlist_ord};
+      this.props.deleteSongFromPlaylist(playlistSong).then(() => this.exitMenu());
     };
   }
 
@@ -55,13 +64,12 @@ class RightClickMenu extends React.Component {
     });
 
     let playlistOption;
-
+    let that = this;
     if (this.props.presentationItem.type === "Albums") {
       playlistOption = (<p onMouseOver={this.handleMouseEnter()}  className="add-song-option">Add song to playlist</p>);
     } else {
-      playlistOption = (<p>Remove song from playlist</p>);
+      playlistOption = (<p onClick={this.handleDeleteSongFromPlaylist()}>Remove song from playlist</p>);
     }
-
     return (
       <div className="right-click-menu-container" >
         <div className="right-click-menu-items">

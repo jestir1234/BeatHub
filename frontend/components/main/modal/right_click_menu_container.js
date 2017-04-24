@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     createSongToPlaylist: (playlistSong) => dispatch(createSongToPlaylist(playlistSong)),
-    deleteSongFromPlaylist: (playlistSongId) => dispatch(deleteSongFromPlaylist(playlistSongId))
+    deleteSongFromPlaylist: (playlistSong) => dispatch(deleteSongFromPlaylist(playlistSong))
   };
 };
 

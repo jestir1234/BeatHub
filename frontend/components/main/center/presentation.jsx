@@ -11,6 +11,8 @@ class Presentation extends React.Component{
     this.renderAlbum = this.renderAlbum.bind(this);
     this.renderPresentation = this.renderPresentation.bind(this);
     this.convertInToTime = this.convertInToTime.bind(this);
+    this.sortByPlaylistOrd = this.sortByPlaylistOrd.bind(this);
+    this.sortByAlbumOrd = this.sortByAlbumOrd.bind(this);
   }
 
 
@@ -33,6 +35,23 @@ class Presentation extends React.Component{
       }
     }
   }
+
+  sortByPlaylistOrd(item1, item2){
+    if (item1.playlist_ord < item2.playlist_ord) {
+      return -1;
+    } else {
+      return 1;
+    }
+  }
+
+  sortByAlbumOrd(item1, item2){
+    if (item1.album_ord < item2.album_ord) {
+      return -1;
+    } else {
+      return 1;
+    }
+  }
+
 
   convertInToTime(duration){
     let minutes = Math.floor(duration / 60);
@@ -61,7 +80,9 @@ class Presentation extends React.Component{
     let owner = presentationItem.author || presentationItem.artist_name;
     let artwork = presentationItem.image_url;
 
-    let songs = this.state.songs.length ? this.state.songs.map((song, idx) => {
+    let songs = presentationType === "Playlists" ? this.state.songs.sort(this.sortByPlaylistOrd) : this.state.songs.sort(this.sortByAlbumOrd);
+    
+    songs = this.state.songs.length ? this.state.songs.map((song, idx) => {
       let order = presentationType === "Albums" ? song.album_ord : song.playlist_ord;
 
       return(
