@@ -4,7 +4,9 @@ import { createSongToPlaylist, deleteSongFromPlaylist } from '../../../actions/p
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    song: ownProps.song
+    song: ownProps.song,
+    currentUser: state.session.currentUser,
+    playlists: state.playlists.playlists
   };
 };
 

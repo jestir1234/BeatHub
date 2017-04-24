@@ -72,7 +72,7 @@ class SongItem extends React.Component {
       let el = e.currentTarget;
       // let el2 = document.getElementsByClassName('song-list-item')[props.idx];
       let menu = document.getElementById('right-click-menu-container');
-      menu.style.display = "inline-block";
+      menu.style.display = "flex";
       el.appendChild(menu);
     };
   }

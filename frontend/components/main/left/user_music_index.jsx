@@ -19,7 +19,7 @@ class UserMusicIndex extends React.Component{
 
   componentWillReceiveProps(newProps){
     if (newProps.currentUser){
-      if (newProps.playlists.playlists){
+      if (newProps.playlists.playlists.length){
         if (this.state.playlists.length !== newProps.playlists.playlists.length){
           this.setState({playlists: newProps.playlists.playlists});
         }

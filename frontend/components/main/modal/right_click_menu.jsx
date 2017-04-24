@@ -6,12 +6,27 @@ class RightClickMenu extends React.Component {
 
   }
 
+  componentDidMount(){
+
+  }
+
 
   render(){
+    const playlists = this.props.playlists.map((playlist, idx) => {
+      return (<li key={idx} >{[playlist.name]}</li>);
+    });
+
     return (
       <div className="fast-modal" id="right-click-menu-container">
-        <p>Add song to playlist</p>
-        <p>Remove song from playlist</p>
+        <div className="right-click-menu-items">
+          <p>Add song to playlist</p>
+          <p>Remove song from playlist</p>
+        </div>
+        <div className="menu-playlists">
+          <ul>
+            {playlists}
+          </ul>
+        </div>
       </div>
     );
   }
