@@ -81,7 +81,7 @@ class Presentation extends React.Component{
     let artwork = presentationItem.image_url;
 
     let songs = presentationType === "Playlists" ? this.state.songs.sort(this.sortByPlaylistOrd) : this.state.songs.sort(this.sortByAlbumOrd);
-    
+
     songs = this.state.songs.length ? this.state.songs.map((song, idx) => {
       let order = presentationType === "Albums" ? song.album_ord : song.playlist_ord;
 

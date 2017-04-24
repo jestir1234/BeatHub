@@ -21,7 +21,7 @@ const PresentationReducer = (oldState = _nullPresentationItem, action) => {
       });
 
         let copy = merge({}, oldState, {item: {songs: collection}});
-        
+
         return copy;
     default:
       return oldState;

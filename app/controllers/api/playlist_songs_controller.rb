@@ -18,7 +18,7 @@ class Api::PlaylistSongsController < ApplicationController
         playlist_song.save
         print playlist_song.ord
       end
-      debugger
+      
       render 'api/playlist_songs/show'
     else
       render json: @playlist_songs.errors.full_messages
