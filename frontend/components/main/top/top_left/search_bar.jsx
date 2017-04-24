@@ -23,7 +23,7 @@ class SearchBar extends React.Component {
           <i className="inside fa fa-search" aria-hidden="true"></i>
           <input id="search-bar" type="text" placeholder="Search" value={this.state.searchText} onChange={this.handleInput}/>
         </div>
-        <SearchResultsDropDown searchResults={this.props.searchResults} receiveAlbum={this.props.receiveAlbum} removeSearchResults={this.props.removeSearchResults}/>
+        <SearchResultsDropDown searchResults={this.props.searchResults} receiveAlbum={this.props.receiveAlbum} receivePresentationItem={this.props.receivePresentationItem} removeSearchResults={this.props.removeSearchResults}/>
       </div>
     );
   }

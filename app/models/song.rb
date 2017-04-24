@@ -8,4 +8,13 @@ class Song < ActiveRecord::Base
   belongs_to :album
   belongs_to :artist
 
+  has_many :playlist_songs,
+    primary_key: :id,
+    foreign_key: :song_id,
+    class_name: "PlaylistSong"
+
+  has_many :playlists,
+    through: :playlist_songs,
+    source: :playlist
+
 end

@@ -8,7 +8,8 @@ const mapStateToProps = (state) => {
     currentUser: state.session.currentUser,
     album: state.Album,
     songs: state.songs,
-    currentSong: state.songs.currentSong
+    currentSong: state.songs.currentSong,
+    presentationItem: state.presentationItem
   };
 };
 

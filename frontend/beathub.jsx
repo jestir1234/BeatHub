@@ -4,12 +4,11 @@ import { login, signup, logout } from './util/session_api_util';
 import { searchMusic } from './util/search_api_util';
 import configureStore from './store/store';
 import Root from './components/root';
-import { fetchAlbumSongs, fetchSong } from './util/songs_api_util';
+import { fetchAlbumSongs, fetchSong, fetchPlaylistSongs } from './util/songs_api_util';
 import { createPlaylist } from './util/playlist_api_util';
+import { createPlaylistSong } from './util/playlist_songs_api_util';
 
-// window.fetchAlbumSongs = fetchAlbumSongs;
-// window.fetchSong = fetchSong;
-window.createPlaylist = createPlaylist;
+window.createPlaylistSong = createPlaylistSong;
 
 
 document.addEventListener("DOMContentLoaded", () => {

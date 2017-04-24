@@ -8,6 +8,7 @@ class UserMusicIndex extends React.Component{
     super(props);
     this.state = {playlists: []};
     this.handleClick = this.handleClick.bind(this);
+    this.handleSelectPlaylist = this.handleSelectPlaylist.bind(this);
   }
 
   componentDidMount(){
@@ -17,7 +18,6 @@ class UserMusicIndex extends React.Component{
   }
 
   componentWillReceiveProps(newProps){
-    
     if (newProps.currentUser){
       if (newProps.playlists.playlists){
         if (this.state.playlists.length !== newProps.playlists.playlists.length){
@@ -33,6 +33,13 @@ class UserMusicIndex extends React.Component{
     }
   }
 
+  handleSelectPlaylist(playlist){
+    return (e) => {
+      e.preventDefault();
+      this.props.receivePresentationItem(playlist, "Playlists");
+    };
+  }
+
   handleClick(e){
     e.preventDefault();
     let modal = document.getElementById("playlist-form-modal");
@@ -41,10 +48,9 @@ class UserMusicIndex extends React.Component{
 
 
   render(){
-
-    let userPlaylists = this.state.playlists ? this.state.playlists.map((playlist) => {
+    let userPlaylists = this.state.playlists ? this.state.playlists.map((playlist, idx) => {
         return(
-          <li className="playlist-item" key={playlist.id}>{playlist.name}</li>
+          <li onClick={this.handleSelectPlaylist(playlist)} className="playlist-item" key={idx}>{playlist.name}</li>
         );
     }) : null;
 

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Presentation from './presentation';
-import { fetchAlbumSongs, fetchSong, removeCurrentSong } from '../../../actions/song_actions';
+import { fetchAlbumSongs, fetchPlaylistSongs, fetchSong, removeCurrentSong } from '../../../actions/song_actions';
 import { playCurrentSong, pauseCurrentSong, stopCurrentSong } from '../../../actions/current_song_actions';
 
 
@@ -12,13 +12,15 @@ const mapStateToProps = (state, ownProps) => {
     presentationInfo: ownProps.presentationInfo,
     songs: ownProps.songs,
     currentSong: ownProps.currentSong,
-    currentSongStatus: state.currentSongStatus
+    currentSongStatus: state.currentSongStatus,
+    presentationItem: state.presentationItem
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchAlbumSongs: (albumId) => dispatch(fetchAlbumSongs(albumId)),
+    fetchPlaylistSongs: (playlistId) => dispatch(fetchPlaylistSongs(playlistId)),
     fetchSong: (songId) => dispatch(fetchSong(songId)),
     removeCurrentSong: () => dispatch(removeCurrentSong()),
     playCurrentSong: (positionAndDuration) => dispatch(playCurrentSong(positionAndDuration)),

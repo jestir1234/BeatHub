@@ -18,9 +18,10 @@ class SearchResultsDropDown extends React.Component {
     }
   }
 
-  handleClick(item){
+  handleClick(item, categoryName){
     return (e) => {
       e.preventDefault();
+      this.props.receivePresentationItem(item, categoryName);
       this.props.receiveAlbum(item);
       this.props.removeSearchResults();
     };
@@ -31,7 +32,7 @@ class SearchResultsDropDown extends React.Component {
       if (categoryName === "Songs"){
         return (
           <li key={idx}>
-            <Link onClick={this.handleClick(item.album)}>
+            <Link onClick={this.handleClick(item.album, "Albums")}>
               <span className="list-item-song">{item.name}</span>
             </Link>
           </li>
@@ -39,7 +40,7 @@ class SearchResultsDropDown extends React.Component {
       } else if (categoryName === "Albums") {
         return (
           <li key={idx}>
-            <Link onClick={this.handleClick(item)}>
+            <Link onClick={this.handleClick(item, categoryName)}>
               <img src={item.image_url}/>
               <span className="list-item-padding">{item.name}</span>
             </Link>

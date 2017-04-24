@@ -5,6 +5,7 @@ import AlbumReducer from './album_reducer';
 import SongsReducer from './songs_reducer';
 import CurrentSongStatusReducer from './current_song_reducer';
 import PlaylistReducer from './playlist_reducer';
+import PresentationReducer from './presentation_reducer';
 import { USER_LOGOUT } from '../actions/session_actions';
 
 const RootReducer = (state, action) => {
@@ -21,7 +22,8 @@ const appReducer = combineReducers({
   Album: AlbumReducer,
   songs: SongsReducer,
   currentSongStatus: CurrentSongStatusReducer,
-  playlists: PlaylistReducer
+  playlists: PlaylistReducer,
+  presentationItem: PresentationReducer
 });
 
 export default RootReducer;

@@ -24,6 +24,7 @@ class Home extends React.Component {
     const user = this.props.currentUser;
     const presentationInfo = this.props.album ? this.props.album : null;
     const currentSong = this.props.currentSong ? this.props.currentSong : null;
+
     return(
       <div className="main-page-container">
 
