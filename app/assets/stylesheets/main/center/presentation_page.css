@@ -193,3 +193,7 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
   border-right: 4px solid white;
   border-left: 4px solid white;
 }
+
+#right-click-menu-container {
+  display: none;
+}

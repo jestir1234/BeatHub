@@ -1,0 +1,20 @@
+.fast-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 10px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+}
+
+#right-click-menu-container{
+  display: none;
+  position: relative;
+  border: 1px solid red;
+  font-size: 60%;
+  overflow: hidden;
+  white-space: nowrap;
+}

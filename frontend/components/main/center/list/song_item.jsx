@@ -1,6 +1,7 @@
 import React from 'react';
 import Sound from 'react-sound';
 import SoundComponent from '../../bottom/sound_component';
+import RightClickMenuContainer from '../../modal/right_click_menu_container';
 
 class SongItem extends React.Component {
   constructor(props){
@@ -9,6 +10,7 @@ class SongItem extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
     this.handlePause = this.handlePause.bind(this);
+    this.handleRightClick = this.handleRightClick.bind(this);
     this.state = {buttonStyle: "triangle-test"};
   }
 
@@ -63,6 +65,18 @@ class SongItem extends React.Component {
     this.setState({buttonStyle: "triangle-test"});
   }
 
+  handleRightClick(props){
+    return (e) => {
+      e.preventDefault();
+      console.log("clicked");
+      let el = e.currentTarget;
+      // let el2 = document.getElementsByClassName('song-list-item')[props.idx];
+      let menu = document.getElementById('right-click-menu-container');
+      menu.style.display = "inline-block";
+      el.appendChild(menu);
+    };
+  }
+
 
   render(){
 
@@ -80,9 +94,9 @@ class SongItem extends React.Component {
         </div>
 
         <div className="song-item-song-name">
-          <p>{props.song.name}</p>
+          <p onContextMenu={this.handleRightClick(props)}>{props.song.name}</p>
         </div>
-
+        <RightClickMenuContainer />
       </li>
     );
   }

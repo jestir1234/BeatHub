@@ -76,7 +76,8 @@ class Presentation extends React.Component{
             stopCurrentSong={this.props.stopCurrentSong}
             currentSongStatus={this.props.currentSongStatus}
             currentSong={this.props.currentSong}
-            key={idx}/>
+            key={idx}
+            idx={idx}/>
           <p id="song-list-item-duration">{this.convertInToTime(song.duration)}</p>
         </div>
       );
