@@ -76,7 +76,7 @@ class SongItem extends React.Component {
         </div>
 
         <div className="song-item-order-container">
-          <span id="song-order">{props.song.album_ord}.</span>
+          <span id="song-order">{props.order}.</span>
         </div>
 
         <div className="song-item-song-name">

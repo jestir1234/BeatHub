@@ -62,10 +62,13 @@ class Presentation extends React.Component{
     let artwork = presentationItem.image_url;
 
     let songs = this.state.songs.length ? this.state.songs.map((song, idx) => {
+      let order = presentationType === "Albums" ? song.album_ord : song.playlist_ord;
+
       return(
         <div className="song-list-item-container">
           <SongItem
             song={song}
+            order={order}
             removeCurrentSong={this.props.removeCurrentSong}
             fetchSong={this.props.fetchSong}
             playCurrentSong={this.props.playCurrentSong}

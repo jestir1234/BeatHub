@@ -1,13 +1,10 @@
 class Api::PlaylistSongsController < ApplicationController
 
   def create
-    debugger
+    
     @playlist_song = PlaylistSong.new(playlist_song_params)
-    playlist = Playlist.find(params[:playlist_id])
-    song = Song.find(params[:song_id])
-
-    @playlist_song.playlist = playlist
-    @playlist_song.song = song
+    playlist = Playlist.find(params[:playlistSong][:playlist_id])
+    song = Song.find(params[:playlistSong][:song_id])
 
     @playlist_song.ord = playlist.songs.length + 1
 
@@ -23,6 +20,6 @@ class Api::PlaylistSongsController < ApplicationController
   private
 
   def playlist_song_params
-    params.require(:playlist_song).permit(:song_id, :playlist_id)
+    params.require(:playlistSong).permit(:song_id, :playlist_id)
   end
 end
