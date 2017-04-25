@@ -19,10 +19,24 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def destroy
+    @playlist = Playlist.find(params[:id])
+
+    if @playlist.destroy
+      render 'api/playlists/show'
+    else
+      render json: @playlist.errors.full_messages
+    end
   end
 
   def update
+    
+    @playlist = Playlist.find(params[:id])
 
+    if @playlist.update(playlist_params)
+      render 'api/playlists/show'
+    else
+      render json: @playlist.errors.full_messages
+    end
   end
 
   def show

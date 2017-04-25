@@ -19,8 +19,8 @@ class UserMusicIndex extends React.Component{
 
   componentWillReceiveProps(newProps){
     if (newProps.currentUser){
-      if (newProps.playlists.playlists.length){
-        if (this.state.playlists.length !== newProps.playlists.playlists.length){
+      if (newProps.playlists.playlists.length || newProps.playlists.playlists.length === 0){
+        if (this.state.playlists.length !== newProps.playlists.playlists.length || newProps.playlists.status === "updated"){
           this.setState({playlists: newProps.playlists.playlists});
         }
       } else if (newProps.playlists.playlist) {
@@ -48,12 +48,12 @@ class UserMusicIndex extends React.Component{
 
 
   render(){
+    debugger
     let userPlaylists = this.state.playlists ? this.state.playlists.map((playlist, idx) => {
         return(
           <li onClick={this.handleSelectPlaylist(playlist)} className="playlist-item" key={idx}>{playlist.name}</li>
         );
     }) : null;
-
     return(
       <div className="left-content">
         <div className="user-music-nav">

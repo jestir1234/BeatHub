@@ -9,6 +9,7 @@ class Song < ActiveRecord::Base
   belongs_to :artist
 
   has_many :playlist_songs,
+    dependent: :destroy,
     primary_key: :id,
     foreign_key: :song_id,
     class_name: "PlaylistSong"

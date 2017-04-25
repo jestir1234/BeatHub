@@ -14,6 +14,25 @@
       -moz-animation: fadein 2s;
 }
 
+.edit-form-modal-open {
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein 2s;
+}
+
+.edit-form-modal-close{
+  display: none;
+}
+
 
 
 @-webkit-keyframes fadein {

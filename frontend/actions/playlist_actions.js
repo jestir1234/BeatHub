@@ -27,9 +27,10 @@ export const removePlaylists = () => {
   };
 };
 
-export const removePlaylist = () => {
+export const removePlaylist = (playlistId) => {
   return {
-    type: REMOVE_PLAYLIST
+    type: REMOVE_PLAYLIST,
+    playlistId
   };
 };
 
@@ -62,7 +63,7 @@ export const fetchPlaylist = (playlistId) => {
 
 export const deletePlaylist = (playlistId) => {
   return (dispatch) => {
-    return PlaylistAPIUtil.fetchPlaylist(playlistId).then(() => dispatch(removePlaylist(playlistId)));
+    return PlaylistAPIUtil.deletePlaylist(playlistId).then(() => dispatch(removePlaylist(playlistId)));
   };
 };
 

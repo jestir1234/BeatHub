@@ -3,22 +3,27 @@ import { Link } from 'react-router';
 import SongItem from './list/song_item';
 import SoundComponent from '../bottom/sound_component';
 import SimpleSliderContainer from './carousel/simple_slider_container';
+import PlaylistEditFormContainer from '../modal/playlist_edit_form_container';
 
 class Presentation extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {songs: [], presentationItem: null};
+    this.state = {songs: [], presentationItem: null, menuOpen: false, editFormOpen: false};
     this.renderAlbum = this.renderAlbum.bind(this);
     this.renderPresentation = this.renderPresentation.bind(this);
     this.renderDefault = this.renderDefault.bind(this);
     this.convertInToTime = this.convertInToTime.bind(this);
     this.sortByPlaylistOrd = this.sortByPlaylistOrd.bind(this);
     this.sortByAlbumOrd = this.sortByAlbumOrd.bind(this);
+    this.handleDeletePlaylist = this.handleDeletePlaylist.bind(this);
+    this.handleOptions = this.handleOptions.bind(this);
+    this.openEditForm = this.openEditForm.bind(this);
   }
 
 
   componentWillReceiveProps(nextProps){
+    this.setState({editFormOpen: false});
 
     if (nextProps.presentationItem.item !== this.state.presentationItem) {
       this.setState({presentationItem: nextProps.presentationItem.item, songs: this.state.songs});
@@ -36,6 +41,17 @@ class Presentation extends React.Component{
         }
       }
     }
+  }
+
+
+  handleOptions(e){
+    e.preventDefault();
+    this.setState({menuOpen: !this.state.menuOpen});
+  }
+
+  openEditForm(e){
+    e.preventDefault();
+    this.setState({editFormOpen: !this.state.editFormOpen});
   }
 
   sortByPlaylistOrd(item1, item2){
@@ -65,6 +81,14 @@ class Presentation extends React.Component{
     }
   }
 
+  handleDeletePlaylist(e){
+    e.preventDefault();
+    let playlist = this.props.presentationItem.item;
+    this.setState({menuOpen: false});
+    this.props.deletePlaylist(playlist.id).then(() => this.props.receivePresentationItem(null, null));
+
+  }
+
   renderPresentation(presentationItem){
 
     if (presentationItem.type === "Albums") {
@@ -83,6 +107,28 @@ class Presentation extends React.Component{
     let name = presentationItem.name;
     let owner = presentationItem.author || presentationItem.artist_name;
     let artwork = presentationItem.image_url;
+    let description = presentationType === "Playlists" ? presentationItem.description : null;
+    let deleteBtn = presentationType === "Playlists" ? (<button onClick={this.handleDeletePlaylist}>Delete Playlist</button>) : null;
+
+    let options = presentationType === "Playlists" ? (
+          <div className="options-container">
+
+             <div className="placeholder-object"></div>
+
+             <div onClick={this.handleOptions} className="option-btns">
+               <div className="white-circles"></div>
+               <div className="white-circles"></div>
+               <div className="white-circles"></div>
+             </div>
+
+             <div className={this.state.menuOpen ? "options-menu-open" : "options-menu-close"}>
+               <ul>
+                 <li onClick={this.handleDeletePlaylist}>Delete playlist</li>
+                 <li onClick={this.openEditForm}>Edit Playist</li>
+               </ul>
+             </div>
+
+           </div>) : null;
 
     let songs = presentationType === "Playlists" ? this.state.songs.sort(this.sortByPlaylistOrd) : this.state.songs.sort(this.sortByAlbumOrd);
 
@@ -113,9 +159,11 @@ class Presentation extends React.Component{
           <div className="album-show-description">
             <img src={artwork}/>
             <h1>{name}</h1>
+            <p className="playlist-description">{description}</p>
             <p>By <Link id="artist-link">{owner}</Link></p>
             <p id="album-song-count">{songs ? `${songs.length} SONGS` : null}</p>
             <button>Play</button>
+             {options}
           </div>
           <div className="album-show-songs">
             <ul>
@@ -129,6 +177,9 @@ class Presentation extends React.Component{
 
   // will refactor this render function to include playlists
   renderAlbum(album){
+
+
+
     let albumName = album.name;
     let artist = album.artist_name;
     let albumArt = album.image_url;
@@ -180,13 +231,13 @@ class Presentation extends React.Component{
 
 
   render(){
-
+    const editForm = this.state.editFormOpen ? (<PlaylistEditFormContainer currentPlaylist={this.props.presentationItem.item}/>) : null;
     const presentationItem = this.props.presentationItem.item ? this.props.presentationItem : null;
     let showPage = presentationItem ? this.renderPresentation(presentationItem) : this.renderDefault();
-
     return(
       <div className="center-content">
         {showPage}
+        {editForm}
       </div>
     );
   }

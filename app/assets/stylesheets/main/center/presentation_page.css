@@ -195,16 +195,7 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
 }
 
 .right-click-menu-container {
-  display: none;
-  position: relative;
-  /* overflow: hidden; */
-  white-space: nowrap;
-  background-color: #404040;
-  border-radius: 2px;
-  /* border: 1px solid green; */
-  border: 1px solid #514b58;
-  box-shadow: 10px 10px 5px #151218;
-  font-size: 17px;
+
 }
 
 .featured-carousel {
@@ -250,4 +241,69 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.playlist-description{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.option-btns {
+  /*border: 1px solid red;*/
+   height: 30px;
+   width: 50px;
+   padding-top: 30px;
+   display: flex;
+   justify-content: center;
+   margin: 0 auto;
+}
+
+.option-btns:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+
+.white-circles{
+ border: 1px solid #eeeeee;
+height: 5px;
+width: 5px;
+border-radius: 50%;
+background: white;
+margin: auto;
+}
+
+.options-menu-open{
+  background: #282828;
+  height: 10%;
+  padding: 10px;
+  position: relative;
+  left: 140px;
+  top: -10px;
+}
+
+.options-menu-open ul li{
+  color: hsla(0,0%,100%,.4)
+}
+
+.options-menu-open ul li:hover{
+  color:white;
+  cursor: pointer;
+}
+
+.options-container{
+    justify-content: space-between;
+    align-items: baseline;
+    width: 60%;
+}
+
+.placeholder-object{
+  width: 40%;
+      /* border: 1px solid green; */
+      /* background: green; */
+      /* height: 40%; */
+}
+
+.options-menu-close{
+  display: none;
 }

@@ -4,6 +4,7 @@ import { receivePresentationItem } from '../../../actions/presentation_actions';
 import UserMusicIndex from './user_music_index';
 
 const mapStateToProps = (state) => {
+
   return {
     currentUser: state.session.currentUser,
     playlists: state.playlists

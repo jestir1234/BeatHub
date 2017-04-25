@@ -7,6 +7,7 @@ class Playlist < ActiveRecord::Base
     class_name: "User"
 
   has_many :playlist_songs,
+    dependent: :destroy,
     foreign_key: :playlist_id,
     primary_key: :id,
     class_name: "PlaylistSong"

@@ -16,11 +16,27 @@ const PlaylistReducer = (oldState = _nullPlaylists, action) => {
     case REMOVE_PLAYLISTS:
       return merge({}, oldState, {playlists: null});
     case REMOVE_PLAYLIST:
-      return merge({}, oldState, {playlist: null});
+      let previousPlaylists = oldState.playlists;
+      let collection = [];
+      previousPlaylists.forEach((playlist) => {
+        if (playlist.id !== action.playlistId){
+          collection.push(playlist);
+        }
+      });
+      newState = {playlist: null, playlists: collection};
+      return newState;
     case EDIT_PLAYLIST:
-      let copy = merge({}, oldState);
-      copy[action.playlist.id] = action.playlist;
-      return copy;
+      let previousPlaylists2 = oldState.playlists;
+      let collection2 = [];
+      previousPlaylists2.forEach((playlist) => {
+        if (playlist.id === action.playlist.id){
+          collection2.push(action.playlist);
+        } else {
+          collection2.push(playlist);
+        }
+      });
+      let newState2 = {playlist: null, playlists: collection2, status: "updated"};
+      return newState2;
     default:
       return oldState;
   }
