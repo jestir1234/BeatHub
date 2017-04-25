@@ -1,6 +1,5 @@
 .top-content{
-  border: 2px solid #00dfff;
-  width: 90%;
+  width: 70%;
   margin-left: 15%;
   margin-right: 15%;
   /* margin-top: 0; */
@@ -12,6 +11,9 @@
   /* align-items: center; */
   /* padding: 4%; */
   padding-top: 3%;
+  background: grey;
+  position: fixed;
+  background: transparent;
 }
 
 .profile-container{

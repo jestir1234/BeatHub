@@ -4,6 +4,7 @@ import { fetchAlbumSongs, fetchPlaylistSongs, fetchSong, removeCurrentSong } fro
 import { playCurrentSong, pauseCurrentSong, stopCurrentSong } from '../../../actions/current_song_actions';
 import { deletePlaylist } from '../../../actions/playlist_actions';
 import { receivePresentationItem } from '../../../actions/presentation_actions';
+import { fetchArtistAlbums } from '../../../actions/artist_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -27,7 +28,8 @@ const mapDispatchToProps = (dispatch) => {
     pauseCurrentSong: (positionAndDuration) => dispatch(pauseCurrentSong(positionAndDuration)),
     stopCurrentSong: (positionAndDuration) => dispatch(stopCurrentSong(positionAndDuration)),
     deletePlaylist: (playlistId) => dispatch(deletePlaylist((playlistId))),
-    receivePresentationItem: (presentationItem, presentationType) => dispatch(receivePresentationItem(presentationItem, presentationType))
+    receivePresentationItem: (presentationItem, presentationType) => dispatch(receivePresentationItem(presentationItem, presentationType)),
+    fetchArtistAlbums: (artistId) => dispatch(fetchArtistAlbums(artistId))
   };
 };
 

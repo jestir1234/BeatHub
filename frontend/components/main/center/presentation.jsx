@@ -9,7 +9,7 @@ class Presentation extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {songs: [], presentationItem: null, menuOpen: false, editFormOpen: false};
+    this.state = {songs: [], presentationItem: null, menuOpen: false, editFormOpen: false, albums: null};
     this.renderAlbum = this.renderAlbum.bind(this);
     this.renderPresentation = this.renderPresentation.bind(this);
     this.renderDefault = this.renderDefault.bind(this);
@@ -19,6 +19,7 @@ class Presentation extends React.Component{
     this.handleDeletePlaylist = this.handleDeletePlaylist.bind(this);
     this.handleOptions = this.handleOptions.bind(this);
     this.openEditForm = this.openEditForm.bind(this);
+    this.renderArtist = this.renderArtist.bind(this);
   }
 
 
@@ -37,7 +38,11 @@ class Presentation extends React.Component{
           this.props.fetchPlaylistSongs(playlist.id)
           .then((songs) => this.setState({presentationItem: this.state.presentationItem, songs: songs.songs}));
         } else if (nextProps.presentationItem.type === "Artists"){
-          //fetch artist albums and top songs here
+          let artist = nextProps.presentationItem.item;
+          this.props.fetchArtistAlbums(artist.id)
+          .then((albumAction) => {
+            return this.setState({presentationItem: this.state.presentationItem, albums: albumAction.artistAlbums});
+          });
         }
       }
     }
@@ -95,13 +100,52 @@ class Presentation extends React.Component{
       return this.renderDisplay(presentationItem.item, presentationItem.type);
     } else if (presentationItem.type === "Playlists") {
       return this.renderDisplay(presentationItem.item, presentationItem.type);
+    } else if (presentationItem.type === "Artists") {
+      return this.renderDisplay(presentationItem.item, presentationItem.type);
     }
 
   }
 
+  renderArtist(artist){
+
+    let name = artist.name;
+    let artwork = artist.image_url;
+    let albums = this.state.albums ? this.state.albums.map((album, idx) => {
+      return(
+          <div className="artist-album-container" key={idx}>
+            <img src={album.image_url}/>
+            <p className="album-name">{album.name}</p>
+            <p className="artist-name">By {album.artist_name}</p>
+          </div>
+      );
+    }) : null;
+
+
+    return (
+      <div className="artist-show">
+
+        <div className="artist-header">
+
+          <div className="artist-banner">
+            <img src={artwork} />
+          </div>
+
+          <h1>{name}</h1>
+
+        </div>
+
+        <div className="album-collection">
+          <h1>Albums</h1>
+          {albums}
+        </div>
+
+      </div>
+    );
+  }
+
   renderDisplay(presentationItem, presentationType){
     if (presentationType === "Artists") {
-      // return renderArtist
+      return this.renderArtist(presentationItem);
     }
 
     let name = presentationItem.name;
@@ -231,7 +275,6 @@ class Presentation extends React.Component{
 
 
   render(){
-    
     const editForm = this.state.editFormOpen ? (<PlaylistEditFormContainer currentPlaylist={this.props.presentationItem.item}/>) : null;
     const presentationItem = this.props.presentationItem.item ? this.props.presentationItem : null;
     let showPage = presentationItem ? this.renderPresentation(presentationItem) : this.renderDefault();

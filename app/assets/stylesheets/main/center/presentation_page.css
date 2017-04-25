@@ -1,12 +1,13 @@
 .center-content{
-  width: 71%;
+  width: 70%;
   height: 90%;
   /* position: absolute; */
   left: 15%;
   /* margin-top: 5%; */
-  border: 2px solid red;
   color: white;
-  background: #181818;
+  /*background: #181818;*/
+  background: inherit;
+  overflow: scroll;
 }
 
 #artist-link {
@@ -35,6 +36,7 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
   overflow-y: auto;
   display: flex;
   justify-content: space-around;
+  padding-top: 10%;
 }
 
 .album-show-songs {
@@ -210,6 +212,7 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 10%;
 }
 
 .featured-content h1{
@@ -306,4 +309,8 @@ margin: auto;
 
 .options-menu-close{
   display: none;
+}
+
+.slick-slider .slick-track{
+  padding-top: 5%;
 }

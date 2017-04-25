@@ -7,6 +7,8 @@ import AudioPlayerContainer from './bottom/audio_player_container';
 import HeaderContainer from './top/header_container';
 import PlaylistFormContainer from './modal/playlist_form_container';
 
+const COLORS = ["dark-gradient-maroon", "dark-gradient-yellow", "dark-gradient-green", "dark-gradient-blue"];
+
 class Home extends React.Component {
   constructor(props){
     super(props);
@@ -26,7 +28,7 @@ class Home extends React.Component {
     const currentSong = this.props.currentSong ? this.props.currentSong : null;
 
     return(
-      <div className="main-page-container">
+      <div className="main-page-container" id={COLORS[Math.floor(Math.random() * COLORS.length)]}>
 
           <HeaderContainer />
 

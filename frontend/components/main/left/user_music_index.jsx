@@ -48,7 +48,7 @@ class UserMusicIndex extends React.Component{
 
 
   render(){
-    
+
     let userPlaylists = this.state.playlists ? this.state.playlists.map((playlist, idx) => {
         return(
           <li onClick={this.handleSelectPlaylist(playlist)} className="playlist-item" key={idx}>{playlist.name}</li>
@@ -56,6 +56,7 @@ class UserMusicIndex extends React.Component{
     }) : null;
     return(
       <div className="left-content">
+
         <div className="user-music-nav">
           <h1>Your Music</h1>
           <p>Songs</p>
@@ -64,10 +65,12 @@ class UserMusicIndex extends React.Component{
         </div>
 
         <div className="user-playlist-index">
+          <div className="playlists-container">
             <h3>PLAYLISTS</h3>
             <ul>
               {userPlaylists}
             </ul>
+          </div>
         </div>
 
         <div className="create-playlist-link">

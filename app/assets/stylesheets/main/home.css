@@ -1,15 +1,44 @@
 .main-page-container{
-   background: -webkit-linear-gradient(#244a74, #8b39b0); /* For Safari 5.1 to 6.0 */
-   background: -o-linear-gradient(#244a74, #8b39b0); /* For Opera 11.1 to 12.0 */
-   background: -moz-linear-gradient(#244a74, #8b39b0); /* For Firefox 3.6 to 15 */
-   background: linear-gradient(#244a74, #8b39b0); /* Standard syntax */
+
    width: 100vw;
    height: 100vh;
    margin: 0 auto;
    background-size: cover;
    color: white;
    position: absolute;
-   border: 3px solid orange;
    display: flex;
    flex-wrap: wrap;
+}
+
+
+#dark-gradient-maroon{
+  background: red; /* For browsers that do not support gradients */
+ background: -webkit-linear-gradient(-140deg, #1e1818, #583131); /* For Safari 5.1 to 6.0 */
+ background: -o-linear-gradient(-140deg, #1e1818, #583131); /* For Opera 11.1 to 12.0 */
+ background: -moz-linear-gradient(-140deg, #1e1818, #583131); /* For Firefox 3.6 to 15 */
+ background: linear-gradient(-140deg, #1e1818, #583131); /* Standard syntax */
+}
+
+#dark-gradient-yellow{
+  background: red; /* For browsers that do not support gradients */
+ background: -webkit-linear-gradient(-140deg, #5c5c17, #583131); /* For Safari 5.1 to 6.0 */
+ background: -o-linear-gradient(-140deg, #5c5c17, #583131); /* For Opera 11.1 to 12.0 */
+ background: -moz-linear-gradient(-140deg, #5c5c17, #583131); /* For Firefox 3.6 to 15 */
+ background: linear-gradient(-140deg, #5c5c17, #583131); /* Standard syntax */
+}
+
+#dark-gradient-green{
+  background: red; /* For browsers that do not support gradients */
+ background: -webkit-linear-gradient(-140deg, #194928, #583131); /* For Safari 5.1 to 6.0 */
+ background: -o-linear-gradient(-140deg, #194928, #583131); /* For Opera 11.1 to 12.0 */
+ background: -moz-linear-gradient(-140deg, #194928, #583131); /* For Firefox 3.6 to 15 */
+ background: linear-gradient(-140deg, #194928, #583131); /* Standard syntax */
+}
+
+#dark-gradient-blue{
+  background: red; /* For browsers that do not support gradients */
+ background: -webkit-linear-gradient(-140deg, #134985, #583131); /* For Safari 5.1 to 6.0 */
+ background: -o-linear-gradient(-140deg, #134985, #583131); /* For Opera 11.1 to 12.0 */
+ background: -moz-linear-gradient(-140deg, #134985, #583131); /* For Firefox 3.6 to 15 */
+ background: linear-gradient(-140deg, #134985, #583131); /* Standard syntax */
 }

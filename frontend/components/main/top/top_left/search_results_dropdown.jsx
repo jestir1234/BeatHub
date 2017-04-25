@@ -22,7 +22,7 @@ class SearchResultsDropDown extends React.Component {
     return (e) => {
       e.preventDefault();
       this.props.receivePresentationItem(item, categoryName);
-      this.props.receiveAlbum(item);
+      // this.props.receiveAlbum(item);
       this.props.removeSearchResults();
     };
   }
@@ -49,10 +49,12 @@ class SearchResultsDropDown extends React.Component {
       } else if (categoryName === "Artists") {
         return (
           <li key={idx}>
-            <div className="list-item-artist">
-              <img src={item.image_url}/>
-            </div>
-            <span className="list-item-padding">{item.name}</span>
+            <Link onClick={this.handleClick(item, "Artists")}>
+              <div className="list-item-artist">
+                <img src={item.image_url}/>
+              </div>
+              <span className="list-item-padding">{item.name}</span>
+            </Link>
           </li>
         );
       }

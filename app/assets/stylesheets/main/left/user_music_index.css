@@ -1,5 +1,4 @@
 .left-content{
-  border: 2px solid green;
   width: 15%;
   height: 90%;
   /* position: absolute; */
@@ -16,7 +15,6 @@
   border-top: 1px solid #a0a0a0;
   height: 13%;
   display: flex;
-  justify-content: center;
   align-items: center;
   color: #a0a0a0;
 }
@@ -41,7 +39,7 @@
 
 #cross {
   padding-bottom: 2%;
-  font-size: 40px;
+  font-size: 35px;
   color: #a0a0a0;
     -webkit-text-stroke: 100% white;
     -webkit-transition: color .5s, -webkit-transform .5s;
@@ -96,6 +94,7 @@
   color: #a0a0a0;
   display: flex;
   flex-direction: column;
+  padding-left: 10%;
 }
 
 .user-music-nav p{
@@ -112,4 +111,8 @@
   font-size: 20px;
   padding-bottom: 10px;
   padding-top: 10px;
+}
+
+.playlists-container{
+  padding-left: 10%;
 }

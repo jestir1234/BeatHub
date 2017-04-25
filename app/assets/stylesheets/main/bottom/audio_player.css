@@ -1,11 +1,13 @@
 .bottom-content{
-  border: 2px solid white;
   height: 13%;
   width: 100%;
   /* top: 84%; */
   background-color: #282828;
   display: flex;
   justify-content: space-between;
+  align-content: center;
+  position: fixed;
+  bottom: 0;
 }
 
 .audio-display{

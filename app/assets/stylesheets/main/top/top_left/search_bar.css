@@ -13,7 +13,7 @@
   margin-top: 3px;
   color: #5c5c5c;
   position: absolute;
-  left: 17.7%;
+  margin-left: 1%;
 }
 
 #search-bar::-webkit-input-placeholder{
