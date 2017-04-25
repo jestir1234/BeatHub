@@ -17,10 +17,3 @@ export const removePresentationItem = (presentationItem) => {
     presentationItem
   };
 };
-
-// export const addToPresentationItem = (presentationItem) => {
-//   return {
-//     type: ADD_TO_PRESENTATION_ITEM,
-//     presentationItem
-//   };
-// };

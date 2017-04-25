@@ -21,6 +21,7 @@ class Presentation extends React.Component{
     this.openEditForm = this.openEditForm.bind(this);
     this.renderArtist = this.renderArtist.bind(this);
     this.handleSelectAlbum = this.handleSelectAlbum.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
   }
 
 
@@ -53,6 +54,13 @@ class Presentation extends React.Component{
     return (e) => {
       e.preventDefault();
       this.props.receivePresentationItem(album, "Albums");
+    };
+  }
+
+  handleSelect(item, categoryType){
+    return (e) => {
+      e.preventDefault();
+      this.props.receivePresentationItem(item, categoryType);
     };
   }
 
@@ -165,6 +173,7 @@ class Presentation extends React.Component{
     let name = presentationItem.name;
     let owner = presentationItem.author || presentationItem.artist_name;
     let artwork = presentationItem.image_url;
+    let artist = presentationType === "Albums" ? presentationItem.artist : null;
     let description = presentationType === "Playlists" ? presentationItem.description : null;
     let deleteBtn = presentationType === "Playlists" ? (<button onClick={this.handleDeletePlaylist}>Delete Playlist</button>) : null;
 
@@ -218,7 +227,7 @@ class Presentation extends React.Component{
             <img src={artwork}/>
             <h1>{name}</h1>
             <p className="playlist-description">{description}</p>
-            <p>By <Link id="artist-link">{owner}</Link></p>
+            <p>By <Link onClick={this.handleSelect(artist, "Artists")} id="artist-link">{owner}</Link></p>
             <p id="album-song-count">{songs ? `${songs.length} SONGS` : null}</p>
             <button>Play</button>
              {options}

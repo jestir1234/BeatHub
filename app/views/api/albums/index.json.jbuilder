@@ -3,4 +3,5 @@ json.array!(@collection) do |album|
   json.artist_name album.artist_name
   json.image_url album.image_url
   json.id album.id
+  json.artist album.artist
 end

@@ -8,6 +8,7 @@ import PlaylistReducer from './playlist_reducer';
 import PresentationReducer from './presentation_reducer';
 import PlaylistSongsReducer from './playlist_songs_reducer';
 import FeaturedReducer from './featured_reducer';
+import QueuReducer from './queu_reducer';
 import { USER_LOGOUT } from '../actions/session_actions';
 
 const RootReducer = (state, action) => {

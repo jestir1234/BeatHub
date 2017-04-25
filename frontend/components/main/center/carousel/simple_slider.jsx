@@ -33,7 +33,7 @@ class SimpleSlider extends React.Component {
         <div className="featured-carousel" key={idx}>
         <img src={item.image_url}/>
         <p onClick={this.handleClick(item, "Albums")} className="featured-album-name">{item.name}</p>
-        <p className="featured-artist-name">By {item.artist_name}</p>
+        <p onClick={this.handleClick(item.artist, "Artists")} className="featured-artist-name">By {item.artist_name}</p>
         </div>);
     }) : (<div></div>);
 
