@@ -48,7 +48,7 @@ class UserMusicIndex extends React.Component{
 
 
   render(){
-    debugger
+    
     let userPlaylists = this.state.playlists ? this.state.playlists.map((playlist, idx) => {
         return(
           <li onClick={this.handleSelectPlaylist(playlist)} className="playlist-item" key={idx}>{playlist.name}</li>

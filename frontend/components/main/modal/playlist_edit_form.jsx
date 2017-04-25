@@ -14,6 +14,7 @@ class PlaylistEditForm extends React.Component{
     this.setState({formOpen: true});
   }
 
+
   handleClick(e){
     e.preventDefault();
     let modal = document.getElementsByClassName('edit-form-modal-open')[0];
@@ -33,7 +34,10 @@ class PlaylistEditForm extends React.Component{
       this.setState({name: "New Playlist"});
       this.props.updatePlaylist({name: "New Playlist", description: "The most bestest playlist in the world!"}).then(() => this.closeForm());
     } else {
-      this.props.updatePlaylist(this.state).then(() => this.closeForm());
+      this.props.updatePlaylist(this.state).then((playlistAction) => this.props.receivePresentationItem(playlistAction.playlist, "Playlists"));
+      this.closeForm();
+      let menu = document.getElementsByClassName('options-menu-open')[0];
+      menu.setAttribute("class", "options-menu-close");
     }
     this.setState({name: "", description: ""});
   }

@@ -3,6 +3,7 @@ export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
 export const REMOVE_PLAYLISTS = "REMOVE_PLAYLISTS";
 export const REMOVE_PLAYLIST = "REMOVE_PLAYLIST";
 export const EDIT_PLAYLIST = "EDIT_PLAYLIST";
+import receivePresentationItem from './presentation_actions';
 
 import * as PlaylistAPIUtil from '../util/playlist_api_util';
 
@@ -69,6 +70,7 @@ export const deletePlaylist = (playlistId) => {
 
 export const updatePlaylist = (playlistId) => {
   return (dispatch) => {
-    return PlaylistAPIUtil.updatePlaylist(playlistId).then((playlist) => dispatch(editPlaylist(playlist)));
+    return PlaylistAPIUtil.updatePlaylist(playlistId).then((playlist) => dispatch(editPlaylist(playlist))
+    );
   };
 };
