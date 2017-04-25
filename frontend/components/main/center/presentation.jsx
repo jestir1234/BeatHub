@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import SongItem from './list/song_item';
 import SoundComponent from '../bottom/sound_component';
+import SimpleSliderContainer from './carousel/simple_slider_container';
 
 class Presentation extends React.Component{
   constructor(props){
@@ -10,6 +11,7 @@ class Presentation extends React.Component{
     this.state = {songs: [], presentationItem: null};
     this.renderAlbum = this.renderAlbum.bind(this);
     this.renderPresentation = this.renderPresentation.bind(this);
+    this.renderDefault = this.renderDefault.bind(this);
     this.convertInToTime = this.convertInToTime.bind(this);
     this.sortByPlaylistOrd = this.sortByPlaylistOrd.bind(this);
     this.sortByAlbumOrd = this.sortByAlbumOrd.bind(this);
@@ -17,7 +19,7 @@ class Presentation extends React.Component{
 
 
   componentWillReceiveProps(nextProps){
-
+    
     if (nextProps.presentationItem.item !== this.state.presentationItem) {
       this.setState({presentationItem: nextProps.presentationItem.item, songs: this.state.songs});
       if (nextProps.presentationItem.item){
@@ -64,6 +66,7 @@ class Presentation extends React.Component{
   }
 
   renderPresentation(presentationItem){
+
     if (presentationItem.type === "Albums") {
       return this.renderDisplay(presentationItem.item, presentationItem.type);
     } else if (presentationItem.type === "Playlists") {
@@ -76,6 +79,7 @@ class Presentation extends React.Component{
     if (presentationType === "Artists") {
       // return renderArtist
     }
+
     let name = presentationItem.name;
     let owner = presentationItem.author || presentationItem.artist_name;
     let artwork = presentationItem.image_url;
@@ -165,10 +169,20 @@ class Presentation extends React.Component{
     );
   }
 
+  renderDefault(){
+    return (
+      <div className="featured-content">
+        <h1>Featured Albums of the Day</h1>
+        <SimpleSliderContainer />
+      </div>
+    );
+  }
+
 
   render(){
+
     const presentationItem = this.props.presentationItem.item ? this.props.presentationItem : null;
-    let showPage = presentationItem ? this.renderPresentation(presentationItem) : null;
+    let showPage = presentationItem ? this.renderPresentation(presentationItem) : this.renderDefault();
 
     return(
       <div className="center-content">

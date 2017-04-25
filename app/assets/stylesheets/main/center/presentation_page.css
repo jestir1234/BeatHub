@@ -6,6 +6,7 @@
   /* margin-top: 5%; */
   border: 2px solid red;
   color: white;
+  background: #181818;
 }
 
 #artist-link {
@@ -195,4 +196,49 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
 
 #right-click-menu-container {
   display: none;
+}
+
+.featured-carousel {
+
+}
+.featured-carousel img{
+  height: 90%;
+  width: 90%;
+}
+
+.featured-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.featured-content h1{
+  display: flex;
+  justify-content: center;
+  font-size: 36px;
+  font-family: 'Alegreya Sans', sans-serif;
+  letter-spacing: 10px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.featured-content p{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  cursor: pointer;
+}
+.featured-content p:hover{
+  color: white;
+}
+
+.featured-artist-name{
+  color: #a0a0a0
+}
+.slick-initialized .slick-slide{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

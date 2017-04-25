@@ -56,7 +56,11 @@ class UserMusicIndex extends React.Component{
 
     return(
       <div className="left-content">
-        THIS IS THE USER MUSIC INDEX. USER NAV FOR SONGS, ALBUMS, ARTISTS INDEX WILL GO HERE
+        <div className="user-music-nav">
+          <p>Songs</p>
+          <p>Albums</p>
+          <p>Artists</p>
+        </div>
 
         <div className="user-playlist-index">
             <h3>PLAYLISTS</h3>

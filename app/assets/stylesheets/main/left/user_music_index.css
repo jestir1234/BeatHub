@@ -63,8 +63,13 @@
   flex-direction: column;
   align-items: flex-start;
   margin-left: 10%;
-  overflow: scroll;
+  /*overflow: scroll;*/
 }
+
+.user-playlist-index::-webkit-scrollbar {
+    width: 12px;
+}
+
 
 .user-playlist-index h3{
   color: #a0a0a0;

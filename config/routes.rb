@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       resources :playlists, only: [:create, :index]
     end
     resource :session, only: [:create, :destroy]
-    resources :albums, only: [:show] do
+    resources :albums, only: [:show, :index] do
       resources :songs, only: [:index]
     end
     resources :songs, only: [:show]

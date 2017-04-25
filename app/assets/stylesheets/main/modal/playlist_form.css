@@ -21,6 +21,11 @@
     to   { opacity: 1; }
 }
 
+@-webkit-keyframes slide{
+  from { left: 0;}
+  to { right: 1000px;}
+}
+
 #playlist-form-modal{
   /*display: none;*/
   height: 90%;
