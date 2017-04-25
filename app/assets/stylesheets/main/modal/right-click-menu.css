@@ -32,10 +32,9 @@
 .menu-playlists {
   overflow: visible;
   height: 100px;
-  width: 100px;
   display: none;
   margin-left: 10px;
-  background-color: #282828
+  background-color: #282828;
   box-shadow: 10px 10px 5px #151218;
 }
 

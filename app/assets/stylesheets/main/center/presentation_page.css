@@ -32,7 +32,6 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
 .album-show {
   height: 100%;
   width: 100%;
-  overflow-y: auto;
   display: flex;
   justify-content: space-around;
   padding-top: 10%;
