@@ -20,11 +20,13 @@
 
 .right-click-menu-container p{
   font-size: 75%;
+  color: white;
 }
 
 .right-click-menu-container p:hover{
-  background: #6f5574;
+  background: inherit;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
 }
 
 .menu-playlists {
@@ -33,7 +35,7 @@
   width: 100px;
   display: none;
   margin-left: 10px;
-  background-color: #2e1a31;
+  background-color: #282828
   box-shadow: 10px 10px 5px #151218;
 }
 
