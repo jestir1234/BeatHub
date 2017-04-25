@@ -1,9 +1,7 @@
 .right-content{
-  border: 2px solid blue;
-    width: 13%;
-    height: 90%;
-    /* position: absolute; */
-    /* margin: 0 auto; */
-    /* right: 1.5%; */
-    /* padding-left: 0; */
+  width: 13%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #0c0a0f;
 }

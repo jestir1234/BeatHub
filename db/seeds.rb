@@ -26,6 +26,7 @@ User.create(username: "Durant", password: "password", email: "durant@email.com")
 
 wild_nothing = Artist.new(name: "Wild Nothing", genre: "Shoe-gaze", image_url: "https://s3.amazonaws.com/beathub-dev/pics/wild_nothing_artist.jpeg")
 chvrches = Artist.new(name: "CHVRCHES", genre: "Synth-pop", image_url: "https://s3.amazonaws.com/beathub-dev/pics/chvrches_artist.jpeg")
+slowdive = Artist.new(name: "Slowdive", genre: "Shoe-gaze", image_url: "https://s3.amazonaws.com/beathub-dev/pics/slowdivepic.jpg")
 
 wild_nothing.save
 artists.push(wild_nothing)
@@ -34,14 +35,20 @@ artists.push(wild_nothing)
 chvrches.save
 artists.push(chvrches)
 
+slowdive.save
+artists.push(slowdive)
+
 nocturne = Album.new(name: "Nocturne", artist_id: wild_nothing.id, year: "01/2/2010", artist_name: "Wild Nothing", image_url: "https://s3.amazonaws.com/beathub-dev/pics/wild_nothing_nocturne_album.jpg")
 bones = Album.new(name: "The Bones of What You Believe", artist_id: chvrches.id, year: "20/9/2013", artist_name: "CHVRCHES", image_url: "https://s3.amazonaws.com/beathub-dev/pics/chvrches_album.jpeg")
+slowdive_ep = Album.new(name: "Slowdive EP", artist_id: slowdive.id, year: "10/02/1990", artist_name: "Slowdive", image_url: "https://s3.amazonaws.com/beathub-dev/pics/slowdive-ep.jpg")
 
 nocturne.save
 bones.save
+slowdive_ep.save
 
 albums.push(nocturne)
 albums.push(bones)
+albums.push(slowdive_ep)
 
 
 noc1 = Song.new(name: "Shadow", album_id: nocturne.id, album_ord: 1, genre: "Shoe-gaze", duration: 261, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/wild_nothing_nocturne/shadow.mp3")
@@ -119,6 +126,18 @@ songs << bones9
 songs << bones10
 songs << bones11
 songs << bones12
+
+slowdive1 = Song.new(name: "Slowdive", album_id: slowdive_ep.id, album_ord: 1, genre: "Shoe-gaze", duration: 316, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/slowdive/01+Slowdive+-+Slowdive.mp3")
+slowdive2 = Song.new(name: "Avalyn I", album_id: slowdive_ep.id, album_ord: 2, genre: "Shoe-gaze", duration: 256, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/slowdive/02+Slowdive+-+Avalyn+I.mp3")
+slowdive3 = Song.new(name: "Avalyn II", album_id: slowdive_ep.id, album_ord: 3, genre: "Shoe-gaze", duration: 480, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/slowdive/03+Slowdive+-+Avalyn+II.mp3")
+
+slowdive1.save
+slowdive2.save
+slowdive3.save
+
+songs << slowdive1
+songs << slowdive2
+songs << slowdive3
 
 artists.each do |artist|
   search_document = artist.pg_search_document

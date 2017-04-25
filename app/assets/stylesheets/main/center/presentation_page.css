@@ -1,5 +1,5 @@
 .center-content{
-  width: 70%;
+  width: 71%;
   height: 90%;
   /* position: absolute; */
   left: 15%;
@@ -194,8 +194,17 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
   border-left: 4px solid white;
 }
 
-#right-click-menu-container {
+.right-click-menu-container {
   display: none;
+  position: relative;
+  /* overflow: hidden; */
+  white-space: nowrap;
+  background-color: #404040;
+  border-radius: 2px;
+  /* border: 1px solid green; */
+  border: 1px solid #514b58;
+  box-shadow: 10px 10px 5px #151218;
+  font-size: 17px;
 }
 
 .featured-carousel {

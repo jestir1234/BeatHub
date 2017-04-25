@@ -19,7 +19,7 @@ class Presentation extends React.Component{
 
 
   componentWillReceiveProps(nextProps){
-    
+
     if (nextProps.presentationItem.item !== this.state.presentationItem) {
       this.setState({presentationItem: nextProps.presentationItem.item, songs: this.state.songs});
       if (nextProps.presentationItem.item){
