@@ -30,7 +30,6 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
 
 
 .album-show {
-  border: 2px dotted #000;
   height: 100%;
   width: 100%;
   overflow-y: auto;

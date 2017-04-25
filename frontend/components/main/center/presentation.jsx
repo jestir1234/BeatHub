@@ -20,6 +20,7 @@ class Presentation extends React.Component{
     this.handleOptions = this.handleOptions.bind(this);
     this.openEditForm = this.openEditForm.bind(this);
     this.renderArtist = this.renderArtist.bind(this);
+    this.handleSelectAlbum = this.handleSelectAlbum.bind(this);
   }
 
 
@@ -46,6 +47,13 @@ class Presentation extends React.Component{
         }
       }
     }
+  }
+
+  handleSelectAlbum(album){
+    return (e) => {
+      e.preventDefault();
+      this.props.receivePresentationItem(album, "Albums");
+    };
   }
 
 
@@ -110,12 +118,15 @@ class Presentation extends React.Component{
 
     let name = artist.name;
     let artwork = artist.image_url;
+    let banner = artist.banner_url;
     let albums = this.state.albums ? this.state.albums.map((album, idx) => {
       return(
           <div className="artist-album-container" key={idx}>
-            <img src={album.image_url}/>
-            <p className="album-name">{album.name}</p>
-            <p className="artist-name">By {album.artist_name}</p>
+            <Link onClick={this.handleSelectAlbum(album)}>
+              <img src={album.image_url}/>
+              <p className="album-name">{album.name}</p>
+              <p className="artist-name">By {album.artist_name}</p>
+            </Link>
           </div>
       );
     }) : null;
@@ -124,13 +135,16 @@ class Presentation extends React.Component{
     return (
       <div className="artist-show">
 
+       <div className="artist-banner">
+         <img src={banner}/>
+          <h1>{name}</h1>
+       </div>
+
         <div className="artist-header">
 
-          <div className="artist-banner">
+          <div className="artist-header-content">
             <img src={artwork} />
           </div>
-
-          <h1>{name}</h1>
 
         </div>
 
@@ -199,7 +213,7 @@ class Presentation extends React.Component{
     }) : null;
 
     return (
-        <div className="album-show" id="light-to-dark-background">
+        <div className="album-show">
           <div className="album-show-description">
             <img src={artwork}/>
             <h1>{name}</h1>

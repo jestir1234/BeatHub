@@ -6,6 +6,7 @@
       json.name artist.name
       json.genre artist.genre
       json.image_url artist.image_url
+      json.banner_url artist.banner_url
     end
   end
 

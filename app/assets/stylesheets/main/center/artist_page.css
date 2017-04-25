@@ -1,10 +1,10 @@
-.artist-banner{
+.artist-header-content{
  display: flex;
  justify-content: center;
  margin-top: 2%;
 }
 
-.artist-banner img{
+.artist-header-content img{
   border-radius: 50%;
   width: 350px;
   height: 300px;
@@ -39,6 +39,10 @@
   color: hsla(0,0%,100%,.4) Light gray;
 }
 
+.artist-album-container:hover{
+  cursor: pointer;
+}
+
 .album-collection h1{
   padding-top: 5%;
   display: flex;
@@ -52,5 +56,17 @@
 }
 
 .artist-show{
-  padding-top: 10%;
+}
+
+.artist-banner img{
+}
+
+.artist-banner h1{
+  padding-top: 5%;
+  letter-spacing: 10px;
+  font-size: 40px;
+  position: relative;
+  z-index: 20;
+  top: -200px;
+  left: 20%;
 }

@@ -109,10 +109,24 @@
 
 .user-music-nav h1{
   font-size: 20px;
-  padding-bottom: 10px;
-  padding-top: 10px;
+ padding-bottom: 10px;
+ padding-top: 10px;
+ border-top: 1px solid;
+ margin-right: 20%;
 }
 
 .playlists-container{
   padding-left: 10%;
+}
+
+.left-nav-logo-container{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 20px;
+  left: 10%;
+}
+
+.left-nav-logo-container img{
+  width: 15%;
 }

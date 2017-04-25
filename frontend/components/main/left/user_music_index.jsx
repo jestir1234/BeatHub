@@ -57,6 +57,10 @@ class UserMusicIndex extends React.Component{
     return(
       <div className="left-content">
 
+        <div className="left-nav-logo-container">
+          <img src={window.logo_path}/>
+        </div>
+
         <div className="user-music-nav">
           <h1>Your Music</h1>
           <p>Songs</p>

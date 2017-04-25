@@ -24,9 +24,9 @@ User.create(username: "Shaq", password: "password", email: "shaq@email.com")
 User.create(username: "Lebron", password: "password", email: "lebron@email.com")
 User.create(username: "Durant", password: "password", email: "durant@email.com")
 
-wild_nothing = Artist.new(name: "Wild Nothing", genre: "Shoe-gaze", image_url: "https://s3.amazonaws.com/beathub-dev/pics/wild_nothing_artist.jpeg")
-chvrches = Artist.new(name: "CHVRCHES", genre: "Synth-pop", image_url: "https://s3.amazonaws.com/beathub-dev/pics/chvrches_artist.jpeg")
-slowdive = Artist.new(name: "Slowdive", genre: "Shoe-gaze", image_url: "https://s3.amazonaws.com/beathub-dev/pics/slowdivepic.jpg")
+wild_nothing = Artist.new(name: "Wild Nothing", genre: "Shoe-gaze", image_url: "https://s3.amazonaws.com/beathub-dev/pics/wild_nothing_artist.jpeg", banner_url: "https://s3.amazonaws.com/beathub-dev/pics/wildnothing_banner.jpg")
+chvrches = Artist.new(name: "CHVRCHES", genre: "Synth-pop", image_url: "https://s3.amazonaws.com/beathub-dev/pics/chvrches_artist.jpeg", banner_url: "https://s3.amazonaws.com/beathub-dev/pics/chvrches_banner.jpg")
+slowdive = Artist.new(name: "Slowdive", genre: "Shoe-gaze", image_url: "https://s3.amazonaws.com/beathub-dev/pics/slowdivepic.jpg", banner_url: "https://s3.amazonaws.com/beathub-dev/pics/slowdive_banner.jpg")
 
 wild_nothing.save
 artists.push(wild_nothing)
