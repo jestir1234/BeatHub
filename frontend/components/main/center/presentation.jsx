@@ -22,7 +22,7 @@ class Presentation extends React.Component{
     this.renderArtist = this.renderArtist.bind(this);
     this.handleSelectAlbum = this.handleSelectAlbum.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
-    this.handleAddAlbumToQueu = this.handleAddAlbumToQueu.bind(this);
+    this.handleAddSongsToQueu = this.handleAddSongsToQueu.bind(this);
   }
 
 
@@ -51,7 +51,7 @@ class Presentation extends React.Component{
     }
   }
 
-  handleAddAlbumToQueu(e){
+  handleAddSongsToQueu(e){
     e.preventDefault();
     this.props.addSongsToQueu(this.state.songs);
   }
@@ -235,7 +235,7 @@ class Presentation extends React.Component{
             <p className="playlist-description">{description}</p>
             <p>By <Link onClick={this.handleSelect(artist, "Artists")} id="artist-link">{owner}</Link></p>
             <p id="album-song-count">{songs ? `${songs.length} SONGS` : null}</p>
-            <button onClick={this.handleAddAlbumToQueu}>Play</button>
+            <button onClick={this.handleAddSongsToQueu}>Play</button>
              {options}
           </div>
           <div className="album-show-songs">

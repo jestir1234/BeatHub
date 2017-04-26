@@ -18,7 +18,6 @@ const QueuReducer = (oldState = _emptyQueu, action) => {
      case REMOVE_SONG_FROM_QUEU:
       let copy3 = merge({}, oldState);
       copy3.songQueu.shift();
-      debugger
       return copy3;
      default:
       return oldState;
