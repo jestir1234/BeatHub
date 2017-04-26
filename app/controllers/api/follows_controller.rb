@@ -19,7 +19,8 @@ class Api::FollowsController < ApplicationController
         @playlist = Playlist.find(followable_id)
         render 'api/playlists/show'
       elsif followable_type == "User"
-        # will render users show
+        @user = User.find(followable_id)
+        render 'api/users/show'
       end
     else
       render json: @follow.errors.full_messages
@@ -35,7 +36,6 @@ class Api::FollowsController < ApplicationController
     @follow = Follow.where(follower_id: follower_id, followable_id: followable_id)
 
     @follow = @follow[0];
-    
     if @follow.destroy
       if followable_type == "Artist"
         @artist = Artist.find(followable_id)
@@ -44,7 +44,8 @@ class Api::FollowsController < ApplicationController
         @playlist = Playlist.find(followable_id)
         render 'api/playlists/show'
       elsif followable_type == "User"
-        # will render users show
+        @user = User.find(followable_id)
+        render 'api/users/show'
       end
     else
       render json: @follow.errors.full_messages
