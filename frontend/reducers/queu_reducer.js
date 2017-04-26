@@ -8,9 +8,11 @@ const QueuReducer = (oldState = _emptyQueu, action) => {
 
   switch(action.type){
     case ADD_SONG_TO_QUEU:
-      let copy = merge({}, oldState);
-      copy = {songQueu: copy.songQueu.push(action.song), currentSongPlaying: oldState.currentSongPlaying};
-      return copy;
+
+      let currentQueue = oldState.songQueu;
+      currentQueue.push(action.song);
+      let newState = {songQueu: currentQueue, currentSongPlaying: oldState.currentSongPlaying};
+      return newState;
      case ADD_SONGS_TO_QUEU:
       let copy2 = merge({}, oldState);
       copy2 = {songQueu: copy2.songQueu.concat(action.songs), currentSongPlaying: oldState.currentSongPlaying};

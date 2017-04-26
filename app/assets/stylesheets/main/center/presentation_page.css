@@ -171,6 +171,7 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
 
 .song-item-song-name{
   margin-left: 10%;
+  white-space: nowrap;
 }
 
 .song-item-song-name p {

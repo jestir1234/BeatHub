@@ -9,6 +9,13 @@ class RightClickMenu extends React.Component {
     this.handleAddSongToPlayist = this.handleAddSongToPlayist.bind(this);
     this.exitMenu = this.exitMenu.bind(this);
     this.handleDeleteSongFromPlaylist = this.handleDeleteSongFromPlaylist.bind(this);
+    this.handleAddSongToQueu = this.handleAddSongToQueu.bind(this);
+  }
+
+  handleAddSongToQueu(e){
+    e.preventDefault();
+    let song = this.props.song;
+    this.props.addSongToQueu(song);
   }
 
 
@@ -64,6 +71,7 @@ class RightClickMenu extends React.Component {
     });
 
     let playlistOption;
+
     let that = this;
     if (this.props.presentationItem.type === "Albums") {
       playlistOption = (<p onMouseOver={this.handleMouseEnter()}  className="add-song-option">Add song to playlist</p>);
@@ -74,6 +82,7 @@ class RightClickMenu extends React.Component {
       <div className="right-click-menu-container" >
         <div className="right-click-menu-items">
         {playlistOption}
+        <p onClick={this.handleAddSongToQueu}>Add song to queu</p>
         </div>
         <div className="menu-playlists">
           <h3>Playlists</h3>

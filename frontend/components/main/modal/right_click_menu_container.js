@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import RightClickMenu from './right_click_menu';
 import { createSongToPlaylist, deleteSongFromPlaylist } from '../../../actions/playlist_songs_actions';
+import { addSongToQueu } from '../../../actions/queu_actions';
 
 const mapStateToProps = (state, ownProps) => {
 
@@ -15,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     createSongToPlaylist: (playlistSong) => dispatch(createSongToPlaylist(playlistSong)),
-    deleteSongFromPlaylist: (playlistSong) => dispatch(deleteSongFromPlaylist(playlistSong))
+    deleteSongFromPlaylist: (playlistSong) => dispatch(deleteSongFromPlaylist(playlistSong)),
+    addSongToQueu: (song) => dispatch(addSongToQueu(song))
   };
 };
 
