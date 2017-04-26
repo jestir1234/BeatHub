@@ -68,7 +68,7 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
   align-items: center;
 }
 
-.album-show-description button {
+/*.album-show-description button {
   letter-spacing: 2px;
   font-family: 'Montserrat', sans-serif;
   margin-top: 6%;
@@ -82,9 +82,9 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
   -webkit-transition: width height background-color 1s;
    transition: width height background-color 1s ease-in-out;
    outline: none;
-}
+}*/
 
-.album-show-description button:hover {
+/*.album-show-description button:hover {
   transform: scaleX(1.2);
   transform: scaleY(1.1);
   cursor: pointer;
@@ -95,7 +95,7 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
   transform: scale(0.94);
   opacity: .8;
   background-color: #07b44d;
-}
+}*/
 
 .song-list-item-container {
   height: 5%;

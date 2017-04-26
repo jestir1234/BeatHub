@@ -51,17 +51,20 @@ class Presentation extends React.Component{
     }
   }
 
-  handleFollow(e){
-   e.preventDefault();
-   let currentUser = this.props.currentUser;
-   let artist = this.props.presentationItem.item;
-   let follow = {follower_id: currentUser.id, followable_id: artist.id, followable_type: "Artist"};
-   let type = this.props.presentationItem.type;
-   if (artist.followed){
-     this.props.deleteFollow(follow, type);
-   } else {
-     this.props.createFollow(follow, type);
-   }
+  handleFollow(type){
+    return (e) => {
+      e.preventDefault();
+      let currentUser = this.props.currentUser;
+      let artist = this.props.presentationItem.item;
+      debugger
+      let follow = {follower_id: currentUser.id, followable_id: artist.id, followable_type: "Artist"};
+      let type = this.props.presentationItem.type;
+      if (artist.followed){
+        this.props.deleteFollow(follow, type);
+      } else {
+        this.props.createFollow(follow, type);
+      }
+    };
   }
 
   handleAddSongsToQueu(e){
@@ -226,6 +229,7 @@ class Presentation extends React.Component{
            </div>) : null;
 
     let songs = presentationType === "Playlists" ? this.state.songs.sort(this.sortByPlaylistOrd) : this.state.songs.sort(this.sortByAlbumOrd);
+    let followBtn = presentationType === "Playlists" ? (<button className="artist-follow-btn">Follow</button>) : null;
 
     songs = this.state.songs.length ? this.state.songs.map((song, idx) => {
       let order = presentationType === "Albums" ? song.album_ord : song.playlist_ord;
@@ -257,7 +261,10 @@ class Presentation extends React.Component{
             <p className="playlist-description">{description}</p>
             <p>By <Link onClick={this.handleSelect(artist, "Artists")} id="artist-link">{owner}</Link></p>
             <p id="album-song-count">{songs ? `${songs.length} SONGS` : null}</p>
-            <button onClick={this.handleAddSongsToQueu}>Play</button>
+            <div className="artist-info-btns">
+              <button className="artist-play-btn" onClick={this.handleAddSongsToQueu}>Play</button>
+              {followBtn}
+            </div>
              {options}
           </div>
           <div className="album-show-songs">
