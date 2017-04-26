@@ -16,6 +16,7 @@ class RightClickMenu extends React.Component {
     e.preventDefault();
     let song = this.props.song;
     this.props.addSongToQueu(song);
+    this.exitMenu();
   }
 
 

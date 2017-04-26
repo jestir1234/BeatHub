@@ -27,7 +27,6 @@ class Presentation extends React.Component{
 
 
   componentWillReceiveProps(nextProps){
-    this.setState({editFormOpen: false});
 
     if (nextProps.presentationItem.item !== this.state.presentationItem) {
       this.setState({presentationItem: nextProps.presentationItem.item, songs: this.state.songs});
