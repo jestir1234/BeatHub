@@ -126,11 +126,16 @@ class AudioPlayer extends React.Component{
     }
     timePassed = this.convertInToTime(interval);
     timeLeft = this.convertInToTime(timeLeft);
-
+    let song_img = currentSong ? (<img src={currentSong.image_url}/>) : null;
     return(
       <div className="bottom-content">
 
-        <h1>{currentSong ? `${currentSong.name} is currently playing...` : "No songs playing"}</h1>
+        <div className="current-song-info">
+          <div className="album-art-thumbnail">
+            {song_img}
+          </div>
+          <h1>{currentSong ? `${currentSong.name} is currently playing...` : "No songs playing"}</h1>
+        </div>
         {playSong}
 
         <div className="audio-display">

@@ -188,3 +188,13 @@
   background-size: contain;
   margin-right: 15px;
 }
+
+.album-art-thumbnail img{
+  width: 4%;
+  position: fixed;
+  bottom: 3%;
+}
+
+.current-song-info h1{
+
+}
