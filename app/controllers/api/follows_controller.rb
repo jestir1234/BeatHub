@@ -17,10 +17,25 @@ class Api::FollowsController < ApplicationController
   end
 
   def destroy
-    @follow = Follow.find(params[:id])
+    follower_id = params[:follow][:follower_id]
+    followable_id = params[:follow][:followable_id]
+    follower_type = params[:follow][:follower_type]
+
+    @follow = Follow.where(follower_id: follower_id, followable_id: followable_id)
+
+    @follow = @follow.length > 1 ? @follow[0] : @follow
+    debugger
 
     if @follow.destroy
-      render 'api/follows/show'
+      if follower_type == "Artist"
+        @artist = Artist.find(followable_id)
+        render 'api/artists/show'
+      elsif follower_type == "Playlist"
+        @playlist = Playlist.find(followable_id)
+        render 'api/playlists/show'
+      elsif follower_type == "User"
+        # will render users show
+      end
     else
       render json: @follow.errors.full_messages
     end

@@ -9,7 +9,7 @@ class Presentation extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {songs: [], presentationItem: null, menuOpen: false, editFormOpen: false, albums: null, followed: false};
+    this.state = {songs: [], presentationItem: null, menuOpen: false, editFormOpen: false, albums: null};
     this.renderAlbum = this.renderAlbum.bind(this);
     this.renderPresentation = this.renderPresentation.bind(this);
     this.renderDefault = this.renderDefault.bind(this);
@@ -56,7 +56,12 @@ class Presentation extends React.Component{
    let currentUser = this.props.currentUser;
    let artist = this.props.presentationItem.item;
    let follow = {follower_id: currentUser.id, followable_id: artist.id, followable_type: "Artist"};
-   this.props.createFollow(follow);
+
+   if (artist.followed){
+     this.props.deleteFollow(follow).then((artist) => this.props.receivePresentationItem(artist));
+   } else {
+     this.props.createFollow(follow);
+   }
   }
 
   handleAddSongsToQueu(e){
@@ -141,7 +146,9 @@ class Presentation extends React.Component{
     let name = artist.name;
     let artwork = artist.image_url;
     let banner = artist.banner_url;
+    let followStatus = artist.followed;
     let albums = this.state.albums ? this.state.albums.map((album, idx) => {
+
       return(
           <div className="artist-album-container" key={idx}>
             <Link onClick={this.handleSelectAlbum(album)}>
@@ -154,6 +161,7 @@ class Presentation extends React.Component{
     }) : null;
 
 
+
     return (
       <div className="artist-show">
 
@@ -164,7 +172,7 @@ class Presentation extends React.Component{
          <h1>{name}</h1>
          <div className="artist-info-btns">
            <button className="artist-play-btn">Play</button>
-           <button onClick={this.handleFollow} className="artist-follow-btn">Follow</button>
+           <button onClick={this.handleFollow} className="artist-follow-btn">{followStatus ? "Unfollow" : "Follow"}</button>
          </div>
        </div>
 

@@ -25,8 +25,8 @@ export const createFollow = (follow) => {
   };
 };
 
-export const deleteFollow = (followId) => {
+export const deleteFollow = (follow) => {
   return (dispatch) => {
-    return FollowAPIUtil.deleteFollow(followId).then(() => dispatch(removeFollow(followId)));
+    return FollowAPIUtil.deleteFollow(follow).then(() => dispatch(removeFollow(follow)));
   };
 };
