@@ -19,30 +19,17 @@ class AudioPlayer extends React.Component{
   }
 
   componentWillReceiveProps(newProps){
-    debugger
+
     if (!newProps.currentSong){
       if (newProps.queu.songQueu.length > 0){
         let queu = newProps.queu.songQueu;
         let nextSong = queu[0];
-        this.setState({buttonStyle: this.state.buttonStyle, currentSongPlaying: nextSong});
+        // this.setState({buttonStyle: this.state.buttonStyle, currentSongPlaying: nextSong});
         this.props.receiveCurrentSong(nextSong);
         this.props.removeSongFromQueu();
         this.props.playCurrentSong();
       }
-    } else if (newProps.currentSong !== this.state.currentSongPlaying){
-      this.setState({buttonStyle: this.state.buttonStyle, queu: this.state.queu, currentSongPlaying: newProps.currentSong});
     }
-
-    //handles initializing currentsong and queu
-    // if (!this.state.currentSongPlaying)
-    //
-    // if (this.state.currentSongPlaying !== newProps.currentSong){
-    //   let newState = merge({}, this.state, {currentSongPlaying: newProps.currentSong});
-    // }
-    //
-    // if (newProps.queu.songQueu.length !== this.state.queu){
-    //   this.setState({buttonStyle: this.state.buttonStyle, queu: newProps.queu.songQueu, currentSongPlaying: this.state.currentSongPlaying});
-    // }
 
     // below handles pause play
     if (newProps.currentSong && this.props.currentSong !== newProps.currentSong) {
@@ -66,7 +53,6 @@ class AudioPlayer extends React.Component{
     let nextSong = this.props.queu.songQueu[0];
     this.props.receiveCurrentSong(nextSong);
     this.props.removeSongFromQueu();
-    debugger
   }
 
   handleClick(props) {
@@ -104,7 +90,6 @@ class AudioPlayer extends React.Component{
   }
 
   playSong(props, currentSong){
-    console.log(currentSong.name);
     return(
       <SoundComponent song={currentSong} songStatus={props.currentSongStatus} updatePositionAndDuration={props.updatePositionAndDuration}/>
     );
@@ -124,7 +109,8 @@ class AudioPlayer extends React.Component{
 
   render(){
 
-    let currentSong = this.state.currentSongPlaying;
+    let currentSong = this.props.currentSong;
+
     const playSong = currentSong ? this.playSong(this.props, currentSong) : null;
     const positionAndDuration = this.props.currentSongStatus.positionAndDuration ? this.props.currentSongStatus.positionAndDuration : null;
 

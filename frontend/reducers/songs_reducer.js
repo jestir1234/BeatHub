@@ -11,6 +11,7 @@ const SongsReducer = (oldState = _nullSongs, action) => {
       let copy = merge({}, oldState, {songs: newSongs});
       return copy;
     case RECEIVE_CURRENT_SONG:
+    debugger
       let newCurrentSong = action.currentSong;
       let copy2 = merge({}, oldState, {currentSong: newCurrentSong});
       return copy2;
