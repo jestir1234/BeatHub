@@ -283,6 +283,7 @@ margin: auto;
   position: relative;
   left: 140px;
   top: -10px;
+  width: 40%;
 }
 
 .options-menu-open ul li{

@@ -76,6 +76,7 @@ class Presentation extends React.Component{
   }
 
   openEditForm(e){
+    debugger
     e.preventDefault();
     this.setState({editFormOpen: !this.state.editFormOpen});
   }
@@ -303,6 +304,7 @@ class Presentation extends React.Component{
 
 
   render(){
+
     const editForm = this.state.editFormOpen ? (<PlaylistEditFormContainer currentPlaylist={this.props.presentationItem.item}/>) : null;
     const presentationItem = this.props.presentationItem.item ? this.props.presentationItem : null;
     let showPage = presentationItem ? this.renderPresentation(presentationItem) : this.renderDefault();

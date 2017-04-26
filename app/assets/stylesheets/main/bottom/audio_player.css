@@ -195,6 +195,6 @@
   bottom: 3%;
 }
 
-.current-song-info h1{
-
+.current-song-info{
+  padding-left: 13px;
 }
