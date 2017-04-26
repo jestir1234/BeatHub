@@ -56,11 +56,11 @@ class Presentation extends React.Component{
    let currentUser = this.props.currentUser;
    let artist = this.props.presentationItem.item;
    let follow = {follower_id: currentUser.id, followable_id: artist.id, followable_type: "Artist"};
-
+   let type = this.props.presentationItem.type;
    if (artist.followed){
-     this.props.deleteFollow(follow).then((artist) => this.props.receivePresentationItem(artist));
+     this.props.deleteFollow(follow, type);
    } else {
-     this.props.createFollow(follow);
+     this.props.createFollow(follow, type);
    }
   }
 
@@ -326,7 +326,6 @@ class Presentation extends React.Component{
 
 
   render(){
-
     const editForm = this.state.editFormOpen ? (<PlaylistEditFormContainer currentPlaylist={this.props.presentationItem.item}/>) : null;
     const presentationItem = this.props.presentationItem.item ? this.props.presentationItem : null;
     let showPage = presentationItem ? this.renderPresentation(presentationItem) : this.renderDefault();

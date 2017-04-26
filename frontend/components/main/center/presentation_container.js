@@ -33,8 +33,8 @@ const mapDispatchToProps = (dispatch) => {
     receivePresentationItem: (presentationItem, presentationType) => dispatch(receivePresentationItem(presentationItem, presentationType)),
     fetchArtistAlbums: (artistId) => dispatch(fetchArtistAlbums(artistId)),
     addSongsToQueu: (songs) => dispatch(addSongsToQueu(songs)),
-    createFollow: (follow) => dispatch(createFollow(follow)),
-    deleteFollow: (follow) => dispatch(deleteFollow(follow))
+    createFollow: (follow, type) => dispatch(createFollow(follow, type)),
+    deleteFollow: (follow, type) => dispatch(deleteFollow(follow, type))
   };
 };
 
