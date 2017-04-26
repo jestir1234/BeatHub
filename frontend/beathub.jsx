@@ -7,9 +7,10 @@ import Root from './components/root';
 import { fetchAlbumSongs, fetchSong, fetchPlaylistSongs } from './util/songs_api_util';
 import { createPlaylist } from './util/playlist_api_util';
 import { createPlaylistSong } from './util/playlist_songs_api_util';
+import { createFollow } from './util/follow_api_util';
 
-window.createPlaylistSong = createPlaylistSong;
 
+window.createFollow = createFollow;
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');

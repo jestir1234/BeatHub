@@ -17,6 +17,7 @@
   display: flex;
   align-items: center;
   color: #a0a0a0;
+  justify-content: center;
 }
 
 .create-playlist-link:hover > .create-playlist-icon{

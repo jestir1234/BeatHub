@@ -9,7 +9,7 @@ class Presentation extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {songs: [], presentationItem: null, menuOpen: false, editFormOpen: false, albums: null};
+    this.state = {songs: [], presentationItem: null, menuOpen: false, editFormOpen: false, albums: null, followed: false};
     this.renderAlbum = this.renderAlbum.bind(this);
     this.renderPresentation = this.renderPresentation.bind(this);
     this.renderDefault = this.renderDefault.bind(this);
@@ -23,6 +23,7 @@ class Presentation extends React.Component{
     this.handleSelectAlbum = this.handleSelectAlbum.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.handleAddSongsToQueu = this.handleAddSongsToQueu.bind(this);
+    this.handleFollow = this.handleFollow.bind(this);
   }
 
 
@@ -48,6 +49,14 @@ class Presentation extends React.Component{
         }
       }
     }
+  }
+
+  handleFollow(e){
+   e.preventDefault();
+   let currentUser = this.props.currentUser;
+   let artist = this.props.presentationItem.item;
+   let follow = {follower_id: currentUser.id, followable_id: artist.id, followable_type: "Artist"};
+   this.props.createFollow(follow);
   }
 
   handleAddSongsToQueu(e){
@@ -76,7 +85,6 @@ class Presentation extends React.Component{
   }
 
   openEditForm(e){
-    debugger
     e.preventDefault();
     this.setState({editFormOpen: !this.state.editFormOpen});
   }
@@ -151,7 +159,13 @@ class Presentation extends React.Component{
 
        <div className="artist-banner">
          <img src={banner}/>
-          <h1>{name}</h1>
+       </div>
+       <div className="artist-info-container">
+         <h1>{name}</h1>
+         <div className="artist-info-btns">
+           <button className="artist-play-btn">Play</button>
+           <button onClick={this.handleFollow} className="artist-follow-btn">Follow</button>
+         </div>
        </div>
 
         <div className="artist-header">

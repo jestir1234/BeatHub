@@ -6,6 +6,7 @@ import { deletePlaylist } from '../../../actions/playlist_actions';
 import { receivePresentationItem } from '../../../actions/presentation_actions';
 import { fetchArtistAlbums } from '../../../actions/artist_actions';
 import { addSongsToQueu } from '../../../actions/queu_actions';
+import { createFollow, deleteFollow } from '../../../actions/follow_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -31,7 +32,9 @@ const mapDispatchToProps = (dispatch) => {
     deletePlaylist: (playlistId) => dispatch(deletePlaylist((playlistId))),
     receivePresentationItem: (presentationItem, presentationType) => dispatch(receivePresentationItem(presentationItem, presentationType)),
     fetchArtistAlbums: (artistId) => dispatch(fetchArtistAlbums(artistId)),
-    addSongsToQueu: (songs) => dispatch(addSongsToQueu(songs))
+    addSongsToQueu: (songs) => dispatch(addSongsToQueu(songs)),
+    createFollow: (follow) => dispatch(createFollow(follow)),
+    deleteFollow: (follow) => dispatch(deleteFollow(follow))
   };
 };
 
