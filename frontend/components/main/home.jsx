@@ -7,6 +7,7 @@ import AudioPlayerContainer from './bottom/audio_player_container';
 import HeaderContainer from './top/header_container';
 import PlaylistFormContainer from './modal/playlist_form_container';
 
+
 const COLORS = ["dark-gradient-maroon", "dark-gradient-yellow", "dark-gradient-green", "dark-gradient-blue"];
 
 class Home extends React.Component {
@@ -38,7 +39,7 @@ class Home extends React.Component {
 
           <FollowedFriendsIndex />
 
-          <AudioPlayerContainer currentSong={currentSong}/>
+          <AudioPlayerContainer currentSong={currentSong} />
 
           <PlaylistFormContainer />
       </div>

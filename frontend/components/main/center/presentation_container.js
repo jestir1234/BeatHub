@@ -5,6 +5,7 @@ import { playCurrentSong, pauseCurrentSong, stopCurrentSong } from '../../../act
 import { deletePlaylist } from '../../../actions/playlist_actions';
 import { receivePresentationItem } from '../../../actions/presentation_actions';
 import { fetchArtistAlbums } from '../../../actions/artist_actions';
+import { addSongsToQueu } from '../../../actions/queu_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -29,7 +30,8 @@ const mapDispatchToProps = (dispatch) => {
     stopCurrentSong: (positionAndDuration) => dispatch(stopCurrentSong(positionAndDuration)),
     deletePlaylist: (playlistId) => dispatch(deletePlaylist((playlistId))),
     receivePresentationItem: (presentationItem, presentationType) => dispatch(receivePresentationItem(presentationItem, presentationType)),
-    fetchArtistAlbums: (artistId) => dispatch(fetchArtistAlbums(artistId))
+    fetchArtistAlbums: (artistId) => dispatch(fetchArtistAlbums(artistId)),
+    addSongsToQueu: (songs) => dispatch(addSongsToQueu(songs))
   };
 };
 

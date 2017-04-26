@@ -4,7 +4,7 @@ import Sound from 'react-sound';
 class SoundComponent extends React.Component {
   constructor(props){
     super(props);
-    this.state = {status: null};
+    this.state = {status: Sound.status.PLAYING};
   }
 
   componentDidMount(){
@@ -33,8 +33,9 @@ class SoundComponent extends React.Component {
 
 
   render(){
-    let newPositionAndDuration = this.props.songStatus.positionAndDuration ? this.props.songStatus.positionAndDuration : null;
 
+    let newPositionAndDuration = this.props.songStatus.positionAndDuration ? this.props.songStatus.positionAndDuration : null;
+    
     return(
       <Sound url={`${this.props.song.audio_url}`} playFromPosition={newPositionAndDuration ? newPositionAndDuration.position : null} playStatus={this.state.status} onPlaying={(positionAndDuration) => this.props.updatePositionAndDuration(positionAndDuration)}/>
     );

@@ -28,7 +28,8 @@ const appReducer = combineReducers({
   playlists: PlaylistReducer,
   presentationItem: PresentationReducer,
   playlistSongs: PlaylistSongsReducer,
-  featured: FeaturedReducer
+  featured: FeaturedReducer,
+  queu: QueuReducer
 });
 
 export default RootReducer;
