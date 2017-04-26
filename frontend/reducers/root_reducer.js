@@ -10,6 +10,7 @@ import PlaylistSongsReducer from './playlist_songs_reducer';
 import FeaturedReducer from './featured_reducer';
 import QueuReducer from './queu_reducer';
 import FollowReducer from './follow_reducer';
+import UsersReducer from './users_reducer';
 import { USER_LOGOUT } from '../actions/session_actions';
 
 const RootReducer = (state, action) => {
@@ -31,7 +32,8 @@ const appReducer = combineReducers({
   playlistSongs: PlaylistSongsReducer,
   featured: FeaturedReducer,
   queu: QueuReducer,
-  follows: FollowReducer
+  follows: FollowReducer,
+  users: UsersReducer
 });
 
 export default RootReducer;

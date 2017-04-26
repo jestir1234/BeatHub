@@ -5,3 +5,51 @@
   justify-content: space-between;
   background-color: #0c0a0f;
 }
+
+.find-friends-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20%;
+  padding-bottom: 20%;
+  border: 1px solid red;
+}
+
+.find-friends-btn-container button{
+  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  -webkit-transition: width height background-color 1s;
+  transition: width height background-color 1s ease-in-out;
+  outline: none;
+  box-shadow: inset 0 0 0 2px #a0a0a0;
+  margin: 5%;
+  padding: 10px 37px;
+  height: auto;
+  width: auto;
+  background: transparent;
+}
+
+.find-friends-btn-container button:hover{
+  transform: scaleX(1.2);
+  transform: scaleY(1.1);
+  cursor: pointer;
+}
+
+.find-friends-btn-container button:active {
+  transform: scale(0.94);
+  opacity: .8;
+}
+
+.find-friends-btn-container {
+padding-top: 10%;
+}
+
+.find-friends-container h1{
+  font-size: 20px;
+  word-wrap: break-word;
+  text-align: center;
+}
