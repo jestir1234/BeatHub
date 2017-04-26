@@ -34,3 +34,15 @@ export const deleteFollow = (follow, type) => {
     return FollowAPIUtil.deleteFollow(follow).then((followable) => dispatch(receivePresentationItem(followable, type)));
   };
 };
+
+export const followUser = (follow) => {
+  return (dispatch) => {
+    return FollowAPIUtil.createFollow(follow);
+  };
+};
+
+export const unfollowUser = (follow) => {
+  return (dispatch) => {
+    return FollowAPIUtil.deleteFollow(follow);
+  };
+};

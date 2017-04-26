@@ -27,6 +27,7 @@
   height: 40%;
   overflow: auto;
   background: #0b0909;
+  box-shadow: 5px 5px 1px #0f0a0a;
 }
 
 .users-list-container{

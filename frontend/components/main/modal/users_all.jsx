@@ -6,6 +6,7 @@ class UsersAll extends React.Component {
     super(props);
 
     this.state = {formOpen: false, users: []};
+    this.handleFollow = this.handleFollow.bind(this);
   }
 
   componentDidMount(){
@@ -23,11 +24,25 @@ class UsersAll extends React.Component {
     modal.style.display = "none";
   }
 
+  handleFollow(user){
+    return (e) => {
+      e.preventDefault();
+      let currentUser = this.props.currentUser;
+      let follow = {follower_id: currentUser.id, followable_id: user.id, followable_type: "User"};
+      if (user.followed){
+        this.props.unfollowUser(follow).then(() => this.props.fetchAllUsers());
+      } else {
+        this.props.followUser(follow).then(() => this.props.fetchAllUsers());
+      }
+    };
+  }
+
 
   render(){
 
     const users = this.state.users ? this.state.users.map((user, idx) => {
-      return (<div className="user-item" key={idx}>{user.username} <button>Follow</button></div>);
+      let followStatus = user.followed;
+      return (<div className="user-item" key={idx}>{user.username} <button onClick={this.handleFollow(user)}>{followStatus ? "Unfollow" : "Follow"}</button></div>);
     }) : null;
 
     return(
