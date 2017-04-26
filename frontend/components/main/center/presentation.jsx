@@ -51,18 +51,17 @@ class Presentation extends React.Component{
     }
   }
 
-  handleFollow(type){
+  handleFollow(presentationType, followType){
     return (e) => {
       e.preventDefault();
       let currentUser = this.props.currentUser;
       let artist = this.props.presentationItem.item;
-      debugger
-      let follow = {follower_id: currentUser.id, followable_id: artist.id, followable_type: "Artist"};
-      let type = this.props.presentationItem.type;
+      let follow = {follower_id: currentUser.id, followable_id: artist.id, followable_type: followType};
+
       if (artist.followed){
-        this.props.deleteFollow(follow, type);
+        this.props.deleteFollow(follow, presentationType);
       } else {
-        this.props.createFollow(follow, type);
+        this.props.createFollow(follow, presentationType);
       }
     };
   }
@@ -175,7 +174,7 @@ class Presentation extends React.Component{
          <h1>{name}</h1>
          <div className="artist-info-btns">
            <button className="artist-play-btn">Play</button>
-           <button onClick={this.handleFollow} className="artist-follow-btn">{followStatus ? "Unfollow" : "Follow"}</button>
+           <button onClick={this.handleFollow("Artists", "Artist")} className="artist-follow-btn">{followStatus ? "Unfollow" : "Follow"}</button>
          </div>
        </div>
 
@@ -227,9 +226,9 @@ class Presentation extends React.Component{
              </div>
 
            </div>) : null;
-
+    let followStatus = presentationItem.followed;
     let songs = presentationType === "Playlists" ? this.state.songs.sort(this.sortByPlaylistOrd) : this.state.songs.sort(this.sortByAlbumOrd);
-    let followBtn = presentationType === "Playlists" ? (<button className="artist-follow-btn">Follow</button>) : null;
+    let followBtn = presentationType === "Playlists" ? (<button onClick={this.handleFollow("Playlists", "Playlist")} className="artist-follow-btn">{followStatus ? "Unfollow" : "Follow"}</button>) : null;
 
     songs = this.state.songs.length ? this.state.songs.map((song, idx) => {
       let order = presentationType === "Albums" ? song.album_ord : song.playlist_ord;
