@@ -7,6 +7,35 @@ class User < ActiveRecord::Base
     foreign_key: :author_id,
     class_name: "Playlist"
 
+  has_many :out_follows,
+    foreign_key: :follower_id,
+    class_name: "Follow"
+
+  has_many :in_follows, as: :followable,
+    foreign_key: :followable_id,
+    class_name: "Follow"
+
+   has_many :followed_artists,
+    through: :out_follows,
+    source: :followable,
+    source_type: "Artist"
+
+  has_many :followed_playlists,
+   through: :out_follows,
+   source: :followable,
+   source_type: "Playlist"
+
+   has_many :followed_users,
+    through: :out_follows,
+    source: :followable,
+    source_type: "User"
+
+
+  has_many :followers,
+    through: :in_follows,
+    source: :follower
+
+
   after_initialize :ensure_session_token
   attr_reader :password
 

@@ -16,4 +16,9 @@ class Playlist < ActiveRecord::Base
     through: :playlist_songs,
     source: :song
 
+  has_many :follows, as: :followable
+
+  has_many :followers,
+    through: :follows,
+     source: :follower
 end

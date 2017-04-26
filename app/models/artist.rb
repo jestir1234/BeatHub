@@ -15,6 +15,10 @@ class Artist < ActiveRecord::Base
   has_many :songs,
   through: :albums
 
+  has_many :follows, as: :followable
 
+  has_many :followers,
+    through: :follows,
+    source: :follower
 
 end
