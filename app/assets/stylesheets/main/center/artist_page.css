@@ -122,3 +122,9 @@
 .artist-play-btn{
   background-color: #07b44d
 }
+
+.artist-album-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

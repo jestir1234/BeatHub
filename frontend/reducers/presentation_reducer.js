@@ -1,4 +1,5 @@
 import { RECEIVE_PRESENTATION_ITEM, REMOVE_PRESENTATION_ITEM } from '../actions/presentation_actions';
+import { RECEIVE_PLAYLIST, REMOVE_PLAYLIST } from '../actions/playlist_actions';
 import merge from 'lodash/merge';
 
 
@@ -24,6 +25,12 @@ const PresentationReducer = (oldState = _nullPresentationItem, action) => {
         let copy = merge({}, oldState, {item: {songs: collection}});
 
         return copy;
+    case RECEIVE_PLAYLIST:
+        let user = oldState.item;
+        let userPlaylists = user.playlists;
+        user.playlists.push(action.playlist);
+        let copy2 = merge({}, oldState, user);
+        return copy2;
     default:
       return oldState;
   }

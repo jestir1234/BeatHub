@@ -4,6 +4,7 @@ json.array!(@playlists) do |playlist|
   json.description playlist.description
   json.image_url playlist.image_url
   json.author playlist.author.username
+  json.author_id playlist.author.id
   json.followed current_user.followed_playlists.include?(playlist)
   json.songs do
     json.array!(playlist.playlist_songs) do |playlist_song|

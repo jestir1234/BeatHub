@@ -213,9 +213,11 @@ class Presentation extends React.Component{
 
         </div>
 
-        <h1>Playlists</h1>
-        <div className="user-playlists">
-          {playlists}
+        <div className="user-playlists-container">
+          <h1>Playlists</h1>
+          <div className="user-playlists">
+            {playlists}
+          </div>
         </div>
 
         <h1>Artists</h1>
@@ -237,7 +239,7 @@ class Presentation extends React.Component{
 
       return(
           <div className="artist-album-container" key={idx}>
-            <Link onClick={this.handleSelectAlbum(album)}>
+            <Link className="artist-album-item" onClick={this.handleSelectAlbum(album)}>
               <img src={album.image_url}/>
               <p className="album-name">{album.name}</p>
               <p className="artist-name">By {album.artist_name}</p>

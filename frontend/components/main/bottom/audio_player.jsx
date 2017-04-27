@@ -142,7 +142,7 @@ class AudioPlayer extends React.Component{
           <div className="album-art-thumbnail">
             {song_img}
           </div>
-          <h1>{currentSong ? `${currentSong.name} is currently playing...` : "No songs playing"}</h1>
+          <marquee><h1>{currentSong ? `${currentSong.name} is currently playing...` : ""}</h1></marquee>
         </div>
         {playSong}
 
