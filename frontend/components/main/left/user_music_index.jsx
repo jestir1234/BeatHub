@@ -71,9 +71,9 @@ class UserMusicIndex extends React.Component{
 
         <div className="user-music-nav">
           <h1>Your Music</h1>
-          <p>Songs</p>
-          <p>Albums</p>
-          <p>Artists</p>
+          <p onClick={this.handleSelectMusic("MySongs")}>Songs</p>
+          <p onClick={this.handleSelectMusic("MyArtists")}>Artists</p>
+          <p onClick={this.handleSelectMusic("MyFollowedPlaylists")}>Playlists</p>
         </div>
 
         <div className="user-playlist-index">

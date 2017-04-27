@@ -1,0 +1,11 @@
+.music-index-show-page {
+  margin-top: 15%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+
+}
+.music-index-show-page h1{
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 4px;
+}

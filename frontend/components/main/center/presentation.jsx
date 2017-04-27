@@ -167,6 +167,8 @@ class Presentation extends React.Component{
       return this.renderIndex("Albums");
     } else if (presentationItem.type === "MyFollowedPlaylists"){
       return this.renderIndex("Followed Playlists");
+    } else if (presentationItem.type === "MySongs"){
+      return this.renderIndex("Songs");
     }
 
   }
@@ -177,9 +179,36 @@ class Presentation extends React.Component{
     let followedPlaylists = currentUser.followed_playlists;
     let followedUsers = currentUser.followed_users;
 
+    let collection;
+
+    if (type === "Artists" && followedArtists) {
+      collection = followedArtists.map((artist, idx) => {
+        return (
+          <div key={idx} className="collection-item">
+            {artist.image_url}
+            {artist.name}
+          </div>
+        );
+      });
+    }
+
+    if (type === "Followed Playlists" && followedPlaylists) {
+      collection = followedPlaylists.map((playlist, idx) => {
+        return (
+          <div key={idx} className="collection-item">
+            {playlist.image_url}
+            {playlist.name}
+          </div>
+        );
+      });
+    }
+
     return (
       <div className="music-index-show-page">
           <h1>Your {type}</h1>
+          <div className="collection-container">
+            {collection}
+          </div>
       </div>
     );
   }
