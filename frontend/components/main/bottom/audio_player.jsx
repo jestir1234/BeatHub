@@ -4,6 +4,7 @@ import { Line, Circle } from 'rc-progress';
 import merge from 'lodash/merge';
 
 
+
 class AudioPlayer extends React.Component{
   constructor(props){
     super(props);

@@ -114,6 +114,7 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
   margin-top: 5%;
   display: flex;
   justify-content:flex-start;
+  position: relative;
 }
 
 .song-list-item:hover > .song-item-play-btn-container{
@@ -150,7 +151,7 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
 }
 
 .song-item-play-btn-container {
-  position: relative;
+  position: absolute;
   float: right;
   left: 10px;
   z-index: 6;
