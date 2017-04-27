@@ -12,7 +12,7 @@ class Header extends React.Component{
     return(
       <div className="top-content">
         <SearchBarContainer />
-        <Profile currentUser={this.props.currentUser} logout={this.props.logout}/>
+        <Profile currentUser={this.props.currentUser} logout={this.props.logout} receivePresentationItem={this.props.receivePresentationItem}/>
       </div>
     );
   }

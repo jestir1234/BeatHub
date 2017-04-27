@@ -66,3 +66,43 @@
 .profile-info p{
   font-size: 15px;
 }
+
+.user-playlist-item{
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.playlist-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5%;
+}
+
+.playlist-image-container img{
+  width: 50%;
+}
+
+.user-playlists {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-top: 3%;
+}
+
+.user-playlist-item p{
+  color: hsla(0,0%,100%,.4)
+}
+
+.user-playlist-item p:hover{
+  color: white;
+  cursor: pointer;
+}
+
+.user-profile-page-container h1{
+  display:flex;
+  align-self: center;
+  justify-content: center;
+  font-size: 25px;
+}

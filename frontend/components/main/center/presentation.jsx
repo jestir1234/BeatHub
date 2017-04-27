@@ -166,11 +166,27 @@ class Presentation extends React.Component{
 
   renderUser(user){
     let name = user.username;
-    let playlists = user.playlists;
-    let artists = user.artists;
     let profilePic = user.default_image_url;
     let followStatus = user.followed;
     let followBtn = this.props.currentUser.id !== user.id ? (<button onClick={this.handleFollowUser(user)}>{followStatus ? "Unfollow" : "Follow"}</button>) : null;
+
+    let playlists = user.playlists ? user.playlists.map((playlist, idx) => {
+      return (
+        <div className="user-playlist-item" key={idx}>
+            <p>{playlist.name}</p>
+
+            <div className="playlist-image-container">
+              <img src={playlist.image_url}/>
+            </div>
+
+        </div>
+      );
+    }) : null;
+
+    let artists = user.followed_artists ? user.followed_artists.map((artist) => {
+
+    }) : null;
+
     return (
       <div className="user-profile-page-container">
 
@@ -186,6 +202,11 @@ class Presentation extends React.Component{
             {followBtn}
           </div>
 
+        </div>
+
+        <h1>Playlists</h1>
+        <div className="user-playlists">
+          {playlists}
         </div>
 
       </div>
