@@ -9,8 +9,8 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
-    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-      -moz-animation: fadein 1s;
+    -webkit-animation: fadein .5s; /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein .5s;
     display: flex;
    flex-direction: column;
    align-items: center;
@@ -22,12 +22,12 @@
 }
 
 .users-index-modal-content{
-  border: 1px solid red;
-  width: 40%;
+  width: 36%;
   height: 40%;
   overflow: auto;
   background: #0b0909;
-  box-shadow: 5px 5px 1px #0f0a0a;
+  box-shadow: 7px 7px 4px #0f0a0a;
+  margin-top: -8%;
 }
 
 .users-list-container{

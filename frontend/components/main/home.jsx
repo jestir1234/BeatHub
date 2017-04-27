@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import PresentationContainer from './center/presentation_container';
 import UserMusicIndexContainer from './left/user_music_index_container';
-import FollowedFriendsIndex from './right/followed_friends_index';
+import FollowedFriendsIndexContainer from './right/followed_friends_index_container';
 import AudioPlayerContainer from './bottom/audio_player_container';
 import HeaderContainer from './top/header_container';
 import PlaylistFormContainer from './modal/playlist_form_container';
@@ -37,7 +37,7 @@ class Home extends React.Component {
 
           <PresentationContainer presentationInfo={presentationInfo} songs={this.props.songs} currentSong={currentSong}/>
 
-          <FollowedFriendsIndex />
+          <FollowedFriendsIndexContainer />
 
           <AudioPlayerContainer currentSong={currentSong} />
 

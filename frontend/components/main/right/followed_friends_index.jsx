@@ -4,10 +4,17 @@ import UsersAllContainer from '../modal/users_all_container';
 class FollowedFriendsIndex extends React.Component {
   constructor(props){
     super(props);
-    this.state = {usersAllShow: false};
+    this.state = {usersAllShow: false, followedUsers: []};
     this.renderAllUsers = this.renderAllUsers.bind(this);
   }
 
+  componentDidMount(){
+     this.props.fetchAllUsers();
+  }
+
+  componentWillReceiveProps(newProps){
+    this.setState({usersAllShow: this.state.usersAllShow, followedUsers: newProps.followedUsers});
+  }
 
   renderAllUsers(e) {
     e.preventDefault();
@@ -17,6 +24,11 @@ class FollowedFriendsIndex extends React.Component {
 
   render(){
     const usersAll = this.state.usersAllShow ? (<UsersAllContainer />) : null;
+    const followedUsers = this.state.followedUsers ? this.state.followedUsers.map((user, idx) => {
+        return (
+          <div key={idx} className="followed-user-item"><p>{user.username}</p></div>
+        );
+    }) : null;
 
     return(
       <div className="right-content">
@@ -30,8 +42,11 @@ class FollowedFriendsIndex extends React.Component {
 
         </div>
 
+        <div className="followed-index-container">
+          {followedUsers}
+        </div>
+
         <div className="friends-index-container">
-          FOLLOWED FRIENDS INDEX WILL GO HERE
           {usersAll}
         </div>
 

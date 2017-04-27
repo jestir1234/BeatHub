@@ -2,6 +2,9 @@ class Api::FollowsController < ApplicationController
 
 
   def index
+    @users = current_user.followed_users
+    
+    render 'api/users/index'
   end
 
   def create

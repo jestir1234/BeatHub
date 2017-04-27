@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchAllUsers: () => dispatch(fetchAllUsers()),
     followUser: (follow) => dispatch(followUser(follow)),
-    unfollowUser: (follow) => dispatch(unfollowUser(follow))
+    unfollowUser: (follow) => dispatch(unfollowUser(follow)),
   };
 };
 
