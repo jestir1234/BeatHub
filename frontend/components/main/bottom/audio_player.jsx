@@ -14,7 +14,7 @@ class AudioPlayer extends React.Component{
     this.handleClick = this.handleClick.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
     this.handlePause = this.handlePause.bind(this);
-    this.state = {buttonStyle: 'play-arrow', queu: this.props.queu.songQueu, currentSongPlaying: null};
+    this.state = {buttonStyle: 'play-arrow', queu: this.props.queu.songQueu, currentSongPlaying: null, newPositionAndDuration: null};
     this.handleSkip = this.handleSkip.bind(this);
     this.handleRestart = this.handleRestart.bind(this);
   }
@@ -48,8 +48,12 @@ class AudioPlayer extends React.Component{
     }
   }
 
-  handleRestart(){
-    
+  handleRestart(e){
+    e.preventDefault();
+    let newPositionAndDuration = this.props.currentSongStatus.positionAndDuration;
+    newPositionAndDuration.position = 0;
+    let newState = merge({}, this.state, {newPositionAndDuration: newPositionAndDuration});
+    this.setState(newState);
   }
 
   handleSkip(e){
@@ -145,7 +149,7 @@ class AudioPlayer extends React.Component{
         <div className="audio-display">
             <div className="play-controls">
               <button className="shuffle-btn"></button>
-              <button className="skip-btn"><div className="arrow-left"></div></button>
+              <button onClick={this.handleRestart} className="skip-btn"><div className="arrow-left"></div></button>
               <button onClick={this.handleClick(this.props)}className="play-btn"><div id={this.state.buttonStyle}></div></button>
               <button onClick={this.handleSkip} className="skip-btn"><div className="arrow-right"></div></button>
               <button className="repeat-btn"></button>
