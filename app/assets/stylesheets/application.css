@@ -24,6 +24,7 @@
 html,body {
     margin:0;
     padding:0;
+
 }
 table {
     border-collapse:collapse;
@@ -61,6 +62,9 @@ abbr,acronym { border:0;
 .app{
   background: black;
   margin: 0 auto;
+}
+img{
+  width: 100%;
 }
 
 

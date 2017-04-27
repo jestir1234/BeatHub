@@ -2,7 +2,7 @@ import React from 'react';
 import SoundComponent from './sound_component';
 import { Line, Circle } from 'rc-progress';
 import merge from 'lodash/merge';
-
+import AudioSlider from './slider';
 
 
 class AudioPlayer extends React.Component{

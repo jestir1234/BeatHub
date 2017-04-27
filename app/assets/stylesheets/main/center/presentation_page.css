@@ -113,7 +113,7 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
   margin-bottom: 5%;
   margin-top: 5%;
   display: flex;
-  justify-content:flex-start;
+  justify-content: flex-start;
   position: relative;
 }
 
@@ -152,10 +152,12 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
 
 .song-item-play-btn-container {
   position: absolute;
-  float: right;
-  left: 10px;
-  z-index: 6;
-  display: none;
+    /* float: right; */
+    /* left: 10px; */
+    left: -13px;
+    top: -4px;
+    z-index: 6;
+    display: none;
 }
 
 
@@ -171,8 +173,7 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
 }
 
 .song-item-song-name{
-  margin-left: 10%;
-  white-space: nowrap;
+  margin-left: 15px;
 }
 
 .song-item-song-name p {
