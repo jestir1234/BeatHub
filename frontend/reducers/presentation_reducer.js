@@ -27,6 +27,10 @@ const PresentationReducer = (oldState = _nullPresentationItem, action) => {
         return copy;
     case RECEIVE_PLAYLIST:
         let user = oldState.item;
+
+        if (!user) {
+          return oldState;
+        }
         let userPlaylists = user.playlists;
         user.playlists.push(action.playlist);
         let copy2 = merge({}, oldState, user);

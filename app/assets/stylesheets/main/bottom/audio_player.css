@@ -40,6 +40,10 @@ flex: 8;
   width: 90%
 }
 
+.status-bar:hover{
+  cursor: pointer;
+}
+
 .play-btn{
   background: none;
   border-radius: 50%;
@@ -183,6 +187,7 @@ flex: 8;
   align-items: center;
   flex: 1;
   display: flex;
+  margin-right: 20px;
 }
 
 .volume-bar{
@@ -203,11 +208,11 @@ flex: 8;
 }
 
 .album-art-thumbnail {
-  padding: 10px;
+  padding: 20px;
 }
 
 .album-art-thumbnail img{
-  width: 100px;
+  width: 60px;
 }
 
 .current-song-info{
@@ -223,4 +228,28 @@ flex: 8;
   width: 50%;
   left: 25%;
   height: 20px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.volume-bar input{
+  width: 100%;
+}
+
+.volume-bar input:hover{
+  cursor: pointer;
+  background-color: green;
+}
+
+#time-passed {
+  color: hsla(0,0%,100%,.4);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+}
+
+#time-left{
+  color: hsla(0,0%,100%,.4);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
 }

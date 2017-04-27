@@ -2,7 +2,7 @@ import React from 'react';
 import SoundComponent from './sound_component';
 import { Line, Circle } from 'rc-progress';
 import merge from 'lodash/merge';
-import AudioSlider from './slider';
+
 
 
 class AudioPlayer extends React.Component{
@@ -14,9 +14,11 @@ class AudioPlayer extends React.Component{
     this.handleClick = this.handleClick.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
     this.handlePause = this.handlePause.bind(this);
-    this.state = {buttonStyle: 'play-arrow', queu: this.props.queu.songQueu, currentSongPlaying: null, newPositionAndDuration: null};
+    this.state = {buttonStyle: 'play-arrow', queu: this.props.queu.songQueu, currentSongPlaying: null, newPositionAndDuration: null, newVolume: null};
     this.handleSkip = this.handleSkip.bind(this);
     this.handleRestart = this.handleRestart.bind(this);
+    this.handleSlider = this.handleSlider.bind(this);
+    this.handleVolume = this.handleVolume.bind(this);
   }
 
   componentWillReceiveProps(newProps){
@@ -25,7 +27,6 @@ class AudioPlayer extends React.Component{
       if (newProps.queu.songQueu.length > 0){
         let queu = newProps.queu.songQueu;
         let nextSong = queu[0];
-        // this.setState({buttonStyle: this.state.buttonStyle, currentSongPlaying: nextSong});
         this.props.receiveCurrentSong(nextSong);
         this.props.removeSongFromQueu();
         this.props.playCurrentSong();
@@ -46,6 +47,34 @@ class AudioPlayer extends React.Component{
         this.setState({buttonStyle: "pause", queu: this.state.queu, currentSongPlaying: this.state.currentSongPlaying});
       }
     }
+  }
+
+  handleSlider(e){
+    let $bar = $('#audioBar');
+    let offset = $bar.offset();
+    let currentPos = e.pageX - offset.left;
+    let totalBarWidth = $bar.width();
+    let percent = (currentPos / totalBarWidth);
+    if (this.props.currentSongStatus.positionAndDuration){
+      let newPositionAndDuration = this.props.currentSongStatus.positionAndDuration;
+      let duration = newPositionAndDuration.duration;
+      newPositionAndDuration.position =  duration * percent;
+      let newState = merge({}, this.state, {newPositionAndDuration: newPositionAndDuration});
+      this.setState(newState);
+    }
+    // let currentPosition = newPositionAndDuration.position;
+  }
+
+  handleVolume(e){
+    let volumeBar = document.getElementById('volumeBar');
+    let value = volumeBar.value;
+    let percent = value / volumeBar.max;
+
+    let newPositionAndDuration = this.props.currentSongStatus.positionAndDuration;
+    newPositionAndDuration.volume = 100 * percent;
+    console.log(newPositionAndDuration.volume);
+    let newState = merge({}, this.state, {newPositionAndDuration: newPositionAndDuration}, {newVolume: newPositionAndDuration.volume});
+    this.setState({newState});
   }
 
   handleRestart(e){
@@ -100,7 +129,7 @@ class AudioPlayer extends React.Component{
 
   playSong(props, currentSong){
     return(
-      <SoundComponent song={currentSong} songStatus={props.currentSongStatus} updatePositionAndDuration={props.updatePositionAndDuration} removeCurrentSong={props.removeCurrentSong}/>
+      <SoundComponent song={currentSong} songStatus={props.currentSongStatus} updatePositionAndDuration={props.updatePositionAndDuration} removeCurrentSong={props.removeCurrentSong} newVolume={this.state.newVolume}/>
     );
   }
 
@@ -122,6 +151,7 @@ class AudioPlayer extends React.Component{
     const playSong = currentSong ? this.playSong(this.props, currentSong) : null;
     const positionAndDuration = this.props.currentSongStatus.positionAndDuration ? this.props.currentSongStatus.positionAndDuration : null;
 
+    let artist = currentSong ? currentSong.artist.name : null;
 
     let completionPercentage = 0;
     let interval = 0;
@@ -132,9 +162,18 @@ class AudioPlayer extends React.Component{
       interval = (positionAndDuration.position / 1000);
       timeLeft = (positionAndDuration.duration / 1000) - interval;
     }
+
     timePassed = this.convertInToTime(interval);
     timeLeft = this.convertInToTime(timeLeft);
     let song_img = currentSong ? (<img src={currentSong.image_url}/>) : null;
+
+    let marqueeStatus;
+    if (this.props.currentSongStatus.status === "PLAY") {
+      marqueeStatus = "playing...";
+    } else if (this.props.currentSongStatus.status === "PAUSE") {
+      marqueeStatus = "paused...";
+    }
+
     return(
       <div className="bottom-content">
 
@@ -142,12 +181,13 @@ class AudioPlayer extends React.Component{
           <div className="album-art-thumbnail">
             {song_img}
           </div>
-          <marquee><h1>{currentSong ? `${currentSong.name} is currently playing...` : ""}</h1></marquee>
+          <marquee><h1>{currentSong ? `${currentSong.name} by ${artist} is currently ${marqueeStatus}` : ""}</h1></marquee>
         </div>
         {playSong}
 
         <div className="audio-display">
-            <div className="play-controls">
+
+          <div className="play-controls">
               <button className="shuffle-btn"></button>
               <button onClick={this.handleRestart} className="skip-btn"><div className="arrow-left"></div></button>
               <button onClick={this.handleClick(this.props)}className="play-btn"><div id={this.state.buttonStyle}></div></button>
@@ -157,7 +197,7 @@ class AudioPlayer extends React.Component{
             <div className="status-bar-container">
               <p id="time-passed">{timePassed}</p>
               <div className="status-bar">
-                <Line percent={completionPercentage} strokeLinecap='round' strokeWidth=".5" strokeColor="#a0a0a0" trailWidth="1" trailColor="#404040" />
+                <Line id="audioBar" onClick={this.handleSlider} percent={completionPercentage} strokeLinecap='round' strokeWidth=".5" strokeColor="#a0a0a0" trailWidth="1" trailColor="#404040" />
               </div>
               <p id="time-left">{timeLeft}</p>
             </div>
@@ -169,7 +209,7 @@ class AudioPlayer extends React.Component{
           <div className="volume-icon">
           </div>
           <div className="volume-bar">
-            <Line percent="50" strokeLinecap='round' strokeWidth='3' strokeColor="green" trailWidth="2" trailColor="#404040"/>
+            <input id="volumeBar" onMouseUp={this.handleVolume} type="range" min="0" max="100" />
           </div>
         </div>
       </div>

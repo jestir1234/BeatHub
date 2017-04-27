@@ -3,7 +3,7 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-
+  margin-left: 15px;
 }
 .music-index-show-page h1{
   font-family: 'Montserrat', sans-serif;
