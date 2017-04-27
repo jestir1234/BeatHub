@@ -1,7 +1,6 @@
 import React from 'react';
 import SoundComponent from './sound_component';
 import { Line, Circle } from 'rc-progress';
-import VolumeSlider from './volume_slider';
 import merge from 'lodash/merge';
 
 
