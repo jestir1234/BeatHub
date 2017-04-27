@@ -12,7 +12,6 @@ import { fetchAllUsers, fetchUpdatedUser } from '../../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let followedUsers = [];
-  let newPlaylists = state.playlists.playlists;
 
   state.users.users.forEach((user) => {
      if (user.followed){
@@ -21,7 +20,6 @@ const mapStateToProps = (state, ownProps) => {
   });
 
   return {
-    playlists: newPlaylists,
     followedUsers: followedUsers,
     currentUser: state.session.currentUser,
     presentationInfo: ownProps.presentationInfo,

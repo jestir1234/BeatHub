@@ -49,16 +49,10 @@ class Presentation extends React.Component{
             return this.setState({presentationItem: this.state.presentationItem, albums: albumAction.artistAlbums});
           });
         } else if (nextProps.presentationItem.type === "Users"){
-          // let user = nextProps.presentationItem.item;
-          // this.props.fetchUpdatedUser(user.id)
-          // .then((action) => {
-          //   let newUser = action.presentationItem;
-          //   return this.setState({presentationItem: newUser, playlists: newUser});
-          // });
+          let user = nextProps.presentationItem.item;
+          this.setState({presentationItem: user, playlists: user.playlists, followed_artists: user.followed_artists});
         }
       }
-    } else if (nextProps.presentationItem.type === "Users") {
-
     }
   }
 
