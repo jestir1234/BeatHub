@@ -25,6 +25,7 @@ class Presentation extends React.Component{
     this.handleSelect = this.handleSelect.bind(this);
     this.handleAddSongsToQueu = this.handleAddSongsToQueu.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
+    this.handleFollowUser = this.handleFollowUser.bind(this);
   }
 
 
@@ -47,19 +48,36 @@ class Presentation extends React.Component{
           .then((albumAction) => {
             return this.setState({presentationItem: this.state.presentationItem, albums: albumAction.artistAlbums});
           });
+        } else if (nextProps.presentationItem.type === "Users"){
+          let user = nextProps.presentationItem.item;
+          //fetch user
         }
       }
     }
   }
 
+  handleFollowUser(user){
+    return (e) => {
+      e.preventDefault();
+      let currentUser = this.props.currentUser;
+      let follow = {follower_id: currentUser.id, followable_id: user.id, followable_type: "User"};
+      if (user.followed){
+        this.props.unfollowUser(follow).then((followable) => this.props.receivePresentationItem(followable, "Users")).then(() => this.props.fetchAllUsers());
+      } else {
+        this.props.followUser(follow).then((followable) => this.props.receivePresentationItem(followable, "Users")).then(() => this.props.fetchAllUsers());
+      }
+    };
+  }
+
+
   handleFollow(presentationType, followType){
     return (e) => {
       e.preventDefault();
       let currentUser = this.props.currentUser;
-      let artist = this.props.presentationItem.item;
-      let follow = {follower_id: currentUser.id, followable_id: artist.id, followable_type: followType};
+      let item = this.props.presentationItem.item;
+      let follow = {follower_id: currentUser.id, followable_id: item.id, followable_type: followType};
 
-      if (artist.followed){
+      if (item.followed){
         this.props.deleteFollow(follow, presentationType);
       } else {
         this.props.createFollow(follow, presentationType);
@@ -147,13 +165,12 @@ class Presentation extends React.Component{
   }
 
   renderUser(user){
-
     let name = user.username;
     let playlists = user.playlists;
     let artists = user.artists;
     let profilePic = user.default_image_url;
-    let followBtn = this.props.currentUser.id !== user.id ? (<button>Follow</button>) : null;
-
+    let followStatus = user.followed;
+    let followBtn = this.props.currentUser.id !== user.id ? (<button onClick={this.handleFollowUser(user)}>{followStatus ? "Unfollow" : "Follow"}</button>) : null;
     return (
       <div className="user-profile-page-container">
 
