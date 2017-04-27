@@ -9,7 +9,7 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
+    @user.default_image_url = "https://s3.amazonaws.com/beathub-dev/pics/default_user_image.jpg"
     if @user.save
       login(@user)
       render :show

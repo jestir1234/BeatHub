@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import FollowedFriendsIndex from './followed_friends_index';
 import { fetchAllUsers } from '../../../actions/user_actions';
+import { receivePresentationItem } from '../../../actions/presentation_actions';
 
 
 const mapStateToProps = (state) => {
@@ -20,7 +21,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchAllUsers: () => dispatch(fetchAllUsers())
+    fetchAllUsers: () => dispatch(fetchAllUsers()),
+    receivePresentationItem: (presentationItem, presentationType) => dispatch(receivePresentationItem(presentationItem, presentationType))
   };
 };
 

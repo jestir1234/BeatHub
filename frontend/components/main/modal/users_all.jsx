@@ -42,7 +42,14 @@ class UsersAll extends React.Component {
 
     const users = this.state.users ? this.state.users.map((user, idx) => {
       let followStatus = user.followed;
-      return (<div className="user-item" key={idx}>{user.username} <button onClick={this.handleFollow(user)}>{followStatus ? "Unfollow" : "Follow"}</button></div>);
+      return (
+        <div className="user-item" key={idx}>
+          <div className="user-thumb">
+            <img src={user.default_image_url}/>
+          </div>
+          {user.username}
+          <button onClick={this.handleFollow(user)}>{followStatus ? "Unfollow" : "Follow"}</button>
+        </div>);
     }) : null;
 
     return(

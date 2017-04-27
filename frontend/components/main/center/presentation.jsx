@@ -20,6 +20,7 @@ class Presentation extends React.Component{
     this.handleOptions = this.handleOptions.bind(this);
     this.openEditForm = this.openEditForm.bind(this);
     this.renderArtist = this.renderArtist.bind(this);
+    this.renderUser = this.renderUser.bind(this);
     this.handleSelectAlbum = this.handleSelectAlbum.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.handleAddSongsToQueu = this.handleAddSongsToQueu.bind(this);
@@ -139,8 +140,39 @@ class Presentation extends React.Component{
       return this.renderDisplay(presentationItem.item, presentationItem.type);
     } else if (presentationItem.type === "Artists") {
       return this.renderDisplay(presentationItem.item, presentationItem.type);
+    } else if (presentationItem.type === "Users") {
+      return this.renderDisplay(presentationItem.item, presentationItem.type);
     }
 
+  }
+
+  renderUser(user){
+
+    let name = user.username;
+    let playlists = user.playlists;
+    let artists = user.artists;
+    let profilePic = user.default_image_url;
+    let followBtn = this.props.currentUser.id !== user.id ? (<button>Follow</button>) : null;
+
+    return (
+      <div className="user-profile-page-container">
+
+        <div className="profile-header">
+
+          <div className="profile-pic-container">
+            <img src={profilePic}/>
+          </div>
+
+          <div className="profile-info">
+            <p>User</p>
+            <h1>{name}</h1>
+            {followBtn}
+          </div>
+
+        </div>
+
+      </div>
+    );
   }
 
   renderArtist(artist){
@@ -198,6 +230,8 @@ class Presentation extends React.Component{
   renderDisplay(presentationItem, presentationType){
     if (presentationType === "Artists") {
       return this.renderArtist(presentationItem);
+    } else if (presentationType === "Users") {
+      return this.renderUser(presentationItem);
     }
 
     let name = presentationItem.name;

@@ -62,7 +62,7 @@ padding-top: 10%;
   padding-top: 5%;
    padding-bottom: 5%;
    margin-left: 8%;
-   opacity: .6;
+   /*opacity: .6;*/
    width: 80%;
    border-top: 1px solid hsla(0,0%,100%,.4);
    height: 50px;
@@ -74,5 +74,16 @@ padding-top: 10%;
 }
 
 .followed-user-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.followed-user-item p{
+  color: hsla(0,0%,100%,.4)
+}
+
+.followed-user-item p:hover{
+  color: white;
   cursor: pointer;
 }

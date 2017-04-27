@@ -6,6 +6,7 @@ class FollowedFriendsIndex extends React.Component {
     super(props);
     this.state = {usersAllShow: false, followedUsers: []};
     this.renderAllUsers = this.renderAllUsers.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount(){
@@ -21,12 +22,24 @@ class FollowedFriendsIndex extends React.Component {
     this.setState({usersAllShow: !this.state.usersAllShow});
   }
 
+  handleClick(user){
+    return (e) => {
+      e.preventDefault();
+      this.props.receivePresentationItem(user, "Users");
+    };
+  }
+
 
   render(){
     const usersAll = this.state.usersAllShow ? (<UsersAllContainer />) : null;
     const followedUsers = this.state.followedUsers ? this.state.followedUsers.map((user, idx) => {
         return (
-          <div key={idx} className="followed-user-item"><p>{user.username}</p></div>
+          <div key={idx} className="followed-user-item">
+            <div className="user-thumb">
+              <img src={user.default_image_url}/>
+            </div>
+            <p onClick={this.handleClick(user)}>{user.username}</p>
+          </div>
         );
     }) : null;
 
