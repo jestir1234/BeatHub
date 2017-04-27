@@ -27,8 +27,9 @@ const PresentationReducer = (oldState = _nullPresentationItem, action) => {
         return copy;
     case RECEIVE_PLAYLIST:
         let user = oldState.item;
-
         if (!user) {
+          return oldState;
+        } else if (user.type !== "Users"){
           return oldState;
         }
         let userPlaylists = user.playlists;

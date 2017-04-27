@@ -19,7 +19,7 @@
 }
 
 .right-click-menu-container p{
-  font-size: 75%;
+  font-size: 85%;
   color: white;
 }
 
@@ -31,12 +31,13 @@
 
 .menu-playlists {
   overflow: visible;
-  height: 100px;
   display: none;
-  margin-left: 10px;
   background-color: #282828;
   box-shadow: 10px 10px 5px #151218;
   padding: 10px;
+  position: absolute;
+  z-index: 10;
+  left: 101.5%;
 }
 
 .menu-playlist-item:hover{
