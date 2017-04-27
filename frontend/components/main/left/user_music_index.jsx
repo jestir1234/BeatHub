@@ -10,6 +10,7 @@ class UserMusicIndex extends React.Component{
     this.handleClick = this.handleClick.bind(this);
     this.handleSelectPlaylist = this.handleSelectPlaylist.bind(this);
     this.handleSelectMusic = this.handleSelectMusic.bind(this);
+    this.handleBeginRadioPlay = this.handleBeginRadioPlay.bind(this);
   }
 
   componentDidMount(){
@@ -54,6 +55,10 @@ class UserMusicIndex extends React.Component{
     modal.style.display = "inline-block";
   }
 
+  handleBeginRadioPlay(){
+    this.props.fetchRadioSongs().then(() => this.props.removeCurrentSong());
+  }
+
 
   render(){
 
@@ -67,6 +72,10 @@ class UserMusicIndex extends React.Component{
 
         <div className="left-nav-logo-container">
           <img src={window.logo_path}/>
+        </div>
+
+        <div className="radio-container">
+          <p onClick={this.handleBeginRadioPlay}>Radio</p>
         </div>
 
         <div className="user-music-nav">

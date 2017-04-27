@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 import AudioPlayer from './audio_player';
 import { removeCurrentSong, receiveCurrentSong } from '../../../actions/song_actions';
 import { updatePositionAndDuration, playCurrentSong, pauseCurrentSong, stopCurrentSong } from '../../../actions/current_song_actions';
-import { removeSongFromQueu } from '../../../actions/queu_actions';
+import { removeSongFromQueu, replaceQueuSongs } from '../../../actions/queu_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  
+
   return {
     currentSong: state.songs.currentSong,
     currentSongStatus: state.currentSongStatus,
@@ -22,7 +22,9 @@ const mapDispatchToProps = (dispatch) => {
     playCurrentSong: () => dispatch(playCurrentSong()),
     pauseCurrentSong: () => dispatch(pauseCurrentSong()),
     stopCurrentSong: () => dispatch(stopCurrentSong()),
-    removeSongFromQueu: () => dispatch(removeSongFromQueu())
+    removeSongFromQueu: () => dispatch(removeSongFromQueu()),
+    replaceQueuSongs: (songs) => dispatch(replaceQueuSongs(songs))
+
   };
 };
 

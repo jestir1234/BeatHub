@@ -131,3 +131,13 @@
 .left-nav-logo-container img{
   width: 15%;
 }
+
+.radio-container{
+  padding-top: 5%;
+  padding-left: 10%;
+}
+
+.radio-container p:hover{
+  color: #07b44d;
+  cursor: pointer;
+}

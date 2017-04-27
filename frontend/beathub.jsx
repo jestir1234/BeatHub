@@ -6,7 +6,6 @@ import configureStore from './store/store';
 import Root from './components/root';
 import { fetchAllUsers } from './util/users_api_util';
 
-window.fetchAllUsers = fetchAllUsers;
 
 
 document.addEventListener("DOMContentLoaded", () => {

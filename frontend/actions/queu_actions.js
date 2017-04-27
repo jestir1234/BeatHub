@@ -1,6 +1,7 @@
 export const ADD_SONG_TO_QUEU = "ADD_SONG_TO_QUEU";
 export const REMOVE_SONG_FROM_QUEU = "REMOVE_SONG_FROM_QUEU";
 export const ADD_SONGS_TO_QUEU = "ADD_SONGS_TO_QUEU";
+export const REPLACE_QUEU_SONGS = "REPLACE_QUEU_SONGS";
 
 // should add song to the back of the queu
 
@@ -24,5 +25,12 @@ export const removeSongFromQueu = (song) => {
   return{
     type: REMOVE_SONG_FROM_QUEU,
     song
+  };
+};
+
+export const replaceQueuSongs = (songs) => {
+  return{
+    type: REPLACE_QUEU_SONGS,
+    songs
   };
 };

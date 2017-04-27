@@ -19,6 +19,8 @@ class AudioPlayer extends React.Component{
     this.handleRestart = this.handleRestart.bind(this);
     this.handleSlider = this.handleSlider.bind(this);
     this.handleVolume = this.handleVolume.bind(this);
+    this.shuffle = this.shuffle.bind(this);
+    this.handleShuffle = this.handleShuffle.bind(this);
   }
 
   componentWillReceiveProps(newProps){
@@ -49,6 +51,21 @@ class AudioPlayer extends React.Component{
     }
   }
 
+  shuffle(array) {
+    for (let i = array.length; i; i--) {
+        let j = Math.floor(Math.random() * i);
+        [array[i - 1], array[j]] = [array[j], array[i - 1]];
+    }
+    return array;
+  }
+
+  handleShuffle(e){
+    if (this.props.queu.songQueu.length){
+      let shuffledQueue = this.shuffle(this.props.queu.songQueu);
+      this.props.replaceQueuSongs(shuffledQueue);
+    }
+  }
+
   handleSlider(e){
     let $bar = $('#audioBar');
     let offset = $bar.offset();
@@ -72,7 +89,6 @@ class AudioPlayer extends React.Component{
 
     let newPositionAndDuration = this.props.currentSongStatus.positionAndDuration;
     newPositionAndDuration.volume = 100 * percent;
-    console.log(newPositionAndDuration.volume);
     let newState = merge({}, this.state, {newPositionAndDuration: newPositionAndDuration}, {newVolume: newPositionAndDuration.volume});
     this.setState({newState});
   }
@@ -188,7 +204,7 @@ class AudioPlayer extends React.Component{
         <div className="audio-display">
 
           <div className="play-controls">
-              <button className="shuffle-btn"></button>
+              <button onClick={this.handleShuffle} className="shuffle-btn"></button>
               <button onClick={this.handleRestart} className="skip-btn"><div className="arrow-left"></div></button>
               <button onClick={this.handleClick(this.props)}className="play-btn"><div id={this.state.buttonStyle}></div></button>
               <button onClick={this.handleSkip} className="skip-btn"><div className="arrow-right"></div></button>

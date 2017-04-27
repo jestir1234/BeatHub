@@ -1,4 +1,5 @@
 import * as SongsAPIUtil from '../util/songs_api_util';
+import { replaceQueuSongs } from './queu_actions';
 
 export const RECEIVE_SONGS = 'RECEIVE_SONGS';
 export const RECEIVE_CURRENT_SONG = 'RECEIVE_CURRENT_SONG';
@@ -39,5 +40,11 @@ export const fetchPlaylistSongs = (playlistId) => {
 export const fetchSong = (songId) => {
   return (dispatch) => {
     return SongsAPIUtil.fetchSong(songId).then((song) => dispatch(receiveCurrentSong(song)));
+  };
+};
+
+export const fetchRadioSongs = () => {
+  return (dispatch) => {
+    return SongsAPIUtil.fetchRadioSongs().then((radioSongs) => dispatch(replaceQueuSongs(radioSongs)));
   };
 };

@@ -3,6 +3,7 @@ import { fetchPlaylists, fetchPlaylist, deletePlaylist,  updatePlaylist } from '
 import { receivePresentationItem } from '../../../actions/presentation_actions';
 import { fetchUpdatedUser } from '../../../actions/user_actions';
 import UserMusicIndex from './user_music_index';
+import { fetchRadioSongs, removeCurrentSong } from '../../../actions/song_actions';
 
 const mapStateToProps = (state) => {
 
@@ -19,7 +20,9 @@ const mapDispatchToProps = (dispatch) => {
     deletePlaylist: (playlistId) => dispatch(deletePlaylist(playlistId)),
     updatePlaylist: (playlist) => dispatch(updatePlaylist(playlist)),
     receivePresentationItem: (presentationItem, presentationType) => dispatch(receivePresentationItem(presentationItem, presentationType)),
-    fetchUpdatedUser: (userId) => dispatch(fetchUpdatedUser(userId))
+    fetchUpdatedUser: (userId) => dispatch(fetchUpdatedUser(userId)),
+    fetchRadioSongs: () => dispatch(fetchRadioSongs()),
+    removeCurrentSong: () => dispatch(removeCurrentSong())
   };
 };
 
