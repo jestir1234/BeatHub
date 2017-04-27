@@ -9,6 +9,7 @@ class UserMusicIndex extends React.Component{
     this.state = {playlists: []};
     this.handleClick = this.handleClick.bind(this);
     this.handleSelectPlaylist = this.handleSelectPlaylist.bind(this);
+    this.handleSelectMusic = this.handleSelectMusic.bind(this);
   }
 
   componentDidMount(){
@@ -31,6 +32,13 @@ class UserMusicIndex extends React.Component{
         }
       }
     }
+  }
+
+  handleSelectMusic(type){
+    return (e) => {
+      e.preventDefault();
+      this.props.receivePresentationItem("Selected Category", type);
+    };
   }
 
   handleSelectPlaylist(playlist){

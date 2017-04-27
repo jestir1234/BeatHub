@@ -26,6 +26,7 @@ class Presentation extends React.Component{
     this.handleAddSongsToQueu = this.handleAddSongsToQueu.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
     this.handleFollowUser = this.handleFollowUser.bind(this);
+    this.renderIndex = this.renderIndex.bind(this);
   }
 
 
@@ -160,8 +161,27 @@ class Presentation extends React.Component{
       return this.renderDisplay(presentationItem.item, presentationItem.type);
     } else if (presentationItem.type === "Users") {
       return this.renderDisplay(presentationItem.item, presentationItem.type);
+    } else if (presentationItem.type === "MyArtists") {
+      return this.renderIndex("Artists");
+    } else if (presentationItem.type === "MyAlbums") {
+      return this.renderIndex("Albums");
+    } else if (presentationItem.type === "MyFollowedPlaylists"){
+      return this.renderIndex("Followed Playlists");
     }
 
+  }
+
+  renderIndex(type){
+    let currentUser = this.props.currentUser;
+    let followedArtists = currentUser.followed_artists;
+    let followedPlaylists = currentUser.followed_playlists;
+    let followedUsers = currentUser.followed_users;
+
+    return (
+      <div className="music-index-show-page">
+          <h1>Your {type}</h1>
+      </div>
+    );
   }
 
   renderUser(user){
@@ -317,7 +337,7 @@ class Presentation extends React.Component{
 
     //check whether current user is owner of playlist
     if (presentationType === "Playlists"){
-      if (presentationItem.author !== this.props.currentUser.username){
+      if (presentationItem.author_id !== this.props.currentUser.id){
         options = null;
       }
     }
