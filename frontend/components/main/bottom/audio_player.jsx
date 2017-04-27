@@ -16,6 +16,7 @@ class AudioPlayer extends React.Component{
     this.handlePause = this.handlePause.bind(this);
     this.state = {buttonStyle: 'play-arrow', queu: this.props.queu.songQueu, currentSongPlaying: null};
     this.handleSkip = this.handleSkip.bind(this);
+    this.handleRestart = this.handleRestart.bind(this);
   }
 
   componentWillReceiveProps(newProps){
@@ -45,6 +46,10 @@ class AudioPlayer extends React.Component{
         this.setState({buttonStyle: "pause", queu: this.state.queu, currentSongPlaying: this.state.currentSongPlaying});
       }
     }
+  }
+
+  handleRestart(){
+    
   }
 
   handleSkip(e){
@@ -91,7 +96,7 @@ class AudioPlayer extends React.Component{
 
   playSong(props, currentSong){
     return(
-      <SoundComponent song={currentSong} songStatus={props.currentSongStatus} updatePositionAndDuration={props.updatePositionAndDuration}/>
+      <SoundComponent song={currentSong} songStatus={props.currentSongStatus} updatePositionAndDuration={props.updatePositionAndDuration} removeCurrentSong={props.removeCurrentSong}/>
     );
   }
 
@@ -104,7 +109,6 @@ class AudioPlayer extends React.Component{
       return `${minutes}:${seconds}`;
     }
   }
-
 
 
   render(){

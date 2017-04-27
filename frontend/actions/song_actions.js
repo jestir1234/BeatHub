@@ -24,7 +24,6 @@ export const removeCurrentSong = () => {
   };
 };
 
-
 export const fetchAlbumSongs = (albumId) => {
   return (dispatch) => {
     return SongsAPIUtil.fetchAlbumSongs(albumId).then((albumSongs) => dispatch(receiveSongs(albumSongs)));

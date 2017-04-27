@@ -5,7 +5,7 @@ import { updatePositionAndDuration, playCurrentSong, pauseCurrentSong, stopCurre
 import { removeSongFromQueu } from '../../../actions/queu_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  
+
   return {
     currentSong: state.songs.currentSong,
     currentSongStatus: state.currentSongStatus,
