@@ -162,31 +162,39 @@ class Presentation extends React.Component{
     } else if (presentationItem.type === "Users") {
       return this.renderDisplay(presentationItem.item, presentationItem.type);
     } else if (presentationItem.type === "MyArtists") {
-      return this.renderIndex("Artists");
+      return this.renderIndex(presentationItem.item, "Artists");
     } else if (presentationItem.type === "MyAlbums") {
-      return this.renderIndex("Albums");
+      return this.renderIndex(presentationItem.item, "Albums");
     } else if (presentationItem.type === "MyFollowedPlaylists"){
-      return this.renderIndex("Followed Playlists");
+      return this.renderIndex(presentationItem.item, "Followed Playlists");
     } else if (presentationItem.type === "MySongs"){
-      return this.renderIndex("Songs");
+      return this.renderIndex(presentationItem.item, "Songs");
     }
 
   }
 
-  renderIndex(type){
-    let currentUser = this.props.currentUser;
+  renderIndex(currentUser, type){
+
+    currentUser.followed_artists.forEach((artist) => {
+      artist.followed = true;
+    });
+
+
+    currentUser.followed_playlists.forEach((playlist) => {
+      playlist.followed = true;
+    });
+
     let followedArtists = currentUser.followed_artists;
     let followedPlaylists = currentUser.followed_playlists;
     let followedUsers = currentUser.followed_users;
-
     let collection;
 
     if (type === "Artists" && followedArtists) {
       collection = followedArtists.map((artist, idx) => {
         return (
           <div key={idx} className="collection-item">
-            {artist.image_url}
-            {artist.name}
+            <img className="artist" src={artist.image_url}/>
+            <p onClick={this.handleSelect(artist, "Artists")}>{artist.name}</p>
           </div>
         );
       });
@@ -196,8 +204,8 @@ class Presentation extends React.Component{
       collection = followedPlaylists.map((playlist, idx) => {
         return (
           <div key={idx} className="collection-item">
-            {playlist.image_url}
-            {playlist.name}
+            <img className="playlist" src={playlist.image_url}/>
+            <p onClick={this.handleSelect(playlist, "Playlists")}>{playlist.name}</p>
           </div>
         );
       });

@@ -8,4 +8,41 @@
 .music-index-show-page h1{
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 4px;
+  padding-left: 20px;
+  font-size: 30px;
+}
+
+
+.collection-item{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.collection-item p {
+  padding-top: 3%;
+}
+
+.collection-item p:hover {
+  cursor: pointer;
+}
+
+.collection-item img{
+
+}
+
+.artist {
+  border-radius: 50%;
+  height: 150px;
+  width: 140px;
+}
+
+.collection-container{
+  display: flex;
+}
+
+.playlist {
+  height: 150px;
+  width: 140px;
 }

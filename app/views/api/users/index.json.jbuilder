@@ -5,4 +5,5 @@ json.array!(@users) do |user|
   json.playlists user.playlists
   json.followed_artists user.followed_artists
   json.default_image_url user.default_image_url
+  json.followed_playlists user.followed_playlists
 end

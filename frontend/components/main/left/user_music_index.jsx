@@ -37,7 +37,7 @@ class UserMusicIndex extends React.Component{
   handleSelectMusic(type){
     return (e) => {
       e.preventDefault();
-      this.props.receivePresentationItem("Selected Category", type);
+      this.props.fetchUpdatedUser(this.props.currentUser.id).then((action) => this.props.receivePresentationItem(action.presentationItem, type));
     };
   }
 

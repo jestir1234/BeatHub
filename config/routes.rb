@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       resources :albums, only: [:index]
     end
     get '/search' => 'searches#search', as: 'search'
+    get '/songs/radio' => 'songs/radio', as: 'radio'
 
     resources :playlists, only: [:show, :update, :destroy]
     resources :playlist_songs, only: [:create, :destroy]
