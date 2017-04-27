@@ -9,7 +9,7 @@ class Presentation extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {songs: [], presentationItem: null, menuOpen: false, editFormOpen: false, albums: null};
+    this.state = {songs: [], presentationItem: null, menuOpen: false, editFormOpen: false, albums: null, playlists: [], followed_artists: []};
     this.renderAlbum = this.renderAlbum.bind(this);
     this.renderPresentation = this.renderPresentation.bind(this);
     this.renderDefault = this.renderDefault.bind(this);
@@ -49,10 +49,16 @@ class Presentation extends React.Component{
             return this.setState({presentationItem: this.state.presentationItem, albums: albumAction.artistAlbums});
           });
         } else if (nextProps.presentationItem.type === "Users"){
-          let user = nextProps.presentationItem.item;
-          //fetch user
+          // let user = nextProps.presentationItem.item;
+          // this.props.fetchUpdatedUser(user.id)
+          // .then((action) => {
+          //   let newUser = action.presentationItem;
+          //   return this.setState({presentationItem: newUser, playlists: newUser});
+          // });
         }
       }
+    } else if (nextProps.presentationItem.type === "Users") {
+
     }
   }
 
@@ -173,7 +179,7 @@ class Presentation extends React.Component{
     let playlists = user.playlists ? user.playlists.map((playlist, idx) => {
       return (
         <div className="user-playlist-item" key={idx}>
-            <p>{playlist.name}</p>
+            <p onClick={this.handleSelect(playlist, "Playlists")}>{playlist.name}</p>
 
             <div className="playlist-image-container">
               <img src={playlist.image_url}/>
@@ -183,8 +189,17 @@ class Presentation extends React.Component{
       );
     }) : null;
 
-    let artists = user.followed_artists ? user.followed_artists.map((artist) => {
+    let artists = user.followed_artists ? user.followed_artists.map((artist, idx) => {
+      return (
+        <div className="user-artist-item" key={idx}>
+            <p onClick={this.handleSelect(artist, "Artists")}>{artist.name}</p>
 
+            <div className="artist-image-container">
+              <img className="profile-artist-img" src={artist.image_url}/>
+            </div>
+
+        </div>
+      );
     }) : null;
 
     return (
@@ -207,6 +222,11 @@ class Presentation extends React.Component{
         <h1>Playlists</h1>
         <div className="user-playlists">
           {playlists}
+        </div>
+
+        <h1>Artists</h1>
+        <div className="user-playlists">
+          {artists}
         </div>
 
       </div>
@@ -298,6 +318,14 @@ class Presentation extends React.Component{
              </div>
 
            </div>) : null;
+
+    //check whether current user is owner of playlist
+    if (presentationType === "Playlists"){
+      if (presentationItem.author !== this.props.currentUser.username){
+        options = null;
+      }
+    }
+
     let followStatus = presentationItem.followed;
     let songs = presentationType === "Playlists" ? this.state.songs.sort(this.sortByPlaylistOrd) : this.state.songs.sort(this.sortByAlbumOrd);
     let followBtn = presentationType === "Playlists" ? (<button onClick={this.handleFollow("Playlists", "Playlist")} className="artist-follow-btn">{followStatus ? "Unfollow" : "Follow"}</button>) : null;

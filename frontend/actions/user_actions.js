@@ -1,4 +1,5 @@
 import * as UsersAPIUtil from '../util/users_api_util';
+import { receivePresentationItem } from './presentation_actions';
 
 export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 export const RECEIVE_FOLLOWED_USERS = 'RECEIVE_FOLLOWED_USERS';
@@ -26,5 +27,11 @@ export const fetchAllUsers = () => {
 export const fetchFollowedUsers = () => {
   return (dispatch) => {
     return UsersAPIUtil.fetchFollowedUsers().then((followedUsers) => dispatch(receiveFollowedUsers(followedUsers)));
+  };
+};
+
+export const fetchUpdatedUser = (userId) => {
+  return (dispatch) => {
+    return UsersAPIUtil.fetchUpdatedUser(userId).then((user) => dispatch(receivePresentationItem(user, "Users")));
   };
 };

@@ -1,10 +1,10 @@
 .user-profile-page-container{
-  border: 1px solid red;
+  /*border: 1px solid red;*/
 }
 
 
 .profile-header{
-  border: 1px solid yellow;
+  /*border: 1px solid yellow;*/
   display: flex;
   padding: 5%;
   padding-top: 10%;
@@ -12,19 +12,19 @@
 
 
 .profile-pic-container{
-  border: 1px solid green;
+  /*border: 1px solid green;*/
 }
 
 
 .profile-pic-container img{
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   height: 200px;
   width: 200px;
   border-radius: 50%;
 }
 
 .profile-info{
-  border: 1px solid purple;
+  /*border: 1px solid purple;*/
   padding-left: 2%;
   justify-content: space-around;
   display: flex;
@@ -64,11 +64,11 @@
 }
 
 .profile-info p{
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .user-playlist-item{
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,6 +89,9 @@
   display: flex;
   flex-wrap: nowrap;
   padding-top: 3%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .user-playlist-item p{
@@ -105,4 +108,30 @@
   align-self: center;
   justify-content: center;
   font-size: 25px;
+}
+
+.profile-artist-img{
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+}
+
+.artist-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5%;
+}
+
+.user-artist-item{
+  /*border: 1px solid white;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.user-artist-item p:hover{
+  color: hsla(0,0%,100%,.4);
+  cursor: pointer;
 }

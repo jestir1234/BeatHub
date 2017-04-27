@@ -7,11 +7,12 @@ import { receivePresentationItem } from '../../../actions/presentation_actions';
 import { fetchArtistAlbums } from '../../../actions/artist_actions';
 import { addSongsToQueu } from '../../../actions/queu_actions';
 import { createFollow, deleteFollow, followUser, unfollowUser } from '../../../actions/follow_actions';
-import { fetchAllUsers } from '../../../actions/user_actions';
+import { fetchAllUsers, fetchUpdatedUser } from '../../../actions/user_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
   let followedUsers = [];
+  let newPlaylists = state.playlists.playlists;
 
   state.users.users.forEach((user) => {
      if (user.followed){
@@ -20,6 +21,7 @@ const mapStateToProps = (state, ownProps) => {
   });
 
   return {
+    playlists: newPlaylists,
     followedUsers: followedUsers,
     currentUser: state.session.currentUser,
     presentationInfo: ownProps.presentationInfo,
@@ -47,7 +49,8 @@ const mapDispatchToProps = (dispatch) => {
     deleteFollow: (follow, type) => dispatch(deleteFollow(follow, type)),
     followUser: (follow) => dispatch(followUser(follow)),
     unfollowUser: (follow) => dispatch(unfollowUser(follow)),
-    fetchAllUsers: () => dispatch(fetchAllUsers())
+    fetchAllUsers: () => dispatch(fetchAllUsers()),
+    fetchUpdatedUser: (userId) => dispatch(fetchUpdatedUser(userId))
   };
 };
 

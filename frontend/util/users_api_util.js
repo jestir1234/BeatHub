@@ -12,3 +12,10 @@ export const fetchFollowedUsers = () => {
     url: "api/follows"
   });
 };
+
+export const fetchUpdatedUser = (userId) => {
+  return $.ajax({
+    method: "GET",
+    url: `api/users/${userId}`
+  });
+};
