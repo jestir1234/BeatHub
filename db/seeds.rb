@@ -53,6 +53,16 @@ foals = Artist.new(name: "Foals", genre: "Indie-rock", image_url: "https://s3.am
 diiv = Artist.new(name: "DIIV", genre: "Indie-rock", image_url: "https://s3.amazonaws.com/beathub-dev/songs/diiv/diiv_artist_art.jpg", banner_url: "https://s3.amazonaws.com/beathub-dev/songs/diiv/diiv_banner.jpg")
 electric = Artist.new(name: "Electric Youth", genre: "Synth-pop", image_url: "https://s3.amazonaws.com/beathub-dev/songs/electric_youth/artist_electricyouth_art.jpg", banner_url: "https://s3.amazonaws.com/beathub-dev/songs/electric_youth/electriyouth_banner.jpg")
 made_in_japan = Artist.new(name: "Made In Japan", genre: "Indie-rock", image_url: "https://s3.amazonaws.com/beathub-dev/songs/made_in_japan/made-in-japanartist_art.jpg", banner_url: "https://s3.amazonaws.com/beathub-dev/songs/made_in_japan/made_in_japan_banner.png")
+beach_house = Artist.new(name: "Beach House", genre: "Dream-pop", image_url: "https://s3.amazonaws.com/beathub-dev/songs/beach_house/beachhouse_artist_art.jpg", banner_url: "https://s3.amazonaws.com/beathub-dev/songs/beach_house/beachhousebanner.jpg")
+flumpool = Artist.new(name: "Flumpool", genre: "J-Rock", image_url: "https://s3.amazonaws.com/beathub-dev/songs/flumpool/flumpool_artist_art.jpeg", banner_url: "https://s3.amazonaws.com/beathub-dev/songs/flumpool/flumpool_banner.jpg")
+pillows = Artist.new(name: "The Pillows", genre: "J-Rock", image_url: "https://s3.amazonaws.com/beathub-dev/songs/the_pillows/pillows_artist_art.jpg", banner_url: "https://s3.amazonaws.com/beathub-dev/songs/the_pillows/pillows_banner.jpg")
+billy_talent = Artist.new(name: "Billy Talent", genre: "Punk-Rock", image_url: "https://s3.amazonaws.com/beathub-dev/songs/billy_talent/billy_talent_artist_art.jpg", banner_url: "https://s3.amazonaws.com/beathub-dev/songs/billy_talent/billy_talent_banner2.jpg")
+
+
+
+
+
+
 
 wild_nothing.save
 artists.push(wild_nothing)
@@ -90,6 +100,18 @@ artists.push(electric)
 made_in_japan.save
 artists.push(made_in_japan)
 
+beach_house.save
+artists.push(beach_house)
+
+flumpool.save
+artists.push(flumpool)
+
+pillows.save
+artists.push(pillows)
+
+billy_talent.save
+artists.push(billy_talent)
+
 # ALBUMS
 nocturne = Album.new(name: "Nocturne", artist_id: wild_nothing.id, year: "01/2/2010", artist_name: "Wild Nothing", image_url: "https://s3.amazonaws.com/beathub-dev/pics/wild_nothing_nocturne_album.jpg")
 bones = Album.new(name: "The Bones of What You Believe", artist_id: chvrches.id, year: "20/9/2013", artist_name: "CHVRCHES", image_url: "https://s3.amazonaws.com/beathub-dev/pics/chvrches_album.jpeg")
@@ -110,6 +132,14 @@ holy_fire = Album.new(name: "Holy Fire", artist_id: foals.id, year: "01/02/2013"
 oshin = Album.new(name: "Oshin", artist_id: diiv.id, year: "01/02/2014", artist_name: "DIIV", image_url: "https://s3.amazonaws.com/beathub-dev/songs/diiv/oshin/oshin_album_art.jpeg")
 inner_world = Album.new(name: "Innerworld", artist_id: electric.id, year: "01/02/2014", artist_name: "Electric Youth", image_url: "https://s3.amazonaws.com/beathub-dev/songs/electric_youth/innerworld/innerworld_albumart.jpg")
 sights_and_sounds = Album.new(name: "Sights and Sounds", artist_id: made_in_japan.id, year: "01/02/2012", artist_name: "Made In Japan", image_url: "https://s3.amazonaws.com/beathub-dev/songs/made_in_japan/sights_and_sounds/albun_art_sights_sounds.jpg")
+bloom = Album.new(name: "Bloom", artist_id: beach_house.id, year: "01/02/2011", artist_name: "Beach House", image_url: "https://s3.amazonaws.com/beathub-dev/songs/beach_house/bloom/bloom_album_art.jpg")
+unreal = Album.new(name: "Unreal", artist_id: flumpool.id, year: "01/02/2007", artist_name: "Flumpool", image_url: "https://s3.amazonaws.com/beathub-dev/songs/flumpool/unreal/unreal_album_art.jpg")
+happy_bivouac = Album.new(name: "Happy Bivouac", artist_id: pillows.id, year: "01/02/2001", artist_name: "The Pillows", image_url: "https://s3.amazonaws.com/beathub-dev/songs/the_pillows/happy_bivouac/happy_bivouac_album_art.jpeg")
+billy_talent_1 = Album.new(name: "Billy Talent", artist_id: billy_talent.id, year: "01/02/2002", artist_name: "Billy Talent", image_url: "https://s3.amazonaws.com/beathub-dev/songs/billy_talent/billy_talent1/billy_talent_album_art.jpg")
+billy_talent_2 = Album.new(name: "Billy Talent II", artist_id: billy_talent.id, year: "01/02/2006", artist_name: "Billy Talent", image_url: "https://s3.amazonaws.com/beathub-dev/songs/billy_talent/billy_talent2/billytalent2_album_art.png")
+
+
+
 
 nocturne.save
 bones.save
@@ -130,6 +160,11 @@ holy_fire.save
 oshin.save
 inner_world.save
 sights_and_sounds.save
+bloom.save
+unreal.save
+happy_bivouac.save
+billy_talent_1.save
+billy_talent_2.save
 
 albums.push(nocturne)
 albums.push(bones)
@@ -150,6 +185,11 @@ albums.push(holy_fire)
 albums.push(oshin)
 albums.push(inner_world)
 albums.push(sights_and_sounds)
+albums.push(bloom)
+albums.push(unreal)
+albums.push(happy_bivouac)
+albums.push(billy_talent_1)
+albums.push(billy_talent_2)
 
 
 # SONGS
@@ -428,6 +468,54 @@ sights_and_sounds1.save
 sights_and_sounds2.save
 sights_and_sounds3.save
 sights_and_sounds4.save
+
+bloom1 = Song.new(name: "Lazuli", album_id: bloom.id, album_ord: 1, genre: "Dream-pop", duration: 231, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/beach_house/bloom/Beach+House+-+Lazuli.mp3")
+bloom2 = Song.new(name: "Myth", album_id: bloom.id, album_ord: 2, genre: "Dream-pop", duration: 180, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/beach_house/bloom/Beach+House+-+Myth.mp3")
+bloom3 = Song.new(name: "Other People", album_id: bloom.id, album_ord: 3, genre: "Dream-pop", duration: 265, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/beach_house/bloom/Beach+House+-+Other+People.mp3")
+
+bloom1.save
+bloom2.save
+bloom3.save
+
+unreal1 = Song.new(name: "Kimi Ni Todoke", album_id: unreal.id, album_ord: 1, genre: "J-Rock", duration: 180, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/flumpool/unreal/Kimi+ni+Todoke-Flumpool+-+YouTube.mp3")
+unreal2 = Song.new(name: "Over The Rain", album_id: unreal.id, album_ord: 2, genre: "J-Rock", duration: 200, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/flumpool/unreal/Over+the+rain.mp3")
+unreal3 = Song.new(name: "Kimi Ni Todoke", album_id: unreal.id, album_ord: 3, genre: "J-Rock", duration: 230, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/flumpool/unreal/hoshi+ni+negai+wo+romaji.mp3")
+
+unreal1.save
+unreal2.save
+unreal3.save
+
+happy_bivouac1 = Song.new(name: "Crazy Sunshine", album_id: happy_bivouac.id, album_ord: 1, genre: "J-Rock", duration: 188, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_pillows/happy_bivouac/Crazy+Sunshine+-+The+Pillows.mp3")
+happy_bivouac2 = Song.new(name: "Carnival", album_id: happy_bivouac.id, album_ord: 3, genre: "J-Rock", duration: 234, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_pillows/happy_bivouac/FLCL+-+Carnival.mp3")
+happy_bivouac3 = Song.new(name: "Hybrid Rainbow", album_id: happy_bivouac.id, album_ord: 4, genre: "J-Rock", duration: 310, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_pillows/happy_bivouac/FLCL+Hybrid+Rainbow.mp3")
+happy_bivouac4 = Song.new(name: "Little Buster", album_id: happy_bivouac.id, album_ord: 2, genre: "J-Rock", duration: 167, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_pillows/happy_bivouac/Little+Busters+-+The+Pillows.mp3")
+happy_bivouac5 = Song.new(name: "Back Seat Dog", album_id: happy_bivouac.id, album_ord: 5, genre: "J-Rock", duration: 222, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_pillows/happy_bivouac/The+Pillows+-+Back+Seat+Dog.mp3")
+happy_bivouac6 = Song.new(name: "Ride On Shooting Star", album_id: happy_bivouac.id, album_ord: 6, genre: "J-Rock", duration: 254, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_pillows/happy_bivouac/The+Pillows+-+Ride+On+Shooting+Star.mp3")
+happy_bivouac7 = Song.new(name: "Last Dinosaur", album_id: happy_bivouac.id, album_ord: 7, genre: "J-Rock", duration: 244, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_pillows/happy_bivouac/The+pillows+-+Last+Dinosaur.mp3")
+
+happy_bivouac1.save
+happy_bivouac2.save
+happy_bivouac3.save
+happy_bivouac4.save
+happy_bivouac5.save
+happy_bivouac6.save
+happy_bivouac7.save
+
+billy_talent1_1 = Song.new(name: "Standing In The Rain", album_id: billy_talent_1.id, album_ord: 1, genre: "Punk-Rock", duration: 244, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/billy_talent/billy_talent1/Billy+Talent+-+Standing+In+The+Rain+%2B+lyrics.mp3")
+billy_talent1_2 = Song.new(name: "Try Honesty", album_id: billy_talent_1.id, album_ord: 2, genre: "Punk-Rock", duration: 267, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/billy_talent/billy_talent1/Billy+Talent+-+Try+Honesty+%2B+Lyrics.mp3")
+billy_talent1_3 = Song.new(name: "This Is How It Goes", album_id: billy_talent_1.id, album_ord: 3, genre: "Punk-Rock", duration: 144, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/billy_talent/billy_talent1/Billy+Talent-+This+is+How+it+Goes+\(Album+version%2Blyrics\).mp3")
+
+billy_talent1_1.save
+billy_talent1_2.save
+billy_talent1_3.save
+
+billy_talent2_1 = Song.new(name: "Fallen Leaves", album_id: billy_talent_2.id, album_ord: 1, genre: "Punk-Rock", duration: 224, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/billy_talent/billy_talent2/Billy+Talent+-+Fallen+Leaves.mp3")
+billy_talent2_2 = Song.new(name: "Pins and Needles", album_id: billy_talent_2.id, album_ord: 2, genre: "Punk-Rock", duration: 314, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/billy_talent/billy_talent2/Billy+Talent+-+Pins+%26+Needles+\(With+Lyrics\).mp3")
+billy_talent2_3 = Song.new(name: "Surrender", album_id: billy_talent_2.id, album_ord: 3, genre: "Punk-Rock", duration: 265, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/billy_talent/billy_talent2/Billy+Talent+-+Surrender.mp3")
+
+billy_talent2_1.save
+billy_talent2_2.save
+billy_talent2_3.save
 
 
 artists.each do |artist|
