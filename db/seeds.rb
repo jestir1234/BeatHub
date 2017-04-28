@@ -349,6 +349,23 @@ antidotes4.save
 antidotes5.save
 antidotes6.save
 
+
+total_life_forever1 = Song.new(name: "Alabaster", album_id: total_life_forever.id, album_ord: 1, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/total_rife_forever/Foals+-+Alabaster+\(%2Blyrics+in+description\).mp3")
+total_life_forever2 = Song.new(name: "Black Gold", album_id: total_life_forever.id, album_ord: 4, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/total_rife_forever/Foals+-+Black+Gold.mp3")
+total_life_forever3 = Song.new(name: "Blue Blood", album_id: total_life_forever.id, album_ord: 5, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/total_rife_forever/Foals+-+Blue+Blood+Lyrics.mp3")
+total_life_forever4 = Song.new(name: "This Orient", album_id: total_life_forever.id, album_ord: 3, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/total_rife_forever/Foals+-+This+Orient.mp3")
+total_life_forever5 = Song.new(name: "Total Life Forever", album_id: total_life_forever.id, album_ord: 6, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/total_rife_forever/Foals+-+Total+Life+Forever.mp3")
+total_life_forever6 = Song.new(name: "Miami", album_id: total_life_forever.id, album_ord: 2, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/total_rife_forever/Miami+-+Foals.mp3")
+
+total_life_forever1.save
+total_life_forever2.save
+total_life_forever3.save
+total_life_forever4.save
+total_life_forever5.save
+total_life_forever6.save
+
+
+
 holy_fire1 = Song.new(name: "Bad Habit", album_id: holy_fire.id, album_ord: 1, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/holyfir/Foals+-+Bad+Habit.mp3")
 holy_fire2 = Song.new(name: "Inhaler", album_id: holy_fire.id, album_ord: 2, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/holyfir/Foals+-+Inhaler+02+-+\(Holy+Fire\).mp3")
 holy_fire3 = Song.new(name: "Late Night", album_id: holy_fire.id, album_ord: 3, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/holyfir/Foals+-+Late+Night.mp3")
