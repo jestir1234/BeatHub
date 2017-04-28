@@ -344,7 +344,6 @@ class Presentation extends React.Component{
         </div>
 
         <div className="album-collection">
-          <h1>Albums</h1>
           {albums}
         </div>
 

@@ -75,6 +75,7 @@ artists.push(electric)
 made_in_japan.save
 artists.push(made_in_japan)
 
+# ALBUMS
 nocturne = Album.new(name: "Nocturne", artist_id: wild_nothing.id, year: "01/2/2010", artist_name: "Wild Nothing", image_url: "https://s3.amazonaws.com/beathub-dev/pics/wild_nothing_nocturne_album.jpg")
 bones = Album.new(name: "The Bones of What You Believe", artist_id: chvrches.id, year: "20/9/2013", artist_name: "CHVRCHES", image_url: "https://s3.amazonaws.com/beathub-dev/pics/chvrches_album.jpeg")
 slowdive_ep = Album.new(name: "Slowdive EP", artist_id: slowdive.id, year: "10/02/1990", artist_name: "Slowdive", image_url: "https://s3.amazonaws.com/beathub-dev/pics/slowdive-ep.jpg")
@@ -136,7 +137,7 @@ albums.push(inner_world)
 albums.push(sights_and_sounds)
 
 
-
+# SONGS
 noc1 = Song.new(name: "Shadow", album_id: nocturne.id, album_ord: 1, genre: "Shoe-gaze", duration: 261, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/wild_nothing_nocturne/shadow.mp3")
 noc2 = Song.new(name: "Midnight Song", album_id: nocturne.id, album_ord: 2, genre: "Shoe-gaze", duration: 187, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/wild_nothing_nocturne/midnight_song.mp3")
 noc3 = Song.new(name: "Nocturne", album_id: nocturne.id, album_ord: 3, genre: "Shoe-gaze", duration: 320, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/wild_nothing_nocturne/nocturne.mp3")
