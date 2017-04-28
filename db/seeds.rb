@@ -23,6 +23,21 @@ User.create(username: "Kobe", password: "password", email: "kobe@email.com", def
 User.create(username: "Shaq", password: "password", email: "shaq@email.com", default_image_url: "https://i2.wp.com/thenypost.files.wordpress.com/2015/01/tv_shaq1a.jpg?quality=90&strip=all&ssl=1")
 User.create(username: "Lebron", password: "password", email: "lebron@email.com", default_image_url: "http://akns-images.eonline.com/eol_images/Entire_Site/201271/634.ab.lebron.080112.jpg")
 User.create(username: "Durant", password: "password", email: "durant@email.com", default_image_url: "http://www.slamonline.com/wp-content/uploads/2015/11/kevin-durant.jpg")
+User.create(username: "Harden", password: "password", email: "harden@email.com", default_image_url: "http://www.blackenterprise.com/wp-content/blogs.dir/1/files/2015/08/JamesHardy620480.jpg")
+User.create(username: "Curry", password: "password", email: "curry@email.com", default_image_url: "http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3975.png&w=350&h=254")
+User.create(username: "GreekFreak", password: "password", email: "greekfreak@email.com", default_image_url: "http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3032977.png&w=350&h=254")
+User.create(username: "Westbrook", password: "password", email: "westbrook@email.com", default_image_url: "http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3468.png&w=350&h=254")
+User.create(username: "Jordan", password: "password", email: "jordan@email.com", default_image_url: "http://wildchildsports.com/wp-content/uploads/2015/10/Michael-Jordan.jpg")
+User.create(username: "T-Mac", password: "password", email: "tmac@email.com", default_image_url: "http://a.espncdn.com/combiner/i?img=/photo/2009/0924/nba_g_mcgrady_576.jpg")
+User.create(username: "Draymond", password: "password", email: "dgreen@email.com", default_image_url: "http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/6589.png&w=350&h=254")
+User.create(username: "Duncan", password: "password", email: "duncan@email.com", default_image_url: "http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/215.png&w=350&h=254")
+User.create(username: "Nash", password: "password", email: "nash@email.com", default_image_url: "https://cdn-s3.si.com/s3fs-public/si/multimedia/photo_gallery/1011/steve.nash.rare.photos/images/steve-nash.075042215.jpg")
+User.create(username: "Mailman", password: "password", email: "malone@email.com", default_image_url: "http://www.blackenterprise.com/wp-content/blogs.dir/1/files/2011/06/Karl-Malone-620x480.jpg")
+User.create(username: "Iverson", password: "password", email: "Iverson@email.com", default_image_url: "https://upload.wikimedia.org/wikipedia/commons/2/21/Allen_Iverson_headshot.jpg")
+User.create(username: "Klay", password: "password", email: "klay@email.com", default_image_url: "http://img.bleacherreport.net/img/images/photos/003/254/291/67fdf975a0a446567365c0eb9f116e9d_crop_north.jpg?1422460134&w=630&h=420")
+User.create(username: "Magic", password: "password", email: "magic@email.com", default_image_url: "http://theledgesports.com/wp-content/uploads/2016/11/magic-johnson-winner-1.jpg")
+User.create(username: "Kyrie", password: "password", email: "kyrie@email.com", default_image_url: "https://s-media-cache-ak0.pinimg.com/originals/48/99/e2/4899e224c89cf91ee9f8bb848d87eaac.jpg")
+User.create(username: "Wall", password: "password", email: "wall@email.com", default_image_url: "http://images.performgroup.com/di/library/omnisport/5c/c5/wall-john-050815-usnews-getty-ftr_jnle4og4jozr1thl9n0e9dbct.jpg?t=862484125")
 
 
 # ARTISTS

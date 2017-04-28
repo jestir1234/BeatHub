@@ -72,10 +72,12 @@ class SignUp extends React.Component{
 
     return (
       <div className="signup-form-page">
-        <h2 id="logo-header">BeatHub</h2>
-        <img id="beathub-logo" src={window.logo_path}/>
 
         <div className="signup-container">
+          <div className="header-container">
+            <img id="beathub-logo" src={window.logo_path}/>
+            <h2 id="logo-header">BeatHub</h2>
+          </div>
           <h3>Sign up with your email address </h3>
           <form className="signup-form">
             <input type="text" value={this.state.username} placeholder="e.g.marshmallow" onChange={this.handleInput('username')}/><div className="form-errors" id="Username">{collectErrors.Username}</div>

@@ -97,8 +97,13 @@
   opacity: .8;
 }
 
-.user-thumb img{
-  width: 50px;
+.user-thumb{
   height: 50px;
+  width: 45px;
   border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-thumb img{
+
 }
