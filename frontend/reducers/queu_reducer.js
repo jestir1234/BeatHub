@@ -1,4 +1,4 @@
-import { ADD_SONG_TO_QUEU, REMOVE_SONG_FROM_QUEU, ADD_SONGS_TO_QUEU, REPLACE_QUEU_SONGS} from '../actions/queu_actions';
+import { ADD_SONG_TO_QUEU, REMOVE_SONG_FROM_QUEU, ADD_SONGS_TO_QUEU, REPLACE_QUEU_SONGS, PUSH_SONG_TO_FRONT} from '../actions/queu_actions';
 import merge from 'lodash/merge';
 
 
@@ -23,6 +23,11 @@ const QueuReducer = (oldState = _emptyQueu, action) => {
       return copy3;
     case REPLACE_QUEU_SONGS:
       return {songQueu: action.songs, currentSongPlaying: null};
+    case PUSH_SONG_TO_FRONT:
+      let newState2 = merge({}, oldState);
+      let newQueu = newState2.songQueu;
+      newQueu.unshift(action.song);
+      return {songQueu: newQueu, currentSongPlaying: newState2.currentSongPlaying};
      default:
       return oldState;
   }

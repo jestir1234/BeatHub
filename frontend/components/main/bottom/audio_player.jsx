@@ -14,13 +14,14 @@ class AudioPlayer extends React.Component{
     this.handleClick = this.handleClick.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
     this.handlePause = this.handlePause.bind(this);
-    this.state = {buttonStyle: 'play-arrow', queu: this.props.queu.songQueu, currentSongPlaying: null, newPositionAndDuration: null, newVolume: null};
+    this.state = {buttonStyle: 'play-arrow', queu: this.props.queu.songQueu, currentSongPlaying: null, newPositionAndDuration: null, newVolume: null, shuffleStatus: false};
     this.handleSkip = this.handleSkip.bind(this);
     this.handleRestart = this.handleRestart.bind(this);
     this.handleSlider = this.handleSlider.bind(this);
     this.handleVolume = this.handleVolume.bind(this);
     this.shuffle = this.shuffle.bind(this);
     this.handleShuffle = this.handleShuffle.bind(this);
+    this.handleRepeatCurrentSong = this.handleRepeatCurrentSong.bind(this);
   }
 
   componentWillReceiveProps(newProps){
@@ -51,6 +52,12 @@ class AudioPlayer extends React.Component{
     }
   }
 
+  handleRepeatCurrentSong(e){
+    this.props.pushSongToFront(this.props.currentSong);
+  }
+
+
+
   shuffle(array) {
     for (let i = array.length; i; i--) {
         let j = Math.floor(Math.random() * i);
@@ -62,7 +69,9 @@ class AudioPlayer extends React.Component{
   handleShuffle(e){
     if (this.props.queu.songQueu.length){
       let shuffledQueue = this.shuffle(this.props.queu.songQueu);
+      let newState = merge({}, this.state, {shuffleStatus: true});
       this.props.replaceQueuSongs(shuffledQueue);
+      this.setState(newState);
     }
   }
 
@@ -197,7 +206,7 @@ class AudioPlayer extends React.Component{
           <div className="album-art-thumbnail">
             {song_img}
           </div>
-          <marquee><h1>{currentSong ? `${currentSong.name} by ${artist} is currently ${marqueeStatus}` : ""}</h1></marquee>
+          <marquee><h1>{currentSong ? `${currentSong.name} by ${artist} is currently ${marqueeStatus} ${this.state.shuffleStatus ? "(shuffle on)" : ""}` : ""}</h1></marquee>
         </div>
         {playSong}
 
@@ -208,7 +217,7 @@ class AudioPlayer extends React.Component{
               <button onClick={this.handleRestart} className="skip-btn"><div className="arrow-left"></div></button>
               <button onClick={this.handleClick(this.props)}className="play-btn"><div id={this.state.buttonStyle}></div></button>
               <button onClick={this.handleSkip} className="skip-btn"><div className="arrow-right"></div></button>
-              <button className="repeat-btn"></button>
+              <button onClick={this.handleRepeatCurrentSong} className="repeat-btn"></button>
             </div>
             <div className="status-bar-container">
               <p id="time-passed">{timePassed}</p>

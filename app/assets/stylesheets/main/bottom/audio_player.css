@@ -153,6 +153,10 @@ flex: 8;
   outline: none;
 }
 
+.shuffle-btn:hover{
+  cursor: pointer;
+}
+
 .shuffle-btn:hover {
   transform: scale(1.2);
 }
