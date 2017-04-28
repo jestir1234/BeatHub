@@ -3,7 +3,7 @@ class Api::AlbumsController < ApplicationController
   def index
 
     if params[:artist_id]
-      artist = Artist.find(params[:artist_id])
+      artist = Artist.includes(:albums).find(params[:artist_id])
       @collection = artist.albums
     else
 

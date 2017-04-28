@@ -25,3 +25,10 @@ export const fetchRadioSongs = () => {
     url: 'api/radio'
   });
 };
+
+export const fetchRandomSong = (artistId) => {
+  return $.ajax({
+    method: "GET",
+    url: `api/radio/${artistId}`
+  });
+};

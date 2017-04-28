@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Presentation from './presentation';
-import { fetchAlbumSongs, fetchPlaylistSongs, fetchSong, removeCurrentSong } from '../../../actions/song_actions';
+import { fetchAlbumSongs, fetchPlaylistSongs, fetchSong, removeCurrentSong, fetchRandomSong } from '../../../actions/song_actions';
 import { playCurrentSong, pauseCurrentSong, stopCurrentSong } from '../../../actions/current_song_actions';
 import { deletePlaylist } from '../../../actions/playlist_actions';
 import { receivePresentationItem } from '../../../actions/presentation_actions';
@@ -48,7 +48,8 @@ const mapDispatchToProps = (dispatch) => {
     followUser: (follow) => dispatch(followUser(follow)),
     unfollowUser: (follow) => dispatch(unfollowUser(follow)),
     fetchAllUsers: () => dispatch(fetchAllUsers()),
-    fetchUpdatedUser: (userId) => dispatch(fetchUpdatedUser(userId))
+    fetchUpdatedUser: (userId) => dispatch(fetchUpdatedUser(userId)),
+    fetchRandomSong: (artistId) => dispatch(fetchRandomSong(artistId))
   };
 };
 

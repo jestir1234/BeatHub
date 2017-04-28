@@ -12,4 +12,12 @@ class Api::RadioController < ApplicationController
     @songs = collection
     render 'api/songs/radio'
   end
+
+  def show
+    artist = Artist.includes(:songs).find(params[:id])
+    artist_songs = artist.songs;
+
+    @song = artist_songs[rand(0..artist_songs.length)]
+    render 'api/songs/show'
+  end
 end

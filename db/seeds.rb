@@ -27,10 +27,11 @@ User.create(username: "Durant", password: "password", email: "durant@email.com",
 wild_nothing = Artist.new(name: "Wild Nothing", genre: "Shoe-gaze", image_url: "https://s3.amazonaws.com/beathub-dev/pics/wild_nothing_artist.jpeg", banner_url: "https://s3.amazonaws.com/beathub-dev/pics/wildnothing_banner.jpg")
 chvrches = Artist.new(name: "CHVRCHES", genre: "Synth-pop", image_url: "https://s3.amazonaws.com/beathub-dev/pics/chvrches_artist.jpeg", banner_url: "https://s3.amazonaws.com/beathub-dev/pics/chvrches_banner.jpg")
 slowdive = Artist.new(name: "Slowdive", genre: "Shoe-gaze", image_url: "https://s3.amazonaws.com/beathub-dev/pics/slowdivepic.jpg", banner_url: "https://s3.amazonaws.com/beathub-dev/pics/slowdive_banner.jpg")
+yumi = Artist.new(name: "Yumi Zouma", genre: "Dream-Pop", image_url: "https://s3.amazonaws.com/beathub-dev/songs/yumi_zouma/yumi_artist_art.png", banner_url: "https://s3.amazonaws.com/beathub-dev/songs/yumi_zouma/yumi_banner-mv2.jpg")
+yung_bae = Artist.new(name: "Yung Bae", genre: "Vaporwave", image_url: "https://s3.amazonaws.com/beathub-dev/songs/yung_bae/yungbae_album_art.jpg", banner_url: "https://s3.amazonaws.com/beathub-dev/songs/yung_bae/yungbae_banner.jpg")
 
 wild_nothing.save
 artists.push(wild_nothing)
-
 
 chvrches.save
 artists.push(chvrches)
@@ -38,17 +39,32 @@ artists.push(chvrches)
 slowdive.save
 artists.push(slowdive)
 
+yumi.save
+artists.push(yumi)
+
+yung_bae.save
+artists.push(yung_bae)
+
 nocturne = Album.new(name: "Nocturne", artist_id: wild_nothing.id, year: "01/2/2010", artist_name: "Wild Nothing", image_url: "https://s3.amazonaws.com/beathub-dev/pics/wild_nothing_nocturne_album.jpg")
 bones = Album.new(name: "The Bones of What You Believe", artist_id: chvrches.id, year: "20/9/2013", artist_name: "CHVRCHES", image_url: "https://s3.amazonaws.com/beathub-dev/pics/chvrches_album.jpeg")
 slowdive_ep = Album.new(name: "Slowdive EP", artist_id: slowdive.id, year: "10/02/1990", artist_name: "Slowdive", image_url: "https://s3.amazonaws.com/beathub-dev/pics/slowdive-ep.jpg")
+gemini = Album.new(name: "Gemini", artist_id: wild_nothing.id, year: "01/02/2010", artist_name: "Wild Nothing", image_url: "https://s3.amazonaws.com/beathub-dev/songs/wild_nothing_gemini/gemini_album_art.jpg")
+yoncalla = Album.new(name: "Yoncalla", artist_id: yumi.id, year: "01/02/2014", artist_name: "Yumi Zouma", image_url: "https://s3.amazonaws.com/beathub-dev/songs/yumi_zouma/yoncalla_albumart.jpg")
+bae = Album.new(name: "Bae", artist_id: yung_bae.id, year: "01/02/2016", artist_name: "Yung Bae", image_url: "https://s3.amazonaws.com/beathub-dev/songs/yung_bae/yungbae_album_art.jpg")
 
 nocturne.save
 bones.save
 slowdive_ep.save
+gemini.save
+yoncalla.save
+bae.save
 
 albums.push(nocturne)
 albums.push(bones)
 albums.push(slowdive_ep)
+albums.push(gemini)
+albums.push(yoncalla)
+albums.push(bae)
 
 
 noc1 = Song.new(name: "Shadow", album_id: nocturne.id, album_ord: 1, genre: "Shoe-gaze", duration: 261, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/wild_nothing_nocturne/shadow.mp3")
@@ -138,6 +154,49 @@ slowdive3.save
 songs << slowdive1
 songs << slowdive2
 songs << slowdive3
+
+gemini1 = Song.new(name: "Live In Dreams", album_id: gemini.id, album_ord: 1, genre: "Shoe-gaze", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/wild_nothing_gemini/WILD+NOTHING+-+LIVE+IN+DREAMS.mp3")
+gemini2 = Song.new(name: "Drifter", album_id: gemini.id, album_ord: 2, genre: "Shoe-gaze", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/wild_nothing_gemini/Wild+Nothing+-+Gemini+-+Drifter.mp3")
+gemini3 = Song.new(name: "Gemini", album_id: gemini.id, album_ord: 3, genre: "Shoe-gaze", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/wild_nothing_gemini/Wild+Nothing+-+Gemini+-+Gemini.mp3")
+gemini4 = Song.new(name: "My Angel Lonely", album_id: gemini.id, album_ord: 4, genre: "Shoe-gaze", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/wild_nothing_gemini/Wild+Nothing+-+Gemini+-+My+Angel+Lonely.mp3")
+gemini5 = Song.new(name: "Summer Holidays", album_id: gemini.id, album_ord: 5, genre: "Shoe-gaze", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/wild_nothing_gemini/Wild+Nothing+-+Summer+Holiday.mp3")
+
+gemini1.save
+gemini2.save
+gemini3.save
+gemini4.save
+gemini5.save
+
+songs << gemini1
+songs << gemini2
+songs << gemini3
+songs << gemini4
+songs << gemini5
+
+yoncalla1 = Song.new(name: "Alena", album_id: yoncalla.id, album_ord: 1, genre: "Dream-pop", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/yumi_zouma/Yumi+Zouma+-+Alena.mp3")
+yoncalla2 = Song.new(name: "Barricade", album_id: yoncalla.id, album_ord: 2, genre: "Dream-pop", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/yumi_zouma/Yumi+Zouma+-+Barricade.mp3")
+yoncalla3 = Song.new(name: "Dodi", album_id: yoncalla.id, album_ord: 3, genre: "Dream-pop", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/yumi_zouma/Yumi+Zouma+-+Dodi.mp3")
+yoncalla4 = Song.new(name: "Song For Zoe and Gwen", album_id: yoncalla.id, album_ord: 4, genre: "Dream-pop", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/yumi_zouma/Yumi+Zouma+-+Song+For+Zoe+%26+Gwen.mp3")
+yoncalla5 = Song.new(name: "The Brae", album_id: yoncalla.id, album_ord: 5, genre: "Dream-pop", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/yumi_zouma/Yumi+Zouma+-+The+Brae.mp3")
+yoncalla6 = Song.new(name: "Catastrophe", album_id: yoncalla.id, album_ord: 6, genre: "Dream-pop", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/yumi_zouma/Yumi+Zouma+-+Catastrophe.mp3")
+
+yoncalla1.save
+yoncalla2.save
+yoncalla3.save
+yoncalla4.save
+yoncalla5.save
+yoncalla6.save
+
+bae1 = Song.new(name: "Fly With Me", album_id: bae.id, album_ord: 1, genre: "Vaporwave", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/yung_bae/YUNG+BAE+-+Fly+With+Me.mp3")
+bae2 = Song.new(name: "Bae City Rollaz", album_id: bae.id, album_ord: 2, genre: "Vaporwave", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/yung_bae/bae_city_rollaz.mp3")
+bae3 = Song.new(name: "It's a Sing", album_id: bae.id, album_ord: 3, genre: "Vaporwave", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/yung_bae/its_a_sing.mp3")
+bae4 = Song.new(name: "Miami Wicked", album_id: bae.id, album_ord: 4, genre: "Vaporwave", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/yung_bae/miami_wicked.mp3")
+
+
+bae1.save
+bae2.save
+bae3.save
+bae4.save
 
 artists.each do |artist|
   search_document = artist.pg_search_document

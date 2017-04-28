@@ -27,6 +27,7 @@ class Presentation extends React.Component{
     this.handleFollow = this.handleFollow.bind(this);
     this.handleFollowUser = this.handleFollowUser.bind(this);
     this.renderIndex = this.renderIndex.bind(this);
+    this.PlayRandomSongByArtist = this.PlayRandomSongByArtist.bind(this);
   }
 
 
@@ -55,6 +56,13 @@ class Presentation extends React.Component{
         }
       }
     }
+  }
+
+  PlayRandomSongByArtist(artist){
+    return (e) => {
+      this.props.fetchRandomSong(artist.id);
+      this.props.playCurrentSong();
+    };
   }
 
   handleFollowUser(user){
@@ -316,7 +324,7 @@ class Presentation extends React.Component{
        <div className="artist-info-container">
          <h1>{name}</h1>
          <div className="artist-info-btns">
-           <button className="artist-play-btn">Play</button>
+           <button onClick={this.PlayRandomSongByArtist(artist)} className="artist-play-btn">Play</button>
            <button onClick={this.handleFollow("Artists", "Artist")} className="artist-follow-btn">{followStatus ? "Unfollow" : "Follow"}</button>
          </div>
        </div>
