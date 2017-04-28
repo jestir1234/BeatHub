@@ -24,7 +24,6 @@ class FollowedFriendsIndex extends React.Component {
 
   handleClick(user){
     return (e) => {
-      e.preventDefault();
       this.props.receivePresentationItem(user, "Users");
     };
   }
