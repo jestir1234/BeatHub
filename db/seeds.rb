@@ -479,7 +479,7 @@ bloom3.save
 
 unreal1 = Song.new(name: "Kimi Ni Todoke", album_id: unreal.id, album_ord: 1, genre: "J-Rock", duration: 180, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/flumpool/unreal/Kimi+ni+Todoke-Flumpool+-+YouTube.mp3")
 unreal2 = Song.new(name: "Over The Rain", album_id: unreal.id, album_ord: 2, genre: "J-Rock", duration: 200, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/flumpool/unreal/Over+the+rain.mp3")
-unreal3 = Song.new(name: "Kimi Ni Todoke", album_id: unreal.id, album_ord: 3, genre: "J-Rock", duration: 230, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/flumpool/unreal/hoshi+ni+negai+wo+romaji.mp3")
+unreal3 = Song.new(name: "Hoshi Ni Negai Wo", album_id: unreal.id, album_ord: 3, genre: "J-Rock", duration: 230, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/flumpool/unreal/hoshi+ni+negai+wo+romaji.mp3")
 
 unreal1.save
 unreal2.save

@@ -234,7 +234,7 @@ class AudioPlayer extends React.Component{
           <div className="volume-icon">
           </div>
           <div className="volume-bar">
-            <input id="volumeBar" onMouseUp={this.handleVolume} type="range" min="0" max="100" />
+            <input id="volumeBar" onMouseUp={this.handleVolume} type="range" defaultValue="100" min="0" max="100" />
           </div>
         </div>
       </div>
