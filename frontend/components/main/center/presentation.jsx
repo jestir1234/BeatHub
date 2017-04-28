@@ -235,6 +235,12 @@ class Presentation extends React.Component{
     let followStatus = user.followed;
     let followBtn = this.props.currentUser.id !== user.id ? (<button onClick={this.handleFollowUser(user)}>{followStatus ? "Unfollow" : "Follow"}</button>) : null;
 
+
+    user.followed_artists.forEach((artist) => {
+      artist.followed = true;
+    });
+
+
     let playlists = user.playlists ? user.playlists.map((playlist, idx) => {
       return (
         <div className="user-playlist-item" key={idx}>
