@@ -222,6 +222,7 @@ class Presentation extends React.Component{
     return (
       <div className="music-index-show-page">
           <h1>Your {type}</h1>
+
           <div className="collection-container">
             {collection}
           </div>
@@ -343,7 +344,11 @@ class Presentation extends React.Component{
 
         </div>
 
-        <div className="album-collection">
+      <div>
+        <h2>Albums</h2>
+      </div>  
+
+      <div className="album-collection">
           {albums}
         </div>
 

@@ -21,7 +21,7 @@ class FollowedFriendsIndex extends React.Component {
     e.preventDefault();
     this.setState({usersAllShow: !this.state.usersAllShow});
   }
-
+sees
   handleClick(user){
     return (e) => {
       this.props.receivePresentationItem(user, "Users");

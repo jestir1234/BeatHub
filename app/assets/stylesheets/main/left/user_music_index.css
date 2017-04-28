@@ -123,13 +123,12 @@
 .left-nav-logo-container{
   display: flex;
   flex-direction: column;
-  position: relative;
-  top: 20px;
-  left: 10%;
+  margin-left: 4%;
+  padding-top: 10%;
 }
 
 .left-nav-logo-container img{
-  width: 15%;
+  width: 30%;
 }
 
 .radio-container{

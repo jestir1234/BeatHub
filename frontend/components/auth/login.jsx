@@ -70,7 +70,7 @@ class Login extends React.Component {
       <div className="login-form-page">
         <div className="login-logo-container">
           <h2 id="login-logo-header">BeatHub</h2>
-          <img id="login-beathub-logo" src={window.logo_path}/>
+          <img id="login-beathub-logo" src="https://s3.amazonaws.com/beathub-dev/songs/logo.png"/>
         </div>
         <div className="login-container">
           <form className='login-form'>

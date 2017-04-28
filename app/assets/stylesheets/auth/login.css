@@ -1,5 +1,5 @@
 .login-form-page{
-  background: url("http://musicfactory.gr/wp-content/uploads/2017/03/k2.jpg");
+  background: url(http://musicfactory.gr/wp-content/uploads/2017/03/k2.jpg);
   width: 100vw;
   height: 100vh;
   text-align: center;
@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: inherit;
 }
 
 
@@ -30,7 +31,8 @@
 }
 
 .link-container {
-  margin-top: 10%;
+  padding-top: 10%;
+  margin-bottom: 40px;
 }
 
 .signup-link:hover {
@@ -84,7 +86,6 @@
 }
 
 .show-login-error{
-  width: 260px;
   height: 40px;
   background: #d60000;
   display: flex;
@@ -92,6 +93,10 @@
   flex-direction: column;
   font-size: 13px;
   margin-top: 6%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #clicked-button{
@@ -111,7 +116,9 @@
 .login-logo-container{
   display: flex;
   flex-direction: row-reverse;
-  align-self:center;
-  margin-right: 18%;
+  /* align-self: center; */
+  justify-content: center;
+  /* margin-right: 18%; */
   margin-top: 15%;
+  align-items: center;
 }

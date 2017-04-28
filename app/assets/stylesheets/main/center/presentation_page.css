@@ -40,6 +40,8 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
 .album-show-songs {
   height: auto;
   width: 60%;
+  padding-right: 5%;
+  padding-top: 1%;
 }
 .album-show p {
   color: #989797;

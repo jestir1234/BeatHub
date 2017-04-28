@@ -71,7 +71,7 @@ class UserMusicIndex extends React.Component{
       <div className="left-content">
 
         <div className="left-nav-logo-container">
-          <img src={window.logo_path}/>
+          <img src="https://s3.amazonaws.com/beathub-dev/songs/logo.png"/>
         </div>
 
         <div className="radio-container">

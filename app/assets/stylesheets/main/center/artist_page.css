@@ -32,12 +32,16 @@
 }
 
 .artist-album-container img{
-  height: 30%;
-  width: 40%;
+  width: 70%;
+}
+
+.artist-album-container .album-name{
+  padding-top: 5%
 }
 
 .artist-album-container .artist-name{
-  color: hsla(0,0%,100%,.4) Light gray;
+  padding-top: 1%;
+  color: hsla(0,0%,100%,.4);
 }
 
 .artist-album-container:hover{
@@ -53,10 +57,22 @@
 }
 
 .album-collection {
-
+  display: flex;
 }
 
 .artist-show{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.artist-show h2 {
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  margin-top: 35px;
+  padding-bottom: 20px;
 }
 
 .artist-banner img{
