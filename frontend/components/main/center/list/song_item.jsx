@@ -98,7 +98,9 @@ class SongItem extends React.Component {
 
         <div className="song-item-song-name">
           <p onContextMenu={this.handleRightClick(props)}>{props.song.name}</p>
+          <p className="song-item-artist-label">{props.song.artist.name}</p>
         </div>
+
         <RightClickMenuContainer song={props.song} idx={props.idx} />
       </li>
     );

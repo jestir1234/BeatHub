@@ -183,6 +183,12 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
   font-size: 20px;
 }
 
+.song-item-song-name .song-item-artist-label{
+  font-size: 14px;
+  color: hsla(0,0%,100%,.4);
+  padding-top: 2px;
+}
+
 #triangle-test{
   width: 0;
   height: 0;
