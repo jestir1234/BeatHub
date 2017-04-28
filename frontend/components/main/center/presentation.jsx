@@ -496,6 +496,7 @@ class Presentation extends React.Component{
     const editForm = this.state.editFormOpen ? (<PlaylistEditFormContainer currentPlaylist={this.props.presentationItem.item}/>) : null;
     const presentationItem = this.props.presentationItem.item ? this.props.presentationItem : null;
     let showPage = presentationItem ? this.renderPresentation(presentationItem) : this.renderDefault();
+
     return(
       <div className="center-content">
         {showPage}
