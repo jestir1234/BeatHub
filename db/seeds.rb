@@ -24,11 +24,20 @@ User.create(username: "Shaq", password: "password", email: "shaq@email.com", def
 User.create(username: "Lebron", password: "password", email: "lebron@email.com", default_image_url: "http://akns-images.eonline.com/eol_images/Entire_Site/201271/634.ab.lebron.080112.jpg")
 User.create(username: "Durant", password: "password", email: "durant@email.com", default_image_url: "http://www.slamonline.com/wp-content/uploads/2015/11/kevin-durant.jpg")
 
+
+# ARTISTS
 wild_nothing = Artist.new(name: "Wild Nothing", genre: "Shoe-gaze", image_url: "https://s3.amazonaws.com/beathub-dev/pics/wild_nothing_artist.jpeg", banner_url: "https://s3.amazonaws.com/beathub-dev/pics/wildnothing_banner.jpg")
 chvrches = Artist.new(name: "CHVRCHES", genre: "Synth-pop", image_url: "https://s3.amazonaws.com/beathub-dev/pics/chvrches_artist.jpeg", banner_url: "https://s3.amazonaws.com/beathub-dev/pics/chvrches_banner.jpg")
 slowdive = Artist.new(name: "Slowdive", genre: "Shoe-gaze", image_url: "https://s3.amazonaws.com/beathub-dev/pics/slowdivepic.jpg", banner_url: "https://s3.amazonaws.com/beathub-dev/pics/slowdive_banner.jpg")
 yumi = Artist.new(name: "Yumi Zouma", genre: "Dream-Pop", image_url: "https://s3.amazonaws.com/beathub-dev/songs/yumi_zouma/yumi_artist_art.png", banner_url: "https://s3.amazonaws.com/beathub-dev/songs/yumi_zouma/yumi_banner-mv2.jpg")
 yung_bae = Artist.new(name: "Yung Bae", genre: "Vaporwave", image_url: "https://s3.amazonaws.com/beathub-dev/songs/yung_bae/yungbae_album_art.jpg", banner_url: "https://s3.amazonaws.com/beathub-dev/songs/yung_bae/yungbae_banner.jpg")
+blood_orange = Artist.new(name: "Blood Orange", genre: "Soul", image_url: "https://s3.amazonaws.com/beathub-dev/songs/blood_orange/blood-orange_artist_img.jpg", banner_url: "https://s3.amazonaws.com/beathub-dev/songs/blood_orange/bloodorange_banner.jpg")
+national = Artist.new(name: "The National", genre: "Indie-rock", image_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/national_artist_art.jpg", banner_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/national_banner.jpg")
+thundercat = Artist.new(name: "Thundercat", genre: "Soul", image_url: "https://s3.amazonaws.com/beathub-dev/songs/thundercat/thundercat_artist_art.jpg", banner_url: "https://s3.amazonaws.com/beathub-dev/songs/thundercat/THUNDERCATbanner.jpg")
+foals = Artist.new(name: "Foals", genre: "Indie-rock", image_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/foals_artist_art.jpg", banner_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/foals_banner.jpg")
+diiv = Artist.new(name: "DIIV", genre: "Indie-rock", image_url: "https://s3.amazonaws.com/beathub-dev/songs/diiv/diiv_artist_art.jpg", banner_url: "https://s3.amazonaws.com/beathub-dev/songs/diiv/diiv_banner.jpg")
+electric = Artist.new(name: "Electric Youth", genre: "Synth-pop", image_url: "https://s3.amazonaws.com/beathub-dev/songs/electric_youth/artist_electricyouth_art.jpg", banner_url: "https://s3.amazonaws.com/beathub-dev/songs/electric_youth/electriyouth_banner.jpg")
+made_in_japan = Artist.new(name: "Made In Japan", genre: "Indie-rock", image_url: "https://s3.amazonaws.com/beathub-dev/songs/made_in_japan/made-in-japanartist_art.jpg", banner_url: "https://s3.amazonaws.com/beathub-dev/songs/made_in_japan/made_in_japan_banner.png")
 
 wild_nothing.save
 artists.push(wild_nothing)
@@ -45,12 +54,46 @@ artists.push(yumi)
 yung_bae.save
 artists.push(yung_bae)
 
+blood_orange.save
+artists.push(blood_orange)
+
+national.save
+artists.push(national)
+
+thundercat.save
+artists.push(thundercat)
+
+foals.save
+artists.push(foals)
+
+diiv.save
+artists.push(diiv)
+
+electric.save
+artists.push(electric)
+
+made_in_japan.save
+artists.push(made_in_japan)
+
 nocturne = Album.new(name: "Nocturne", artist_id: wild_nothing.id, year: "01/2/2010", artist_name: "Wild Nothing", image_url: "https://s3.amazonaws.com/beathub-dev/pics/wild_nothing_nocturne_album.jpg")
 bones = Album.new(name: "The Bones of What You Believe", artist_id: chvrches.id, year: "20/9/2013", artist_name: "CHVRCHES", image_url: "https://s3.amazonaws.com/beathub-dev/pics/chvrches_album.jpeg")
 slowdive_ep = Album.new(name: "Slowdive EP", artist_id: slowdive.id, year: "10/02/1990", artist_name: "Slowdive", image_url: "https://s3.amazonaws.com/beathub-dev/pics/slowdive-ep.jpg")
 gemini = Album.new(name: "Gemini", artist_id: wild_nothing.id, year: "01/02/2010", artist_name: "Wild Nothing", image_url: "https://s3.amazonaws.com/beathub-dev/songs/wild_nothing_gemini/gemini_album_art.jpg")
 yoncalla = Album.new(name: "Yoncalla", artist_id: yumi.id, year: "01/02/2014", artist_name: "Yumi Zouma", image_url: "https://s3.amazonaws.com/beathub-dev/songs/yumi_zouma/yoncalla_albumart.jpg")
 bae = Album.new(name: "Bae", artist_id: yung_bae.id, year: "01/02/2016", artist_name: "Yung Bae", image_url: "https://s3.amazonaws.com/beathub-dev/songs/yung_bae/yungbae_album_art.jpg")
+cupid_deluxe = Album.new(name: "Cupid Deluxe", artist_id: blood_orange.id, year: "01/02/2013", artist_name: "Blood Orange", image_url: "https://s3.amazonaws.com/beathub-dev/songs/blood_orange/cupid_deluxe/cupid_deluxe_album_art.jpg")
+freetown_sound = Album.new(name: "Freetown Sound", artist_id: blood_orange.id, year: "01/02/2016", artist_name: "Blood Orange", image_url: "https://s3.amazonaws.com/beathub-dev/songs/blood_orange/freetown_sound/freetown_art.jpg")
+alligator = Album.new(name: "Alligator", artist_id: national.id, year: "01/02/2003", artist_name: "The National", image_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/alligator/alligator_album_art.jpg")
+boxer = Album.new(name: "Boxer", artist_id: national.id, year: "01/02/2007", artist_name: "The National", image_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/boxer/boxer_album_art.jpg")
+high_violet = Album.new(name: "High Violet", artist_id: national.id, year: "01/02/2010", artist_name: "The National", image_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/high_violet/high_violet_album_art.jpg")
+trouble_will_find_me = Album.new(name: "Trouble Will Find Me", artist_id: national.id, year: "01/02/2013", artist_name: "The National", image_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/trouble_will_find_me/trouble_will_find_me_album_art.jpg")
+apocalypse = Album.new(name: "Apocalypse", artist_id: thundercat.id, year: "01/02/2012", artist_name: "Thundercat", image_url: "https://s3.amazonaws.com/beathub-dev/songs/thundercat/apocalypse/thundercat_album_art.jpeg")
+antidotes = Album.new(name: "Antidotes", artist_id: foals.id, year: "01/02/2007", artist_name: "Foals", image_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/antidoate/antidote_album_art.jpg")
+total_life_forever = Album.new(name: "Total Life Forever", artist_id: foals.id, year: "01/02/2010", artist_name: "Foals", image_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/total_rife_forever/total_life_Album_art.jpg")
+holy_fire = Album.new(name: "Holy Fire", artist_id: foals.id, year: "01/02/2013", artist_name: "Foals", image_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/holyfir/holy_fire_album_Art.jpg")
+oshin = Album.new(name: "Oshin", artist_id: diiv.id, year: "01/02/2014", artist_name: "DIIV", image_url: "https://s3.amazonaws.com/beathub-dev/songs/diiv/oshin/oshin_album_art.jpeg")
+inner_world = Album.new(name: "Innerworld", artist_id: electric.id, year: "01/02/2014", artist_name: "Electric Youth", image_url: "https://s3.amazonaws.com/beathub-dev/songs/electric_youth/innerworld/innerworld_albumart.jpg")
+sights_and_sounds = Album.new(name: "Sights and Sounds", artist_id: made_in_japan.id, year: "01/02/2012", artist_name: "Made In Japan", image_url: "https://s3.amazonaws.com/beathub-dev/songs/made_in_japan/sights_and_sounds/albun_art_sights_sounds.jpg")
 
 nocturne.save
 bones.save
@@ -58,6 +101,19 @@ slowdive_ep.save
 gemini.save
 yoncalla.save
 bae.save
+cupid_deluxe.save
+freetown_sound.save
+alligator.save
+boxer.save
+high_violet.save
+trouble_will_find_me.save
+apocalypse.save
+antidotes.save
+total_life_forever.save
+holy_fire.save
+oshin.save
+inner_world.save
+sights_and_sounds.save
 
 albums.push(nocturne)
 albums.push(bones)
@@ -65,6 +121,20 @@ albums.push(slowdive_ep)
 albums.push(gemini)
 albums.push(yoncalla)
 albums.push(bae)
+albums.push(cupid_deluxe)
+albums.push(freetown_sound)
+albums.push(alligator)
+albums.push(boxer)
+albums.push(high_violet)
+albums.push(trouble_will_find_me)
+albums.push(apocalypse)
+albums.push(antidotes)
+albums.push(total_life_forever)
+albums.push(holy_fire)
+albums.push(oshin)
+albums.push(inner_world)
+albums.push(sights_and_sounds)
+
 
 
 noc1 = Song.new(name: "Shadow", album_id: nocturne.id, album_ord: 1, genre: "Shoe-gaze", duration: 261, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/wild_nothing_nocturne/shadow.mp3")
@@ -197,6 +267,135 @@ bae1.save
 bae2.save
 bae3.save
 bae4.save
+
+cupid_deluxe1 = Song.new(name: "Chamakay", album_id: cupid_deluxe.id, album_ord: 1, genre: "Soul", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/blood_orange/cupid_deluxe/Blood+Orange+-+Chamakay.mp3")
+cupid_deluxe2 = Song.new(name: "Chosen", album_id: cupid_deluxe.id, album_ord: 2, genre: "Soul", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/blood_orange/cupid_deluxe/Blood+Orange+-+Chosen.mp3")
+cupid_deluxe3 = Song.new(name: "It Is What It Is", album_id: cupid_deluxe.id, album_ord: 3, genre: "Soul", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/blood_orange/cupid_deluxe/Blood+Orange+-+It+Is+What+It+Is.mp3")
+cupid_deluxe4 = Song.new(name: "You're Not Good Enough", album_id: cupid_deluxe.id, album_ord: 4, genre: "Soul", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/blood_orange/cupid_deluxe/Blood+Orange+-+Youre+Not+Good+Enough.mp3")
+
+cupid_deluxe1.save
+cupid_deluxe2.save
+cupid_deluxe3.save
+cupid_deluxe4.save
+
+free_town1 = Song.new(name: "Hadron Collider", album_id: freetown_sound.id, album_ord: 1, genre: "Soul", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/blood_orange/freetown_sound/Blood+Orange+%26+Nelly+Furtado+-+Hadron+Collider.mp3")
+free_town2 = Song.new(name: "Augustine", album_id: freetown_sound.id, album_ord: 2, genre: "Soul", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/blood_orange/freetown_sound/Blood+Orange+-+Augustine.mp3")
+free_town3 = Song.new(name: "Best To You", album_id: freetown_sound.id, album_ord: 3, genre: "Soul", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/blood_orange/freetown_sound/Blood+Orange+-+Best+To+You.mp3")
+
+free_town1.save
+free_town2.save
+free_town3.save
+
+alligator1 = Song.new(name: "About Today", album_id: alligator.id, album_ord: 1, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/alligator/The+National+-+-About+Today-.mp3")
+alligator2 = Song.new(name: "All The Wine", album_id: alligator.id, album_ord: 2, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/alligator/The+National+All+the+wine.mp3")
+
+alligator1.save
+alligator2.save
+
+boxer1 = Song.new(name: "Apartment Story", album_id: boxer.id, album_ord: 1, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/boxer/The+National+-+-Apartment+Story-.mp3")
+boxer2 = Song.new(name: "Mistaken For Strangers", album_id: boxer.id, album_ord: 2, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/boxer/The+National+-+Mistaken+for+Strangers.mp3")
+boxer3 = Song.new(name: "Slow Show", album_id: boxer.id, album_ord: 3, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/boxer/The+National+-+Slow+Show.mp3")
+
+boxer1.save
+boxer2.save
+boxer3.save
+
+high_violet1 = Song.new(name: "Afraid of Everyone", album_id: high_violet.id, album_ord: 1, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/high_violet/The+National+-+Afraid+of+Everyone.mp3")
+high_violet2 = Song.new(name: "Lemon World", album_id: high_violet.id, album_ord: 2, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/high_violet/The+National-Lemon+World.mp3")
+high_violet3 = Song.new(name: "Bloodbuzz Ohio", album_id: high_violet.id, album_ord: 3, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/high_violet/The+National+-+Bloodbuzz+Ohio.mp3")
+high_violet4 = Song.new(name: "Little Faith", album_id: high_violet.id, album_ord: 4, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/high_violet/The+National-+Little+Faith.mp3")
+high_violet5 = Song.new(name: "Anyone's Ghoust", album_id: high_violet.id, album_ord: 5, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/high_violet/The+National+-+Anyones+Ghost.mp3")
+high_violet6 = Song.new(name: "Conversation 16", album_id: high_violet.id, album_ord: 6, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/high_violet/The+National+-+Conversation+16.mp3")
+
+high_violet1.save
+high_violet2.save
+high_violet3.save
+high_violet4.save
+high_violet5.save
+high_violet6.save
+
+trouble_will_find_me1 = Song.new(name: "Demons", album_id: trouble_will_find_me.id, album_ord: 3, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/trouble_will_find_me/The+National+-+-Demons-.mp3")
+trouble_will_find_me2 = Song.new(name: "Don't Swallow The Cap", album_id: trouble_will_find_me.id, album_ord: 1, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/trouble_will_find_me/The+National+-+-Dont+Swallow+the+Cap-.mp3")
+trouble_will_find_me3 = Song.new(name: "I Need My Girl", album_id: trouble_will_find_me.id, album_ord: 2, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/trouble_will_find_me/The+National+-+-I+Need+My+Girl-.mp3")
+trouble_will_find_me4 = Song.new(name: "Humiliation", album_id: trouble_will_find_me.id, album_ord: 5, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/trouble_will_find_me/The+National+-+Humiliation.mp3")
+trouble_will_find_me5 = Song.new(name: "This Is The Last Time", album_id: trouble_will_find_me.id, album_ord: 4, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/the_national/trouble_will_find_me/The+National+-+This+Is+The+Last+Time.mp3")
+
+trouble_will_find_me1.save
+trouble_will_find_me2.save
+trouble_will_find_me3.save
+trouble_will_find_me4.save
+trouble_will_find_me5.save
+
+apocalypse1 = Song.new(name: "Heartbreaks + Setbacks", album_id: apocalypse.id, album_ord: 1, genre: "Soul", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/thundercat/apocalypse/Thundercat+-+Heartbreaks+%2B+Setbacks.mp3")
+apocalypse2 = Song.new(name: "Tenfold", album_id: apocalypse.id, album_ord: 2, genre: "Soul", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/thundercat/apocalypse/Thundercat+-+Tenfold.mp3")
+apocalypse3 = Song.new(name: "Tron Song", album_id: apocalypse.id, album_ord: 3, genre: "Soul", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/thundercat/apocalypse/Tron+Song+-+Thundercat.mp3")
+
+apocalypse1.save
+apocalypse2.save
+apocalypse3.save
+
+antidotes1 = Song.new(name: "The French Open", album_id: antidotes.id, album_ord: 1, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/antidoate/Foals+-+The+French+Open+-+Antidotes.mp3")
+antidotes2 = Song.new(name: "Cassius", album_id: antidotes.id, album_ord: 2, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/antidoate/Foals+-+Cassius.mp3")
+antidotes3 = Song.new(name: "Electric Bloom", album_id: antidotes.id, album_ord: 3, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/antidoate/Foals+-+Electric+Bloom+-+Antidotes.mp3")
+antidotes4 = Song.new(name: "Hummer", album_id: antidotes.id, album_ord: 4, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/antidoate/Foals+-+Hummer.mp3")
+antidotes5 = Song.new(name: "Olympic Airways", album_id: antidotes.id, album_ord: 5, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/antidoate/Foals+-+Olympic+Airways.mp3")
+antidotes6 = Song.new(name: "Balloon", album_id: antidotes.id, album_ord: 6, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/antidoate/Balloons+-+Foals.mp3")
+
+antidotes1.save
+antidotes2.save
+antidotes3.save
+antidotes4.save
+antidotes5.save
+antidotes6.save
+
+holy_fire1 = Song.new(name: "Bad Habit", album_id: holy_fire.id, album_ord: 1, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/holyfir/Foals+-+Bad+Habit.mp3")
+holy_fire2 = Song.new(name: "Inhaler", album_id: holy_fire.id, album_ord: 2, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/holyfir/Foals+-+Inhaler+02+-+\(Holy+Fire\).mp3")
+holy_fire3 = Song.new(name: "Late Night", album_id: holy_fire.id, album_ord: 3, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/holyfir/Foals+-+Late+Night.mp3")
+holy_fire4 = Song.new(name: "My Number", album_id: holy_fire.id, album_ord: 4, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/foals/holyfir/My+Number+-+FOALS+\(lyrics+on-screen\).mp3")
+
+holy_fire1.save
+holy_fire2.save
+holy_fire3.save
+holy_fire4.save
+
+oshin1 = Song.new(name: "Doused", album_id: oshin.id, album_ord: 1, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/diiv/oshin/DIIV+-+Doused.mp3")
+oshin2 = Song.new(name: "Follow", album_id: oshin.id, album_ord: 2, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/diiv/oshin/DIIV+-+Follow.mp3")
+oshin3 = Song.new(name: "How Long Have You Known", album_id: oshin.id, album_ord: 3, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/diiv/oshin/DIIV+-+How+Long+Have+You+Known-.mp3")
+oshin4 = Song.new(name: "Subsume", album_id: oshin.id, album_ord: 4, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/diiv/oshin/DIIV+-+Oshin+\(Subsume\).mp3")
+
+oshin1.save
+oshin2.save
+oshin3.save
+oshin4.save
+
+inner_world1 = Song.new(name: "A Real Hero", album_id: inner_world.id, album_ord: 1, genre: "Synth-pop", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/electric_youth/innerworld/Electric+Youth+-+A+Real+Hero.mp3")
+inner_world2 = Song.new(name: "Before Life", album_id: inner_world.id, album_ord: 2, genre: "Synth-pop", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/electric_youth/innerworld/Electric+Youth+-+Before+Life.mp3")
+inner_world3 = Song.new(name: "If All She Has Is You", album_id: inner_world.id, album_ord: 3, genre: "Synth-pop", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/electric_youth/innerworld/Electric+Youth+-+If+All+She+Has+Is+You.mp3")
+inner_world4 = Song.new(name: "Innocence", album_id: inner_world.id, album_ord: 4, genre: "Synth-pop", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/electric_youth/innerworld/Electric+Youth+-+Innocence.mp3")
+inner_world5 = Song.new(name: "The Best Thing", album_id: inner_world.id, album_ord: 5, genre: "Synth-pop", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/electric_youth/innerworld/Electric+Youth+-+The+Best+Thing.mp3")
+inner_world6 = Song.new(name: "Tomorrow", album_id: inner_world.id, album_ord: 6, genre: "Synth-pop", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/electric_youth/innerworld/Electric+Youth+-+Tomorrow.mp3")
+inner_world7 = Song.new(name: "WeAreTheYouth", album_id: inner_world.id, album_ord: 7, genre: "Synth-pop", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/electric_youth/innerworld/Electric+Youth+-+WeAreTheYouth.mp3")
+inner_world8 = Song.new(name: "Without You", album_id: inner_world.id, album_ord: 8, genre: "Synth-pop", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/electric_youth/innerworld/Electric+Youth+-+Without+You.mp3")
+
+inner_world1.save
+inner_world2.save
+inner_world3.save
+inner_world4.save
+inner_world5.save
+inner_world6.save
+inner_world7.save
+inner_world8.save
+
+sights_and_sounds1 = Song.new(name: "Evening Weather", album_id: sights_and_sounds.id, album_ord: 1, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/made_in_japan/sights_and_sounds/Evening+Weather+-+Made+in+Japan.mp3")
+sights_and_sounds2 = Song.new(name: "Pairs", album_id: sights_and_sounds.id, album_ord: 2, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/made_in_japan/sights_and_sounds/Made+in+Japan+-+Pairs.mp3")
+sights_and_sounds3 = Song.new(name: "What It Is", album_id: sights_and_sounds.id, album_ord: 3, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/made_in_japan/sights_and_sounds/Made+in+Japan+-+What+it+is.mp3")
+sights_and_sounds4 = Song.new(name: "Time Flies", album_id: sights_and_sounds.id, album_ord: 4, genre: "Indie-rock", duration: 300, audio_url: "https://s3.amazonaws.com/beathub-dev/songs/made_in_japan/sights_and_sounds/Made+in+Japan+Time+Flies.mp3")
+
+sights_and_sounds1.save
+sights_and_sounds2.save
+sights_and_sounds3.save
+sights_and_sounds4.save
+
 
 artists.each do |artist|
   search_document = artist.pg_search_document
