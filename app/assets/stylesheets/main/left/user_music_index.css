@@ -58,6 +58,7 @@
   flex-direction: column;
   align-items: flex-start;
   padding-top: 10%;
+  min-height: 200px;
 }
 
 .user-playlist-index::-webkit-scrollbar {
@@ -93,11 +94,14 @@
   display: flex;
   flex-direction: column;
   padding-left: 10%;
+  min-height: 100px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .user-music-nav p{
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 .user-music-nav p:hover{
@@ -115,6 +119,8 @@
 
 .playlists-container{
   padding-left: 10%;
+  min-height: 30px;
+  margin-top: 15px;
 }
 
 .left-nav-logo-container{
@@ -122,6 +128,7 @@
   flex-direction: column;
   margin-left: 4%;
   padding-top: 10%;
+  min-height: 50px;
 }
 
 .left-nav-logo-container img{
