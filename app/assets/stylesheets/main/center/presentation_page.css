@@ -325,3 +325,13 @@ margin: auto;
 .slick-slider .slick-track{
   padding-top: 5%;
 }
+
+.featured-content .slick-next {
+  right: 2px;
+  z-index: 40;
+}
+
+.featured-content .slick-prev {
+  left: 2px;
+  z-index: 40;
+}
