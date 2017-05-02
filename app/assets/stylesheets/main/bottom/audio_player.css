@@ -137,14 +137,16 @@ flex: 8;
 }
 
 .shuffle-btn{
-  margin-top: 2.5%;
   border: none;
   background: none;
-  background-image: url("http://www.iconsplace.com/download/white-shuffle-256.ico");
-  background-size: 55% 65%;
+  background-image: url(http://www.iconsplace.com/download/white-shuffle-256.ico);
   background-repeat: no-repeat;
-  width: 10%;
   outline: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  min-width: 30px;
+  transform: scale(.6);
 }
 
 .shuffle-btn:hover{
@@ -152,11 +154,11 @@ flex: 8;
 }
 
 .shuffle-btn:hover {
-  transform: scale(1.2);
+  transform: scale(.7);
 }
 
 .shuffle-btn:active{
-  transform: scale(.9);
+  transform: scale(.5);
 }
 
 .repeat-btn{
@@ -250,4 +252,8 @@ flex: 8;
   color: hsla(0,0%,100%,.4);
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
+}
+
+#shuffle-icon{
+
 }
