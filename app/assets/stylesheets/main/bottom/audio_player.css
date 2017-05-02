@@ -163,13 +163,14 @@ flex: 8;
 
 .repeat-btn{
   background: none;
-  background-image: url("https://1001freedownloads.s3.amazonaws.com/vector/thumb/66492/ic_auto_repeat_disabled.png");
+  background-image: url(https://1001freedownloads.s3.amazonaws.com/vector/thumb/66492/ic_auto_repeat_disabled.png);
   background-repeat: no-repeat;
-  background-size: 90% 90%;
-  width: 10%;
+  background-size: cover;
   outline: none;
   margin-top: 1%;
   border: none;
+  background-position: 50% 50%;
+  min-width: 30px;
 }
 
 .repeat-btn:hover{
