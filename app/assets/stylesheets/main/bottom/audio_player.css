@@ -1,7 +1,7 @@
 .bottom-content{
   height: 13%;
   width: 100%;
-  /* top: 84%; */
+  min-height: 84px;
   background-color: #282828;
   display: flex;
   justify-content: space-between;
