@@ -4,7 +4,7 @@ BeatHub is a music streaming web application, built with Ruby on Rails and React
 
 :notes:  [BeatHub][heroku]  :notes:
 
-[heroku]: https://beat-hub-app.herokuapp.com/#/
+[heroku]: http://www.beathub.us/#/
 
 Matthew Nguyen
 
@@ -12,10 +12,10 @@ Matthew Nguyen
 
 ## Features and Implementation
 
-### :musical_keyboard: My Music: Playlist and Playlist Song CRUD
+### :guitar: My Music: Playlist and Playlist Song CRUD
 `User`s create `Playlist`s and can search and save `Song`s they discover throughout the application. Individual Songs can be played by clicking the Play button next to the track or the Play button beneath the Album/Playlist artwork to hear the playlist or album in its entirety by queuing all of their songs. Right clicking any song will bring up a context menu to either add the song to the queu, add the song to a Playlist, or remove the song if the User is currently on the playlist's page. Users can view their collection of personal playlists in their profile page, available at the top right.
 
-### :organization: Following and Unfollowing Users
+### :thumbsup: Following and Unfollowing Users
 Users can follow and unfollow other users. A list of followed users exists on the right side-bar. Clicking an the follower's name will navigate the User to the follower's profile page, which shows their followed artists and personal playlists. Clicking 'Find Friends' will bring up a modal of all Users with a follow option next to each User's name.
 
 ### :headphones: Continuous Music Playback While Navigating the Site
