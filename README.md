@@ -1,4 +1,4 @@
-## Beathub
+# Beathub
 
 BeatHub is a music streaming web application, built with Ruby on Rails and React/Redux.
 
