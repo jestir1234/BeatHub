@@ -2,7 +2,7 @@
 
 BeatHub is a music streaming web application, built with Ruby on Rails and React/Redux.
 
-:notes:  [beat-hub-app][heroku]  :notes:
+:notes:  [BeatHub][heroku]  :notes:
 
 [heroku]: https://beat-hub-app.herokuapp.com/#/
 
