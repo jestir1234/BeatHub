@@ -10,6 +10,8 @@ Matthew Nguyen
 
 <jestir1234@gmail.com>
 
+![browse](./screenshots/home.png)
+
 ## Features and Implementation
 
 ### :guitar: My Music: Playlist and Playlist Song CRUD
