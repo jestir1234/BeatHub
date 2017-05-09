@@ -16,7 +16,7 @@ const PresentationReducer = (oldState = _nullPresentationItem, action) => {
 
       oldState.item.songs.forEach((song) => {
         if (song.playlist_song_id === removedSong.id && song.playlist_ord === removedSong.playlist_ord){
-          console.log("we skipping this shit");
+          // console.log("we skipping this shit");
         } else {
           collection.push(song);
         }

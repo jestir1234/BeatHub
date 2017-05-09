@@ -59,7 +59,7 @@ class RightClickMenu extends React.Component {
     document.addEventListener("click", (e) => {
       menu = document.getElementsByClassName('right-click-menu-container')[this.props.idx];
       if (e.path.includes(menu) || e.target.className === 'menu-playlists'){
-        console.log("inside container");
+        // console.log("inside container");
       } else {
         let playlistMenu = document.getElementsByClassName("menu-playlists")[this.props.idx];
         playlistMenu.style.display = "none";
