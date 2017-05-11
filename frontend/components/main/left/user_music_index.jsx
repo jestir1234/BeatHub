@@ -11,6 +11,7 @@ class UserMusicIndex extends React.Component{
     this.handleSelectPlaylist = this.handleSelectPlaylist.bind(this);
     this.handleSelectMusic = this.handleSelectMusic.bind(this);
     this.handleBeginRadioPlay = this.handleBeginRadioPlay.bind(this);
+    this.handleGoToHomePage = this.handleGoToHomePage.bind(this);
   }
 
   componentDidMount(){
@@ -49,6 +50,11 @@ class UserMusicIndex extends React.Component{
     };
   }
 
+  handleGoToHomePage(e){
+    console.log("going to home page")
+    this.props.receivePresentationItem(null, null);
+  }
+
   handleClick(e){
     e.preventDefault();
     let modal = document.getElementById("playlist-form-modal");
@@ -71,7 +77,7 @@ class UserMusicIndex extends React.Component{
       <div className="left-content">
 
         <div className="left-nav-logo-container">
-          <img src="https://s3.amazonaws.com/beathub-dev/songs/logo.png"/>
+          <img onClick={this.handleGoToHomePage} src="https://s3.amazonaws.com/beathub-dev/songs/logo.png"/>
         </div>
 
         <div className="radio-container">
