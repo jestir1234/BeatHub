@@ -302,7 +302,6 @@ class Presentation extends React.Component{
   }
 
   renderArtist(artist){
-
     let name = artist.name;
     let artwork = artist.image_url;
     let banner = artist.banner_url;
@@ -346,7 +345,7 @@ class Presentation extends React.Component{
 
       <div>
         <h2>Albums</h2>
-      </div>  
+      </div>
 
       <div className="album-collection">
           {albums}
@@ -503,6 +502,7 @@ class Presentation extends React.Component{
 
 
   render(){
+
     const editForm = this.state.editFormOpen ? (<PlaylistEditFormContainer currentPlaylist={this.props.presentationItem.item}/>) : null;
     const presentationItem = this.props.presentationItem.item ? this.props.presentationItem : null;
     let showPage = presentationItem ? this.renderPresentation(presentationItem) : this.renderDefault();

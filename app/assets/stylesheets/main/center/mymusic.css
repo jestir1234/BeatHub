@@ -40,6 +40,7 @@
 
 .collection-container{
   display: flex;
+  flex-wrap: wrap;
 }
 
 .playlist {

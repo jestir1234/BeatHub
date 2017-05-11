@@ -21,6 +21,10 @@ module.exports = {
       }
     ]
   },
+  devtool: 'source-maps',
+  resolve: {
+    extensions: [".js", ".jsx", "*"]
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env':{
@@ -29,8 +33,4 @@ module.exports = {
     }),
     new webpack.optimize.UglifyJsPlugin()
   ],
-  devtool: 'source-maps',
-  resolve: {
-    extensions: [".js", ".jsx", "*"]
-  }
 };

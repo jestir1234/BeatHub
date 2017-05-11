@@ -175,6 +175,7 @@ flex: 8;
 
 .repeat-btn:hover{
   transform: scale(1.2);
+  cursor: pointer;
 }
 
 .repeat-btn:active{

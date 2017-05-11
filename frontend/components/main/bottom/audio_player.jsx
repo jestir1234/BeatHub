@@ -67,10 +67,15 @@ class AudioPlayer extends React.Component{
   }
 
   handleShuffle(e){
-    if (this.props.queu.songQueu.length){
-      let shuffledQueue = this.shuffle(this.props.queu.songQueu);
-      let newState = merge({}, this.state, {shuffleStatus: true});
-      this.props.replaceQueuSongs(shuffledQueue);
+    if (this.state.shuffleStatus === false){
+      if (this.props.queu.songQueu.length){
+        let shuffledQueue = this.shuffle(this.props.queu.songQueu);
+        let newState = merge({}, this.state, {shuffleStatus: true});
+        this.props.replaceQueuSongs(shuffledQueue);
+        this.setState(newState);
+      }
+    } else {
+      let newState = merge({}, this.state, {shuffleStatus: false});
       this.setState(newState);
     }
   }
