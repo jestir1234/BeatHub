@@ -73,6 +73,7 @@
   width: 100%;
   display: flex;
   flex-direction: row-reverse;
+  align-items: center;
   justify-content: space-between;
   background-color: #404040;
   height: 9%;

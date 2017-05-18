@@ -201,7 +201,7 @@ flex: 8;
 }
 
 .volume-icon{
-  background-image: url('http://www.iconsdb.com/icons/preview/white/volume-up-4-xxl.png');
+  background-image: url('https://s3.amazonaws.com/beathub-dev/pics/volume.png');
   height: 18px;
   width: 18px;
   background-size: contain;
