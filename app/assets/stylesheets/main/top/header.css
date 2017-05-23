@@ -1,15 +1,9 @@
 .top-content{
   width: 70%;
-  margin-left: 15%;
-  margin-right: 15%;
-  /* margin-top: 0; */
-  /* padding-top: 10px; */
   height: 6%;
   display: flex;
   justify-content: space-between;
   z-index: 3;
-  /* align-items: center; */
-  /* padding: 4%; */
   padding-top: 3%;
   background: grey;
   position: fixed;
@@ -20,6 +14,7 @@
   width: 25%;
   display: flex;
   justify-content: space-between;
+  margin-right: 40px;
 }
 
 .search-container{

@@ -31,11 +31,12 @@ class Home extends React.Component {
     return(
       <div className="main-page-container" id={COLORS[Math.floor(Math.random() * COLORS.length)]}>
 
-          <HeaderContainer />
-
           <UserMusicIndexContainer />
 
-          <PresentationContainer presentationInfo={presentationInfo} songs={this.props.songs} currentSong={currentSong}/>
+          <div className="top-center-container">
+            <HeaderContainer />
+            <PresentationContainer presentationInfo={presentationInfo} songs={this.props.songs} currentSong={currentSong}/>
+          </div>
 
           <FollowedFriendsIndexContainer />
 

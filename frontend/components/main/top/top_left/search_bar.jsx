@@ -11,7 +11,7 @@ class SearchBar extends React.Component {
 
   handleInput(e){
     e.preventDefault();
-    setTimeOut(this.setState({searchText: e.target.value}, () => this.props.fetchSearchResults(this.state.searchText)), 100)
+    setTimeout(this.setState({searchText: e.target.value}, () => this.props.fetchSearchResults(this.state.searchText)), 100)
   }
 
 

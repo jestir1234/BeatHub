@@ -1,5 +1,5 @@
 .main-page-container{
-
+  min-width: 500px;
    width: 100vw;
    height: 100vh;
    margin: 0 auto;
@@ -7,7 +7,19 @@
    color: white;
    position: absolute;
    display: flex;
-   flex-wrap: wrap;
+}
+
+.top-center-container{
+  display:flex;
+  flex-direction: column;
+  width: 70%;
+  min-width: 500px;
+}
+
+@media only screen and (max-width : 700px) {
+  .right-content{
+    display:none;
+  }
 }
 
 
