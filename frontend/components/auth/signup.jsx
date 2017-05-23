@@ -78,21 +78,21 @@ class SignUp extends React.Component{
             <img id="beathub-logo" src={window.logo_path}/>
             <h2 id="logo-header">BeatHub</h2>
           </div>
-          <h3>Sign up with your email address </h3>
+          <div className="signup-header-container">
+            <h3>Sign up with your email address </h3>
+          </div>
           <form className="signup-form">
             <input type="text" value={this.state.username} placeholder="e.g.marshmallow" onChange={this.handleInput('username')}/><div className="form-errors" id="Username">{collectErrors.Username}</div>
             <br/>
             <input type="email" value={this.state.email} placeholder="e.g.marshmallow@email.com" onChange={this.handleInput('email')}/><div className="form-errors" id="Email">{collectErrors.Email}</div>
             <br/>
             <input type="password" value={this.state.password} placeholder="Choose a password" onChange={this.handleInput('password')}/><div className="form-errors" id="Password">{collectErrors.Password}</div>
-            <br/>
             <button onClick={this.handleSubmit}>SIGN UP</button>
           </form>
-          <br/>
           <div className="login-link-container">
           <Link className="login-link" to='/login'>Already have an account? Log In here</Link>
           <br/>
-          <Link className="guest-login-link" onClick={() => this.guestLogin()}>Guest Login</Link>
+        <Link className="guest-login-link" onClick={() => this.guestLogin()}>Guest Login</Link>
           </div>
         </div>
         <div className="slogan-container">
