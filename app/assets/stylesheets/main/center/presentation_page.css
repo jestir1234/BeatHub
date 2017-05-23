@@ -1,12 +1,8 @@
 .center-content{
   width: 70%;
   height: 90%;
-  /* position: absolute; */
   left: 15%;
-  /* margin-top: 5%; */
   color: white;
-  /*background: #181818;*/
-  background: inherit;
   overflow: scroll;
 }
 

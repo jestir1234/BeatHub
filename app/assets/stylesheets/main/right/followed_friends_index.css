@@ -3,6 +3,9 @@
   height: 87%;
   background-color: #0c0a0f;
   overflow-y: auto;
+  position: fixed;
+  right: 0;
+  min-width: 100px;
 }
 
 .find-friends-container{
@@ -25,7 +28,7 @@
   outline: none;
   box-shadow: inset 0 0 0 2px #a0a0a0;
   margin: 5%;
-  padding: 10px 37px;
+  padding: 5% 25%;
   height: auto;
   width: auto;
   background: transparent;

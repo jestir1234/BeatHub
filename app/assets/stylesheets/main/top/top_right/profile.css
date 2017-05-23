@@ -27,7 +27,9 @@
   -webkit-transition: width height font-size border-color margin-top 2.3s;
    transition: width height font-size border-color 2.3s;
    outline: none;
-   padding: 6px 25px
+   padding: 6px 25px;
+   margin-right: 30px;
+   white-space: nowrap;
 }
 
 #logout-btn-container button:hover{
