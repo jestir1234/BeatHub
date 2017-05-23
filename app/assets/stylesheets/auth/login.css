@@ -11,14 +11,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: inherit;
+  justify-content: center;
+  overflow: hidden;
 }
 
 
 .login-container{
   z-index: 5;
   width: 40%;
-  margin-top: 10%;
 }
 
 .signup-link {
@@ -31,8 +31,6 @@
 }
 
 .link-container {
-  padding-top: 10%;
-  margin-bottom: 40px;
 }
 
 .signup-link:hover {
@@ -47,7 +45,7 @@
 }
 
 .login-form input {
-  width: 70%;
+  width: 50%;
   height: 28px;
   background-color: #363636;
   border: none;
@@ -109,14 +107,17 @@
 #login-beathub-logo{
   height: 10%;
   width: 10%;
+  min-width: 50px;
 }
 
 .login-logo-container{
   display: flex;
   flex-direction: row-reverse;
-  /* align-self: center; */
   justify-content: center;
-  /* margin-right: 18%; */
-  margin-top: 15%;
   align-items: center;
+  margin-right: 20px;
+}
+
+.login-form-page > * {
+  padding: 3%;
 }
