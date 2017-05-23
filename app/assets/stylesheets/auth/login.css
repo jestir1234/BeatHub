@@ -58,14 +58,13 @@
 
 .login-form button {
   background-color: #07b44d;
-  position: absolute;
   border-radius: 20px;
   border: none;
   right: 0;
   left: 0;
   margin: auto;
   color: white;
-  width: 9%;
+  width: 100px;
   height: 30px;
   margin-top: 2%;
   font-weight: bold;
@@ -76,8 +75,7 @@
 
 .login-form button:hover {
   cursor: pointer;
-  width: 10%;
-  height: 35px;
+  transform: scale(1.1);
   background-color: #07d159;
 }
 
@@ -92,7 +90,7 @@
   justify-content: center;
   flex-direction: column;
   font-size: 13px;
-  margin-top: 6%;
+  margin-top: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
