@@ -22,6 +22,12 @@
   }
 }
 
+@media only screen and (max-height: 550px) {
+  .create-playlist-link{
+    display: none;
+  }
+}
+
 
 #dark-gradient-maroon{
   background: red; /* For browsers that do not support gradients */

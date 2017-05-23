@@ -227,6 +227,7 @@ background: linear-gradient(#432551, #19171a); /* Standard syntax */
   padding-top: 2%;
   padding-bottom: 2%;
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }
 
 .featured-content p{
