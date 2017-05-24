@@ -6,7 +6,6 @@ import RightClickMenuContainer from '../../modal/right_click_menu_container';
 class SongItem extends React.Component {
   constructor(props){
     super(props);
-    console.log(props)
     this.handleClick = this.handleClick.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
     this.handlePause = this.handlePause.bind(this);

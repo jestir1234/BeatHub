@@ -340,3 +340,8 @@ margin: auto;
 .show-user-songs p {
   color: #989797;
 }
+
+.show-user-songs h1{
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+}

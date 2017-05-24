@@ -205,6 +205,7 @@ class Presentation extends React.Component{
 
     return (
       <div className="show-user-songs">
+        <h1>Your Songs</h1>
         <ul>
           {collection}
         </ul>

@@ -48,7 +48,6 @@ class UserMusicIndex extends React.Component{
       e.preventDefault();
       this.props.fetchUserSongs(this.props.currentUser.id)
       .then((songs) => {
-        console.log(songs)
         this.props.receivePresentationItem(songs, "MySongs")
       });
     }
@@ -62,7 +61,6 @@ class UserMusicIndex extends React.Component{
   }
 
   handleGoToHomePage(e){
-    console.log("going to home page")
     this.props.receivePresentationItem(null, null);
   }
 
