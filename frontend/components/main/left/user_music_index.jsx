@@ -43,6 +43,17 @@ class UserMusicIndex extends React.Component{
     };
   }
 
+  handleSelectSongs(){
+    return (e) => {
+      e.preventDefault();
+      this.props.fetchUserSongs(this.props.currentUser.id)
+      .then((songs) => {
+        console.log(songs)
+        this.props.receivePresentationItem(songs, "MySongs")
+      });
+    }
+  }
+
   handleSelectPlaylist(playlist){
     return (e) => {
       e.preventDefault();
@@ -86,7 +97,7 @@ class UserMusicIndex extends React.Component{
 
         <div className="user-music-nav">
           <h1>Your Music</h1>
-          <p onClick={this.handleSelectMusic("MySongs")}>Songs</p>
+          <p onClick={this.handleSelectSongs("MySongs")}>Songs</p>
           <p onClick={this.handleSelectMusic("MyArtists")}>Artists</p>
           <p onClick={this.handleSelectMusic("MyFollowedPlaylists")}>Playlists</p>
         </div>

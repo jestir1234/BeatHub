@@ -330,3 +330,13 @@ margin: auto;
   left: 2px;
   z-index: 40;
 }
+
+.show-user-songs {
+  padding-right: 5%;
+  padding-top: 1%;
+  margin-left: 100px;
+  margin-top: 10%;
+}
+.show-user-songs p {
+  color: #989797;
+}

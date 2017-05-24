@@ -54,3 +54,7 @@ export const fetchRandomSong = (artistId) => {
     return SongsAPIUtil.fetchRandomSong(artistId).then((randomSong) => dispatch(receiveCurrentSong(randomSong)));
   };
 };
+
+export const fetchUserSongs = (userId) => {
+  return SongsAPIUtil.fetchUserSongs(userId);
+};

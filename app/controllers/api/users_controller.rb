@@ -29,6 +29,12 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def songs
+    user = User.includes(:playlists => :songs).includes(:followed_playlists => :songs).find(params[:id])
+    @songs = user.followed_playlist_songs + user.playlist_songs
+    render 'api/users/songs'
+  end
+
 
   private
 

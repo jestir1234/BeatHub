@@ -28,6 +28,7 @@ class Presentation extends React.Component{
     this.handleFollowUser = this.handleFollowUser.bind(this);
     this.renderIndex = this.renderIndex.bind(this);
     this.PlayRandomSongByArtist = this.PlayRandomSongByArtist.bind(this);
+    this.renderSongs = this.renderSongs.bind(this);
   }
 
 
@@ -176,8 +177,39 @@ class Presentation extends React.Component{
     } else if (presentationItem.type === "MyFollowedPlaylists"){
       return this.renderIndex(presentationItem.item, "Followed Playlists");
     } else if (presentationItem.type === "MySongs"){
-      return this.renderIndex(presentationItem.item, "Songs");
+      return this.renderSongs(presentationItem.item);
     }
+
+  }
+
+  renderSongs(user_songs){
+
+    let collection = user_songs.map((song, idx) => {
+      return(
+        <div className="song-list-item-container">
+          <SongItem
+            song={song}
+            removeCurrentSong={this.props.removeCurrentSong}
+            fetchSong={this.props.fetchSong}
+            playCurrentSong={this.props.playCurrentSong}
+            pauseCurrentSong={this.props.pauseCurrentSong}
+            stopCurrentSong={this.props.stopCurrentSong}
+            currentSongStatus={this.props.currentSongStatus}
+            currentSong={this.props.currentSong}
+            key={idx}
+            idx={idx}/>
+          <p id="song-list-item-duration">{this.convertInToTime(song.duration)}</p>
+        </div>
+      );
+    });
+
+    return (
+      <div className="show-user-songs">
+        <ul>
+          {collection}
+        </ul>
+      </div>
+    )
 
   }
 
@@ -502,7 +534,6 @@ class Presentation extends React.Component{
 
 
   render(){
-
     const editForm = this.state.editFormOpen ? (<PlaylistEditFormContainer currentPlaylist={this.props.presentationItem.item}/>) : null;
     const presentationItem = this.props.presentationItem.item ? this.props.presentationItem : null;
     let showPage = presentationItem ? this.renderPresentation(presentationItem) : this.renderDefault();

@@ -35,6 +35,14 @@ class User < ActiveRecord::Base
     through: :in_follows,
     source: :follower
 
+  has_many :playlist_songs,
+    through: :playlists,
+    source: :songs
+
+  has_many :followed_playlist_songs,
+    through: :followed_playlists,
+    source: :songs
+
 
   after_initialize :ensure_session_token
   attr_reader :password
