@@ -11,12 +11,12 @@ class Api::GenresController < ApplicationController
 
 
     @genres = {
-      synth_pop: synth_pop
-      dream_pop: dream_pop
-      shoe_gaze: shoe_gaze
-      soul: soul
-      indie_rock: indie_rock
-      j_rock: j_rock
+      synth_pop: synth_pop,
+      dream_pop: dream_pop,
+      shoe_gaze: shoe_gaze,
+      soul: soul,
+      indie_rock: indie_rock,
+      j_rock: j_rock,
       punk_rock: punk_rock
     }
 
