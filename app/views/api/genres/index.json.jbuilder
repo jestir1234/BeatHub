@@ -1,1 +1,1 @@
-@genres
+json.genres @genres
