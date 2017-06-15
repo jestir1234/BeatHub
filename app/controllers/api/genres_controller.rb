@@ -9,6 +9,7 @@ class Api::GenresController < ApplicationController
     j_rock_songs = Song.where(genre: "J-Rock")
     punk_rock_songs = Song.where(genre: "Punk-Rock")
 
+
     @genres = {
       synth_pop: synth_pop_songs,
       dream_pop: dream_pop_songs,
