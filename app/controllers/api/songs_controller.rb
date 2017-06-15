@@ -14,5 +14,4 @@ class Api::SongsController < ApplicationController
     render 'api/songs/show'
   end
 
-
 end
