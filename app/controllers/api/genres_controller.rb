@@ -4,7 +4,7 @@ class Api::GenresController < ApplicationController
     synth_pop = Artist.where(genre: "Synth-pop")
     dream_pop = Artist.where(genre: "Dream-pop")
     shoe_gaze = Artist.where(genre: "Shoe-gaze")
-    soul = Artist.where(genre: "soul")
+    soul = Artist.where(genre: "Soul")
     indie_rock = Artist.where(genre: "Indie-rock")
     j_rock = Artist.where(genre: "J-Rock")
     punk_rock = Artist.where(genre: "Punk-Rock")
