@@ -8,12 +8,12 @@ class Api::FollowsController < ApplicationController
   end
 
   def create
-    follower_id = @current_user.id
+    follower_id = current_user.id
     followable_id = params[:follow][:followable_id]
     followable_type = params[:follow][:followable_type]
 
     @follow = Follow.new(follow_params);
-
+    
     if @follow.save
       if followable_type == "Artist"
         @artist = Artist.find(followable_id)
@@ -32,7 +32,7 @@ class Api::FollowsController < ApplicationController
   end
 
   def destroy
-    follower_id = @current_user.id
+    follower_id = current_user.id
     followable_id = params[:follow][:followable_id]
     followable_type = params[:follow][:followable_type]
 
@@ -56,7 +56,7 @@ class Api::FollowsController < ApplicationController
   end
 
   def follows_artist
-    followed_artists = @current_user.followed_artists
+    followed_artists = current_user.followed_artists
     current_artist_id = params[:id]
     @followed = false
     followed_artists.each do |artist|
