@@ -56,7 +56,7 @@ class Api::FollowsController < ApplicationController
   end
 
   def follows_artist
-    followed_artists = current_user.followed_artists
+    followed_artists = @current_user.followed_artists
     current_artist_id = params[:id]
     @followed = false
     followed_artists.each do |artist|
