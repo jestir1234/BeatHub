@@ -38,8 +38,6 @@ class Api::FollowsController < ApplicationController
 
     @follow = Follow.where(follower_id: follower_id, followable_id: followable_id)
 
-    puts @follow
-
     @follow = @follow[0];
     if @follow.destroy
       if followable_type == "Artist"
@@ -66,7 +64,7 @@ class Api::FollowsController < ApplicationController
         @followed = true
       end
     end
-
+    puts @followed
     render 'api/follows/follows'
   end
 
