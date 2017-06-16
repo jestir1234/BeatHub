@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :playlists, only: [:show, :update, :destroy]
     resources :playlist_songs, only: [:create, :destroy]
     resources :follows, only: [:create, :destroy, :index]
+    get '/follows/artists/:id' => 'follows#follows_artist', as: 'follows_artist'
     resources :genres, only: [:index]
     get '/genres/:category' => 'genres#category', as: 'category'
   end

@@ -55,6 +55,19 @@ class Api::FollowsController < ApplicationController
     end
   end
 
+  def follows_artist
+    followed_artists = current_user.followed_artists
+    current_artist_id = params[:id]
+    @followed = false
+    followed_artists.each do |artist|
+      if current_artist_id == artist.id
+        @followed = true
+      end
+    end
+
+    render 'api/follows/follows'
+  end
+
   private
 
   def follow_params
