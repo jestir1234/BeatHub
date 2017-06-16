@@ -13,7 +13,7 @@ class Api::FollowsController < ApplicationController
     followable_type = params[:follow][:followable_type]
 
     @follow = Follow.new(follow_params);
-    
+
     if @follow.save
       if followable_type == "Artist"
         @artist = Artist.find(followable_id)
@@ -36,6 +36,8 @@ class Api::FollowsController < ApplicationController
     followable_id = params[:follow][:followable_id]
     followable_type = params[:follow][:followable_type]
 
+    puts current_user
+
     @follow = Follow.where(follower_id: follower_id, followable_id: followable_id)
 
     @follow = @follow[0];
@@ -56,6 +58,7 @@ class Api::FollowsController < ApplicationController
   end
 
   def follows_artist
+    current_user = User.find(params[:user_id])
     followed_artists = current_user.followed_artists
     current_artist_id = params[:id]
     @followed = false
