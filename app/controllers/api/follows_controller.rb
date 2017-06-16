@@ -63,7 +63,7 @@ class Api::FollowsController < ApplicationController
     current_artist_id = params[:id]
     @followed = false
     followed_artists.each do |artist|
-      if current_artist_id == artist.id
+      if current_artist_id.to_i == artist.id
         @followed = true
       end
     end
