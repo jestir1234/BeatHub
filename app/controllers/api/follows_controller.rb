@@ -8,7 +8,7 @@ class Api::FollowsController < ApplicationController
   end
 
   def create
-    follower_id = params[:follow][:follower_id]
+    follower_id = current_user.id
     followable_id = params[:follow][:followable_id]
     followable_type = params[:follow][:followable_type]
 
