@@ -15,10 +15,15 @@ class User < ActiveRecord::Base
     foreign_key: :followable_id,
     class_name: "Follow"
 
-   has_many :followed_artists,
+  has_many :followed_artists,
     through: :out_follows,
     source: :followable,
     source_type: "Artist"
+
+  has_many :followed_albums,
+    through: :out_follows,
+    source: :followable,
+    source_type: "Album"
 
   has_many :followed_playlists,
    through: :out_follows,

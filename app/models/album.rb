@@ -10,4 +10,10 @@ class Album < ActiveRecord::Base
 
   belongs_to :artist
   has_many :songs
+
+  has_many :follows, as: :followable
+
+  has_many :followers,
+    through: :follows,
+    source: :follower
 end

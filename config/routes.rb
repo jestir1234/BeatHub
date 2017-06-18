@@ -22,5 +22,7 @@ Rails.application.routes.draw do
     get '/follows/artists/:id/:user_id' => 'follows#follows_artist', as: 'follows_artist'
     resources :genres, only: [:index]
     get '/genres/:category' => 'genres#category', as: 'category'
+    get '/users/:id/followed_albums' => 'users#followed_albums', as: 'followed_albums'
+    get '/users/:id/followed_artists' => 'users#followed_artists', as: 'followed_artists'
   end
 end
