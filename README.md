@@ -8,7 +8,7 @@ BeatHub is a music streaming application, built with Ruby on Rails and React/Red
 
 By Matthew Nguyen
 
-<matt.duy.nguyen@gmail.com>
+Contact: <matt.duy.nguyen@gmail.com>
 
 ![browse](./screenshots/home.png)
 
