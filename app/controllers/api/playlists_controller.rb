@@ -2,7 +2,7 @@ class Api::PlaylistsController < ApplicationController
 
   def create
     @playlist = Playlist.new(playlist_params)
-    @playlist.author = current_user
+    @playlist.author = current_user ? current_user : User.find(param[:user_id])
     @playlist.image_url = 'https://x.myspacecdn.com/new/common/images/ilike-logo-square_512.png'
 
     if @playlist.save
@@ -29,7 +29,7 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def update
-    
+
     @playlist = Playlist.find(params[:id])
 
     if @playlist.update(playlist_params)
