@@ -1,11 +1,11 @@
 # Beathub
 
-BeatHub is a music streaming application, built with Ruby on Rails and React/Redux.
+BeatHub is a music streaming application, built with Ruby on Rails and React/Redux. For Android & IOS please check out [this React Native version](https://github.com/jestir1234/BeatHub-Mobile).
 
 :notes:  [BeatHub][heroku]  :notes:
 
 [heroku]: http://www.beathub.us/#/
-[Mobile Version](https://github.com/jestir1234/BeatHub-Mobile)
+
 
 By Matthew Nguyen
 
