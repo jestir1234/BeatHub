@@ -5,6 +5,7 @@ import SoundComponent from '../bottom/sound_component';
 import SimpleSliderContainer from './carousel/simple_slider_container';
 import PlaylistEditFormContainer from '../modal/playlist_edit_form_container';
 
+
 class Presentation extends React.Component{
   constructor(props){
     super(props);

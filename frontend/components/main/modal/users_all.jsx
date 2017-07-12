@@ -1,4 +1,5 @@
 import React from 'react';
+import Spinner from '../../spinner'
 
 
 class UsersAll extends React.Component {
@@ -50,7 +51,7 @@ class UsersAll extends React.Component {
           {user.username}
           <button onClick={this.handleFollow(user)}>{followStatus ? "Unfollow" : "Follow"}</button>
         </div>);
-    }) : null;
+    }) : <Spinner />;
 
     return(
       <div className={this.state.formOpen ? "users-index-modal-open" : "users-index-modal-close"}>
